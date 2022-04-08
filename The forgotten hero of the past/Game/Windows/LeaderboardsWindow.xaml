@@ -15,6 +15,12 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Content="Back" Click="Button_Click" Padding="10" Margin="20" Width="200"/>
+        <Button Content="Back" Click="Button_Click" Padding="10" Margin="20" Width="200">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </StackPanel>
 </Window>

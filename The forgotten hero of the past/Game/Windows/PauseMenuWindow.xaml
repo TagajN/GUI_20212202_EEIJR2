@@ -8,8 +8,26 @@
         Title="PauseMenuWindow" Height="250" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <StackPanel>
         <Label Content="Game Paused" HorizontalAlignment="Center"/>
-        <Button Content="Resume" Click="Button_Click_Resume" Padding="10" Margin="10"/>
-        <Button Content="Save" Click="Button_Click_Save" Padding="10" Margin="10"/>
-        <Button Content="Exit" Click="Button_Click_Exit" Padding="10" Margin="10"/>
+        <Button Content="Resume" Click="Button_Click_Resume" Padding="10" Margin="10">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Save" Click="Button_Click_Save" Padding="10" Margin="10">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Exit" Click="Button_Click_Exit" Padding="10" Margin="10">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </StackPanel>
 </Window>

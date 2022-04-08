@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\onisp\\source\\repos\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Model\\Game.Model.csproj": {}
+    "C:\\Users\\Aron\\Documents\\GitHub\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Model\\Game.Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\onisp\\source\\repos\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Model\\Game.Model.csproj": {
+    "C:\\Users\\Aron\\Documents\\GitHub\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Model\\Game.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\onisp\\source\\repos\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Model\\Game.Model.csproj",
+        "projectUniqueName": "C:\\Users\\Aron\\Documents\\GitHub\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Model\\Game.Model.csproj",
         "projectName": "Game.Model",
-        "projectPath": "C:\\Users\\onisp\\source\\repos\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Model\\Game.Model.csproj",
-        "packagesPath": "C:\\Users\\onisp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\onisp\\source\\repos\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Model\\obj\\",
+        "projectPath": "C:\\Users\\Aron\\Documents\\GitHub\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Model\\Game.Model.csproj",
+        "packagesPath": "C:\\Users\\Aron\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Aron\\Documents\\GitHub\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\onisp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aron\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

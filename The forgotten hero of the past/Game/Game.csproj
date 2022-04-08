@@ -7,4 +7,31 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="04e1583888120761e22e97ca39b79a70.png" />
+    <None Remove="7241463.webp" />
+    <None Remove="7947d1bc3287fddc22a13b993f1a56a0.png" />
+    <None Remove="Art\MUTE.png" />
+    <None Remove="Art\UNMUTE.png" />
+    <None Remove="EXIT_button.png" />
+    <None Remove="LEADERBOARDS_button.png" />
+    <None Remove="LOAD_button.png" />
+    <None Remove="title.png" />
+    <None Remove="Windows\knight-idle.gif" />
+    <None Remove="Windows\warlock-idle.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Art\PLAY_button.png" />
+    <Resource Include="Art\Background.webp" />
+    <Resource Include="Art\EXIT_button.png" />
+    <Resource Include="Art\LEADERBOARDS_button.png" />
+    <Resource Include="Art\LOAD_button.png" />
+    <Resource Include="Art\Title.png" />
+  </ItemGroup>
+
 </Project>

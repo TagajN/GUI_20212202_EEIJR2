@@ -1,26 +1,62 @@
 {
   "version": 3,
   "targets": {
-    "net5.0-windows7.0": {}
+    "net5.0-windows7.0": {
+      "WpfAnimatedGif/2.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/WpfAnimatedGif.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/WpfAnimatedGif.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "WpfAnimatedGif/2.0.2": {
+      "sha512": "B0j9SqtThyHVTiOPvu6yR+39Te0g3o+7Jjb+qEm7+Iz1HRqbE5/4QV+ntHWOYYBPOUFr9x1mdzGl/EzWP+nKiA==",
+      "type": "package",
+      "path": "wpfanimatedgif/2.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/WpfAnimatedGif.dll",
+        "lib/net35/WpfAnimatedGif.pdb",
+        "lib/net35/WpfAnimatedGif.xml",
+        "lib/net40/WpfAnimatedGif.dll",
+        "lib/net40/WpfAnimatedGif.pdb",
+        "lib/net40/WpfAnimatedGif.xml",
+        "lib/netcoreapp3.0/WpfAnimatedGif.dll",
+        "lib/netcoreapp3.0/WpfAnimatedGif.pdb",
+        "lib/netcoreapp3.0/WpfAnimatedGif.xml",
+        "wpfanimatedgif.2.0.2.nupkg.sha512",
+        "wpfanimatedgif.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0-windows7.0": []
+    "net5.0-windows7.0": [
+      "WpfAnimatedGif >= 2.0.2"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\onisp\\.nuget\\packages\\": {}
+    "C:\\Users\\Aron\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\onisp\\Source\\Repos\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game\\Game.csproj",
+      "projectUniqueName": "C:\\Users\\Aron\\Documents\\GitHub\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game\\Game.csproj",
       "projectName": "Game",
-      "projectPath": "C:\\Users\\onisp\\Source\\Repos\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game\\Game.csproj",
-      "packagesPath": "C:\\Users\\onisp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\onisp\\Source\\Repos\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game\\obj\\",
+      "projectPath": "C:\\Users\\Aron\\Documents\\GitHub\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game\\Game.csproj",
+      "packagesPath": "C:\\Users\\Aron\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Aron\\Documents\\GitHub\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\onisp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Aron\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -45,6 +81,12 @@
     "frameworks": {
       "net5.0-windows7.0": {
         "targetAlias": "net5.0-windows",
+        "dependencies": {
+          "WpfAnimatedGif": {
+            "target": "Package",
+            "version": "[2.0.2, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -63,7 +105,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -5,12 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="DarkOliveGreen">
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="250">
-        <Label Content="The Forgotten Hero of the Past" Padding="30" HorizontalContentAlignment="Center"/>
-        <Button Content="Play" Click="Play_Click" Padding="10" Margin="10"/>
-        <Button Content="Load" Click="Load_Click" Padding="10" Margin="10"/>
-        <Button Content="Leaderboards" Click="Leaderboards_Click" Padding="10" Margin="10"/>
-        <Button Content="Exit" Click="Exit_Click" Padding="10" Margin="10"/>
-    </StackPanel>
+        Title="MainWindow" Height="450" Width="800" WindowState="Maximized" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Image Source="/Art/Background.webp" Grid.RowSpan="2" Stretch="Fill"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Grid.Row="1">
+            <Button Click="Play_Click" Padding="10" Margin="10" Background="Gray" >
+                <Button.Content>
+                    <Image  Height="22" Width="163" Source="/Art/PLAY_button.png" />
+                </Button.Content>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Click="Load_Click" Padding="10" Margin="10" Background="Gray">
+                <Button.Content>
+                    <Image  Height="22" Width="163" Source="/Art/LOAD_button.png"  />
+                </Button.Content>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Click="Leaderboards_Click" Padding="10" Margin="10" Background="Gray">
+                <Button.Content>
+                    <Image  Height="22" Width="163" Source="/Art/LEADERBOARDS_button.png"/>
+                </Button.Content>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Click="Exit_Click" Padding="10" Margin="10" Background="Gray">
+                <Button.Content>
+                    <Image  Height="22" Width="163" Source="/Art/EXIT_button.png"  />
+                </Button.Content>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+        <Image Height="100" Width="700" Source="/Art/title.png" />
+    </Grid>
 </Window>
+    

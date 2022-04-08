@@ -1,0 +1,12 @@
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Logic.Tests\bin\Debug\net5.0-windows\Game.Logic.Tests.deps.json
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Logic.Tests\bin\Debug\net5.0-windows\Game.Logic.Tests.dll
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Logic.Tests\bin\Debug\net5.0-windows\ref\Game.Logic.Tests.dll
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Logic.Tests\bin\Debug\net5.0-windows\Game.Logic.Tests.pdb
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Logic.Tests\obj\Debug\net5.0-windows\Game.Logic.Tests.csproj.AssemblyReference.cache
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Logic.Tests\obj\Debug\net5.0-windows\Game.Logic.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Logic.Tests\obj\Debug\net5.0-windows\Game.Logic.Tests.AssemblyInfoInputs.cache
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Logic.Tests\obj\Debug\net5.0-windows\Game.Logic.Tests.AssemblyInfo.cs
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Logic.Tests\obj\Debug\net5.0-windows\Game.Logic.Tests.csproj.CoreCompileInputs.cache
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Logic.Tests\obj\Debug\net5.0-windows\Game.Logic.Tests.dll
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Logic.Tests\obj\Debug\net5.0-windows\ref\Game.Logic.Tests.dll
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Logic.Tests\obj\Debug\net5.0-windows\Game.Logic.Tests.pdb

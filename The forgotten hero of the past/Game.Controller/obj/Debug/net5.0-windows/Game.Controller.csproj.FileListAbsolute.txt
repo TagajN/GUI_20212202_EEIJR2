@@ -1,0 +1,12 @@
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Controller\bin\Debug\net5.0-windows\Game.Controller.deps.json
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Controller\bin\Debug\net5.0-windows\Game.Controller.dll
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Controller\bin\Debug\net5.0-windows\ref\Game.Controller.dll
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Controller\bin\Debug\net5.0-windows\Game.Controller.pdb
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Controller\obj\Debug\net5.0-windows\Game.Controller.csproj.AssemblyReference.cache
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Controller\obj\Debug\net5.0-windows\Game.Controller.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Controller\obj\Debug\net5.0-windows\Game.Controller.AssemblyInfoInputs.cache
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Controller\obj\Debug\net5.0-windows\Game.Controller.AssemblyInfo.cs
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Controller\obj\Debug\net5.0-windows\Game.Controller.csproj.CoreCompileInputs.cache
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Controller\obj\Debug\net5.0-windows\Game.Controller.dll
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Controller\obj\Debug\net5.0-windows\ref\Game.Controller.dll
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game.Controller\obj\Debug\net5.0-windows\Game.Controller.pdb

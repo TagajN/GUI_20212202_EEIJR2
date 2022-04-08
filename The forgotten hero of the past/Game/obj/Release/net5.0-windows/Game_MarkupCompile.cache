@@ -1,0 +1,20 @@
+﻿Game
+
+
+winexe
+C#
+.cs
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game\obj\Release\net5.0-windows\
+Game
+none
+false
+TRACE;RELEASE;NET;NET5_0;NETCOREAPP
+C:\Users\onisp\Source\Repos\GUI_20212202_EEIJR2\The forgotten hero of the past\Game\App.xaml
+7-1717999439
+
+9-176647384
+193-1891726104
+MainWindow.xaml;Windows\GameWindow.xaml;Windows\HeroMenuWindow.xaml;Windows\LeaderboardsWindow.xaml;Windows\LoadGameWindow.xaml;Windows\NewGameWindow.xaml;Windows\PauseMenuWindow.xaml;
+
+True
+

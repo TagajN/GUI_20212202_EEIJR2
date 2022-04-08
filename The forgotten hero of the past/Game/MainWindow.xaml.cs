@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,24 @@ namespace Game
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void Play_Click(object sender, RoutedEventArgs e)
+        {
+            new NewGameWindow().ShowDialog();
+        }
+
+        private void Load_Click(object sender, RoutedEventArgs e)
+        {
+            new LoadGameWindow().ShowDialog();
+        }
+
+        private void Leaderboards_Click(object sender, RoutedEventArgs e)
+        {
+            new LeaderboardsWindow().ShowDialog();
+        }
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

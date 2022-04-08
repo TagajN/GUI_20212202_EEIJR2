@@ -8,19 +8,19 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Aron\\.nuget\\packages\\": {}
+    "C:\\Users\\onisp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aron\\Documents\\GitHub\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Logic\\Game.Logic.csproj",
+      "projectUniqueName": "C:\\Users\\onisp\\Source\\Repos\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Logic\\Game.Logic.csproj",
       "projectName": "Game.Logic",
-      "projectPath": "C:\\Users\\Aron\\Documents\\GitHub\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Logic\\Game.Logic.csproj",
-      "packagesPath": "C:\\Users\\Aron\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aron\\Documents\\GitHub\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Logic\\obj\\",
+      "projectPath": "C:\\Users\\onisp\\Source\\Repos\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Logic\\Game.Logic.csproj",
+      "packagesPath": "C:\\Users\\onisp\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\onisp\\Source\\Repos\\GUI_20212202_EEIJR2\\The forgotten hero of the past\\Game.Logic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Aron\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\onisp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

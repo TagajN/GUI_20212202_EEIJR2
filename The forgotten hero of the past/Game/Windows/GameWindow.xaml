@@ -1,0 +1,19 @@
+﻿<Window x:Class="Game.Windows.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game.Windows"
+        mc:Ignorable="d"
+        Title="GameWindow" Height="450" Width="800" KeyDown="Esc" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <StackPanel >
+        <WrapPanel Margin="5">
+            <Button Content="Hero" Click="Button_Click" Width="80"/>
+            <ProgressBar x:Name="HealthBar" Maximum="100" Value="80" Width="100" Height="20" Padding="10" Margin="5"/>
+            <Label x:Name="CoinCounter" Content="1000" Padding="10"/>
+        </WrapPanel>
+        <Grid>
+
+        </Grid>
+    </StackPanel>
+</Window>

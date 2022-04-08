@@ -1,0 +1,20 @@
+﻿<Window x:Class="Game.Windows.LeaderboardsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game.Windows"
+        mc:Ignorable="d"
+        Title="LeaderboardsWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <StackPanel>
+        <Label Content="Leaderboards" HorizontalAlignment="Center"/>
+        <ListBox x:Name="lbox">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="Player Data"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="Back" Click="Button_Click" Padding="10" Margin="20" Width="200"/>
+    </StackPanel>
+</Window>

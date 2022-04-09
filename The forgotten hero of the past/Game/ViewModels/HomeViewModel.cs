@@ -15,7 +15,7 @@ namespace Game.ViewModels
         public ICommand NewGameCommand { get; }
         public ICommand LoadGameCommand { get; }
         public ICommand LeaderBoardsCommand { get; }
-
+        public ICommand CreditsCommand { get; }
         public ICommand ExitCommand { get; }
 
         public HomeViewModel(NavigationStore navigationStore)
@@ -23,6 +23,7 @@ namespace Game.ViewModels
             NewGameCommand = new NavigateCommand<NewGameViewModel>(navigationStore, () => new NewGameViewModel(navigationStore));
             LoadGameCommand = new NavigateCommand<LoadGameViewModel>(navigationStore, () => new LoadGameViewModel(navigationStore));
             LeaderBoardsCommand = new NavigateCommand<LeaderBoardsViewModel>(navigationStore, () => new LeaderBoardsViewModel(navigationStore));
+            CreditsCommand = new NavigateCommand<CreditsViewModel>(navigationStore, () => new CreditsViewModel(navigationStore));
             ExitCommand = new RelayCommand(() => System.Environment.Exit(1));
         }
     }

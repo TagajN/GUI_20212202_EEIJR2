@@ -19,6 +19,14 @@
     <None Remove="title.png" />
     <None Remove="Windows\knight-idle.gif" />
     <None Remove="Windows\warlock-idle.gif" />
+    <None Remove="WindowUC\Background2.png" />
+    <None Remove="WindowUC\Background3.jpg" />
+    <None Remove="WindowUC\Background4.jpg" />
+    <None Remove="WindowUC\BACK_button.png" />
+    <None Remove="WindowUC\CREDITS_button.png" />
+    <None Remove="WindowUC\HIGHSCORES_button.png" />
+    <None Remove="WindowUC\LOADGAME_button.png" />
+    <None Remove="WindowUC\NEWGAME_button.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,9 +38,16 @@
     <Resource Include="Art\PLAY_button.png" />
     <Resource Include="Art\Background.webp" />
     <Resource Include="Art\EXIT_button.png" />
-    <Resource Include="Art\LEADERBOARDS_button.png" />
     <Resource Include="Art\LOAD_button.png" />
     <Resource Include="Art\Title.png" />
+    <Resource Include="Art\Background2.png" />
+    <Resource Include="Art\BACK_button.png" />
+    <Resource Include="Art\Background3.jpg" />
+    <Resource Include="Art\LOADGAME_button.png" />
+    <Resource Include="Art\NEWGAME_button.png" />
+    <Resource Include="Art\CREDITS_button.png" />
+    <Resource Include="Art\HIGHSCORES_button.png" />
+    <Resource Include="Art\Background4.jpg" />
   </ItemGroup>
 
 </Project>

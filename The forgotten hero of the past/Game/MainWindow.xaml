@@ -7,7 +7,7 @@
         xmlns:viewmodels="clr-namespace:Game.ViewModels"
         xmlns:views="clr-namespace:Game.WindowUC"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowState="Normal" WindowStartupLocation="CenterScreen" >
+        Title="MainWindow" Height="500" Width="800" WindowState="Normal" WindowStartupLocation="CenterScreen" >
     <ContentControl Content="{Binding CurrentViewModel}">
         <ContentControl.Resources>
             <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
@@ -21,6 +21,9 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:LeaderBoardsViewModel}">
                 <views:LeaderBoardsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:CreditsViewModel}">
+                <views:CreditsView/>
             </DataTemplate>
         </ContentControl.Resources>
     </ContentControl>

@@ -10,13 +10,13 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <Image Source="/Art/Background.webp" Grid.RowSpan="2" Stretch="Fill"/>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Grid.Row="1">
             <Button Command="{Binding NewGameCommand}" Padding="10" Margin="10" Background="Gray" >
                 <Button.Content>
-                    <Image  Height="22" Width="163" Source="/Art/PLAY_button.png" />
+                    <Image  Height="22" Width="163" Source="/Art/NEWGAME_button.png" />
                 </Button.Content>
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -36,7 +36,17 @@
             </Button>
             <Button Command="{Binding LeaderBoardsCommand}" Padding="10" Margin="10" Background="Gray">
                 <Button.Content>
-                    <Image  Height="22" Width="163" Source="/Art/LEADERBOARDS_button.png"/>
+                    <Image  Height="22" Width="163" Source="/Art/HIGHSCORES_button.png" />
+                </Button.Content>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Command="{Binding CreditsCommand}" Padding="10" Margin="10" Background="Gray">
+                <Button.Content>
+                    <Image  Height="22" Width="163" Source="/Art/CREDITS_button.png" />
                 </Button.Content>
                 <Button.Resources>
                     <Style TargetType="Border">

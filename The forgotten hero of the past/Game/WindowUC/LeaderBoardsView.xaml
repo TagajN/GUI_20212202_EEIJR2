@@ -6,21 +6,32 @@
              xmlns:local="clr-namespace:Game.WindowUC"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
-        <Label Content="Leaderboards" HorizontalAlignment="Center"/>
-        <ListBox x:Name="lbox">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Image  Grid.RowSpan="3" Stretch="Fill" Source="/Art/Background2.png"/>
+        <Image Source="/Art/HIGHSCORES_button.png" HorizontalAlignment="Center" Height="40"/>
+
+        <ListBox Grid.Row="1" Background="Transparent" BorderBrush="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="Player Data"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Command="{Binding NavigateHomeCommand}" Content="Back" Padding="10" Margin="20" Width="200">
+        <Button Grid.Row="2" Command="{Binding NavigateHomeCommand}" Padding="10" Margin="10" Width="200" Background="Gray">
+            <Button.Content>
+                <Image  Height="22" Width="163" Source="/Art/BACK_button.png"/>
+            </Button.Content>
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-    </StackPanel>
+
+    </Grid>
 </UserControl>

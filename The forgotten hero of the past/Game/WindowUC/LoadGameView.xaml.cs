@@ -1,7 +1,4 @@
-﻿using Game.Stores;
-using Game.ViewModels;
-using Game.Windows;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,19 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Game
+namespace Game.WindowUC
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for LoadGameView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoadGameView : UserControl
     {
-        NavigationStore navigationStore = new NavigationStore();
-
-        public MainWindow()
+        public LoadGameView()
         {
-            navigationStore.CurrentViewModel = new HomeViewModel(navigationStore);
-            DataContext = new MainViewModel(navigationStore);
             InitializeComponent();
         }
     }

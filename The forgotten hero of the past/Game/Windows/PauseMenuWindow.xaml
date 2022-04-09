@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game.Windows"
         mc:Ignorable="d"
-        Title="PauseMenuWindow" Height="250" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="PauseMenuWindow" Height="250" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <StackPanel>
         <Label Content="Game Paused" HorizontalAlignment="Center"/>
         <Button Content="Resume" Click="Button_Click_Resume" Padding="10" Margin="10">

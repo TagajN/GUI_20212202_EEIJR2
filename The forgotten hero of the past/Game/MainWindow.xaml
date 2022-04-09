@@ -4,57 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game"
+        xmlns:viewmodels="clr-namespace:Game.ViewModels"
+        xmlns:views="clr-namespace:Game.WindowUC"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowState="Maximized" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
-        </Grid.RowDefinitions>
-        <Image Source="/Art/Background.webp" Grid.RowSpan="2" Stretch="Fill"/>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Grid.Row="1">
-            <Button Click="Play_Click" Padding="10" Margin="10" Background="Gray" >
-                <Button.Content>
-                    <Image  Height="22" Width="163" Source="/Art/PLAY_button.png" />
-                </Button.Content>
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Button Click="Load_Click" Padding="10" Margin="10" Background="Gray">
-                <Button.Content>
-                    <Image  Height="22" Width="163" Source="/Art/LOAD_button.png"  />
-                </Button.Content>
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Button Click="Leaderboards_Click" Padding="10" Margin="10" Background="Gray">
-                <Button.Content>
-                    <Image  Height="22" Width="163" Source="/Art/LEADERBOARDS_button.png"/>
-                </Button.Content>
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Button Click="Exit_Click" Padding="10" Margin="10" Background="Gray">
-                <Button.Content>
-                    <Image  Height="22" Width="163" Source="/Art/EXIT_button.png"  />
-                </Button.Content>
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-        </StackPanel>
-        <Image Height="100" Width="700" Source="/Art/title.png" />
-    </Grid>
+        Title="MainWindow" Height="450" Width="800" WindowState="Normal" WindowStartupLocation="CenterScreen" >
+    <ContentControl Content="{Binding CurrentViewModel}">
+        <ContentControl.Resources>
+            <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+                <views:HomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:NewGameViewModel}">
+                <views:NewGameView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:LoadGameViewModel}">
+                <views:LoadGameView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:LeaderBoardsViewModel}">
+                <views:LeaderBoardsView/>
+            </DataTemplate>
+        </ContentControl.Resources>
+    </ContentControl>
+    
 </Window>
     

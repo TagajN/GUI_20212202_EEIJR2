@@ -5,30 +5,55 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Game.WindowUC"
              xmlns:vms="clr-namespace:Game.ViewModels"
+             xmlns:gif="http://wpfanimatedgif.codeplex.com"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
-        <Label Content="Select Your Hero" HorizontalAlignment="Center"/>
-        <Grid Margin="10">
+
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Art/ChampSelectBackground.webp"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Source="/Art/SELECT_title.png" HorizontalAlignment="Center" Height="40"/>
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-            </Grid.RowDefinitions>
-            <Label Content="Hero_1" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" Padding="10"/>
-            <Button x:Name="hero_1" Content="Hero_1" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Padding="10"  Width="150"/>
-            <Label Content="Hero_2" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0" Padding="10"/>
-            <Button x:Name="hero_2" Content="Hero_2" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Padding="10" Width="150"/>
+            <Button Background="Black" VerticalContentAlignment="Bottom">
+                <Button.Content>
+                    <Image gif:ImageBehavior.AnimatedSource="/Art/Character/knight-idle.gif" />
+                </Button.Content>
+            </Button>
+            <Button Grid.Column="1" Background="Black" VerticalContentAlignment="Bottom">
+                <Button.Content>
+                    <Image gif:ImageBehavior.AnimatedSource="/Art/Character/StormMage-idle.gif" Height="237" Width="206" />
+                </Button.Content>
+            </Button>
+            <Button Grid.Column="2" Background="Black">
+                <Button.Content>
+                    <Image Grid.Column="2" gif:ImageBehavior.AnimatedSource="/Art/Character/warlock-idle.gif" />
+                </Button.Content>
+            </Button>
+
         </Grid>
-        <Button Command="{Binding NavigateHomeCommand}" Content="Back" Padding="10" Margin="20" Width="200">
+        
+        <Button Grid.Row="2" Command="{Binding NavigateHomeCommand}" Padding="10" Margin="10" Width="200" Background="Gray">
+            <Button.Content>
+                <Image  Height="22" Width="163" Source="/Art/BACK_button.png"/>
+            </Button.Content>
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-    </StackPanel>
+    </Grid>
+    
 </UserControl>

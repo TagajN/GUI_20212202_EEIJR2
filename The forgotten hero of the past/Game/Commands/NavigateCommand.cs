@@ -1,5 +1,7 @@
-﻿using Game.Stores;
+﻿using Game.Sound;
+using Game.Stores;
 using Game.ViewModels;
+using Game.WindowUC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +24,7 @@ namespace Game.Commands
 
         public override void Execute(object parameter)
         {
+            MainWindow.MsPlayer.ClickSound();
             navigationStore.CurrentViewModel = createViewModel();
         }
     }

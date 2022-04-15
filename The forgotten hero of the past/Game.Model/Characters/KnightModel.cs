@@ -21,6 +21,24 @@ namespace Game.Model.Characters
         private int characterHeight;
         private double horizDegree;
 
+        public KnightModel()
+        {
+
+        }
+        public KnightModel(int hp, int chlevel, int experience, int damage, string name, double xCordinate, double yCordinate, int characterWidth, int characterHeight, double horizDegree)
+        {
+            this.hp = hp;
+            this.chlevel = chlevel;
+            this.experience = experience;
+            this.damage = damage;
+            this.name = name;
+            this.xCordinate = xCordinate;
+            this.yCordinate = yCordinate;
+            this.characterWidth = characterWidth;
+            this.characterHeight = characterHeight;
+            this.horizDegree = horizDegree;
+        }
+
         public int Hp
         {
             get { return hp; }

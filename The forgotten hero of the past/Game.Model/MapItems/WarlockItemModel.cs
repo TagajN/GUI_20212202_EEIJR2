@@ -12,7 +12,20 @@ namespace Game.Model.MapItems
     {
         private double xPosition;
         private double yPosition;
+        private double gitemValue;
 
+        public WarlockItemModel(double xPosition, double yPosition, double damage)
+        {
+            this.xPosition = xPosition;
+            this.yPosition = yPosition;
+            this.gitemValue = damage;
+        }
+
+        public double GitemValue
+        {
+            get { return gitemValue; }
+            set { SetProperty(ref gitemValue, value); }
+        }
         public double XPosition
         {
             get { return xPosition; }

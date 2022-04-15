@@ -19,6 +19,11 @@ namespace Game.Model.ChEnInterfaces
         double YPosition { get; set; }
 
         /// <summary>
+        /// Gets or Sets the y axis position of the game item.
+        /// </summary>
+        double GitemValue { get; set; }
+
+        /// <summary>
         /// Decides whether the item collided with another item.
         /// </summary>
         /// <param name="other">The other item that this item could've collided with.</param>

@@ -18,6 +18,21 @@ namespace Game.Model.Enemies
         private int characterHeight;
         private double horizDegree;
 
+        public SkeletonWarriorModel()
+        {
+
+        }
+        public SkeletonWarriorModel(int hp, int damage, double xCordinate, double yCordinate, int characterWidth, int characterHeight, double horizDegree)
+        {
+            this.hp = hp;
+            this.damage = damage;
+            this.xCordinate = xCordinate;
+            this.yCordinate = yCordinate;
+            this.characterWidth = characterWidth;
+            this.characterHeight = characterHeight;
+            this.horizDegree = horizDegree;
+        }
+
         public int Hp
         {
             get { return hp; }

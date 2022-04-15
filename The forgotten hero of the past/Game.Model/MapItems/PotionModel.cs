@@ -12,7 +12,14 @@ namespace Game.Model.MapItems
     {
         private double xPosition;
         private double yPosition;
-        private double hpValue;
+        private double gitemValue;
+
+        public PotionModel(double xPosition, double yPosition, double hpValue)
+        {
+            this.xPosition = xPosition;
+            this.yPosition = yPosition;
+            this.gitemValue = hpValue;
+        }
 
         public double XPosition
         {
@@ -25,10 +32,10 @@ namespace Game.Model.MapItems
             set { SetProperty(ref yPosition, value); }
         }
 
-        public double HpValue
+        public double GitemValue
         {
-            get { return hpValue; }
-            set { SetProperty(ref hpValue, value); }
+            get { return gitemValue; }
+            set { SetProperty(ref gitemValue, value); }
         }
 
         public bool IsCollision()

@@ -1,5 +1,4 @@
-﻿using Game.Model.ChEnInterfaces;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,19 +7,15 @@ using System.Threading.Tasks;
 
 namespace Game.Model.MapItems
 {
-    public class CoinModel : ObservableObject, IGameItem
+    public class mapEndItem : ObservableObject
     {
         private double xPosition;
         private double yPosition;
-        private double gitemValue;
-
-        public CoinModel(double xPosition, double yPosition, double coinValue)
+        public mapEndItem(double xPosition, double yPosition)
         {
             this.xPosition = xPosition;
             this.yPosition = yPosition;
-            this.gitemValue = coinValue;
         }
-
         public double XPosition
         {
             get { return xPosition; }
@@ -31,13 +26,6 @@ namespace Game.Model.MapItems
             get { return yPosition; }
             set { SetProperty(ref yPosition, value); }
         }
-
-        public double GitemValue
-        {
-            get { return gitemValue; }
-            set { SetProperty(ref gitemValue, value); }
-        }
-
         public bool IsCollision()
         {
             throw new NotImplementedException();

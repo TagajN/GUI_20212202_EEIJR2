@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Game.ViewModels
 {
-    internal class MainViewModel : ViewModelBase
+    public class MainViewModel : ViewModelBase
     {
         private readonly NavigationStore navigationStore;
 

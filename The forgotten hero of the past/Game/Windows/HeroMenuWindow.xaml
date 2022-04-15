@@ -4,32 +4,88 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game.Windows"
+        xmlns:vms="clr-namespace:Game.ViewModels"
         mc:Ignorable="d"
-        Title="HeroMenu" Height="280" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <StackPanel>
-        <Label Content="Hero Upgrades" HorizontalAlignment="Center"/>
-        <Grid Margin="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="3*"/>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" HorizontalAlignment="Center">
-                <Label Content="Health" Margin="5"/>
-                <Label Content="Speed" Margin="5"/>
-                <Label Content="Damage" Margin="5"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1">
-                <ProgressBar Maximum="5" Value="3" Height="20" Margin="10"/>
-                <ProgressBar Maximum="5" Value="2" Height="20" Margin="10"/>
-                <ProgressBar Maximum="5" Value="5" Height="20" Margin="10"/>
-            </StackPanel>
-        </Grid>
-        <Button Content="Back" Click="Button_Click" Padding="10" Margin="20" Width="200">
+        Title="HeroMenu" Height="364" Width="566" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" x:Name="HeroMenu" WindowStyle="None" BorderBrush="Black" BorderThickness="3">
+    <Window.DataContext>
+        <vms:HeroMenuViewModel/>
+    </Window.DataContext>
+    <Window.Background>
+        <ImageBrush ImageSource="/Art/StatBackground.jpg"/>
+    </Window.Background>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Column="1" Source="/Art/HEROUPGRADE_title.png" HorizontalAlignment="Center" Height="40"/>
+        <StackPanel  Grid.Row="1" >
+            <Image Source="/Art/HEALTH_title.png"  Height="40" Width="70"/>
+            <Image Source="/Art/SPEED_title.png"  Height="40" Width="70"/>
+            <Image Source="/Art/DAMAGE_title.png"  Height="40" Width="70"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" >
+            <ProgressBar Maximum="5" Value="3" Height="20" Margin="10"/>
+            <ProgressBar Maximum="5" Value="2" Height="20" Margin="10"/>
+            <ProgressBar Maximum="5" Value="5" Height="20" Margin="10"/>
+        </StackPanel>
+
+        <StackPanel  Grid.Row="1" Grid.Column="2" >
+            <Button Grid.Row="2" Grid.Column="1" Height="30" Width="40" Margin="5"  Background="Gray">
+                <Button.Content>
+                    <Image Source="/Art/+_title.png"/>
+                </Button.Content>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="1"  Height="30" Width="40" Margin="5"  Background="Gray">
+                <Button.Content>
+                    <Image Source="/Art/+_title.png"/>
+                </Button.Content>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+
+            <Button Grid.Row="2" Grid.Column="1"  Height="30" Width="40" Margin="5"  Background="Gray">
+                <Button.Content>
+                    <Image Source="/Art/+_title.png"/>
+                </Button.Content>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+
+        <Button Grid.Row="2" Grid.Column="1" Command="{Binding CloseWindowCommand, Mode=OneWay}" CommandParameter="{Binding ElementName=HeroMenu}" Padding="10" Margin="10" Width="200" Background="Gray">
+            <Button.Content>
+                <Image  Height="22" Width="163" Source="/Art/BACK_button.png"/>
+            </Button.Content>
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-    </StackPanel>
+
+    </Grid>
+
+
 </Window>

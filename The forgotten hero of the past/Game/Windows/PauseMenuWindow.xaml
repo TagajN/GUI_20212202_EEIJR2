@@ -4,30 +4,54 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game.Windows"
+        xmlns:vms="clr-namespace:Game.ViewModels"
         mc:Ignorable="d"
-        Title="PauseMenuWindow" Height="250" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
-    <StackPanel>
-        <Label Content="Game Paused" HorizontalAlignment="Center"/>
-        <Button Content="Resume" Click="Button_Click_Resume" Padding="10" Margin="10">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button Content="Save" Click="Button_Click_Save" Padding="10" Margin="10">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button Content="Exit" Click="Button_Click_Exit" Padding="10" Margin="10">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-    </StackPanel>
+        Title="PauseMenuWindow" Height="450" Width="512" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" BorderBrush="Black" BorderThickness="3" x:Name="PauseMenu">
+    <Window.DataContext>
+        <vms:PauseMenuViewModel/>
+    </Window.DataContext>
+    <Window.Background>
+        <ImageBrush ImageSource="/Art/StatBackground.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Column="1" Source="/Art/PAUSED_title.png" HorizontalAlignment="Center" Margin="15"/>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+            <Button Padding="10" Margin="10" Background="Gray" Width="250" Command="{Binding CloseWindowCommand, Mode=OneWay}" CommandParameter="{Binding ElementName=PauseMenu}" >
+                <Button.Content>
+                    <Image  Height="22" Width="163" Source="/Art/RESUME_title.png"  />
+                </Button.Content>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button  Padding="10" Margin="10" Background="Gray" Width="250" >
+                <Button.Content>
+                    <Image  Height="22" Width="163" Source="/Art/SAVE_title.png" />
+                </Button.Content>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Padding="10" Margin="10" Background="Gray" Width="250" Command="{Binding CloseWindowCommand, Mode=OneWay}" CommandParameter="{Binding ElementName=PauseMenu}">
+                <Button.Content>
+                    <Image  Height="22" Width="163" Source="/Art/EXIT_button.png" />
+                </Button.Content>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+
+    </Grid>
+
 </Window>

@@ -11,12 +11,21 @@
     <None Remove="04e1583888120761e22e97ca39b79a70.png" />
     <None Remove="7241463.webp" />
     <None Remove="7947d1bc3287fddc22a13b993f1a56a0.png" />
+    <None Remove="Art\+_title.png" />
     <None Remove="Art\ChampSelectBackground.webp" />
     <None Remove="Art\Character\knight-idle.gif" />
     <None Remove="Art\Character\StormMage-idle.gif" />
     <None Remove="Art\Character\warlock-idle.gif" />
+    <None Remove="Art\DAMAGE_title.png" />
+    <None Remove="Art\HEALTH_title.png" />
+    <None Remove="Art\HEROUPGRADE_title.png" />
     <None Remove="Art\MUTE.png" />
+    <None Remove="Art\PAUSED_title.png" />
+    <None Remove="Art\RESUME_title.png" />
+    <None Remove="Art\SAVE_title.png" />
     <None Remove="Art\SELECT_title.png" />
+    <None Remove="Art\SPEED_title.png" />
+    <None Remove="Art\StatBackground.jpg" />
     <None Remove="Art\UNMUTE.png" />
     <None Remove="EXIT_button.png" />
     <None Remove="LEADERBOARDS_button.png" />
@@ -36,6 +45,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Art\+_title.png" />
+    <Resource Include="Art\PAUSED_title.png" />
+    <Resource Include="Art\RESUME_title.png" />
+    <Resource Include="Art\SAVE_title.png" />
+    <Resource Include="Art\SPEED_title.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
     <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
   </ItemGroup>
@@ -45,11 +62,15 @@
     <Resource Include="Art\Character\knight-idle.gif" />
     <Resource Include="Art\Character\StormMage-idle.gif" />
     <Resource Include="Art\Character\warlock-idle.gif" />
+    <Resource Include="Art\DAMAGE_title.png" />
+    <Resource Include="Art\HEALTH_title.png" />
+    <Resource Include="Art\HEROUPGRADE_title.png" />
     <Resource Include="Art\PLAY_button.png" />
     <Resource Include="Art\Background.webp" />
     <Resource Include="Art\EXIT_button.png" />
     <Resource Include="Art\LOAD_button.png" />
     <Resource Include="Art\SELECT_title.png" />
+    <Resource Include="Art\StatBackground.jpg" />
     <Resource Include="Art\Title.png" />
     <Resource Include="Art\Background2.png" />
     <Resource Include="Art\BACK_button.png" />

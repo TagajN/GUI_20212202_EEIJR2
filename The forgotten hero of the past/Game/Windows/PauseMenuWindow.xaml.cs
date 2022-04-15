@@ -23,17 +23,5 @@ namespace Game.Windows
         {
             InitializeComponent();
         }
-        private void Button_Click_Resume(object sender, RoutedEventArgs e)
-        {
-            this.DialogResult = true;
-        }
-        private void Button_Click_Save(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void Button_Click_Exit(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
     }
 }

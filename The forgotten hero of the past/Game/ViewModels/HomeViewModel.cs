@@ -1,7 +1,10 @@
 ﻿using Game.Commands;
-using Game.Stores;
+using Game.Sound;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
+using MVVMEssentials.Commands;
+using MVVMEssentials.Services;
+using MVVMEssentials.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,39 +23,12 @@ namespace Game.ViewModels
         public ICommand MuteCommand { get; set; }
         public ICommand ExitCommand { get; }
 
-        private string muteButton;
-
-        public string MuteButton
+        public HomeViewModel(List<INavigationService> NavigationList)
         {
-            get
-            {
-                return muteButton;
-            }
-            set
-            {
-                SetProperty(ref muteButton, value);
-                OnPropertyChanged("muteButton");
-            }
-        }
-
-        public HomeViewModel(NavigationStore navigationStore)
-        {
-            MuteButton = "🔊";
-            NewGameCommand = new NavigateCommand<NewGameViewModel>(navigationStore, () => new NewGameViewModel(navigationStore));
-            LoadGameCommand = new NavigateCommand<LoadGameViewModel>(navigationStore, () => new LoadGameViewModel(navigationStore));
-            LeaderBoardsCommand = new NavigateCommand<LeaderBoardsViewModel>(navigationStore, () => new LeaderBoardsViewModel(navigationStore));
-            CreditsCommand = new NavigateCommand<CreditsViewModel>(navigationStore, () => new CreditsViewModel(navigationStore));
-            MuteCommand = new RelayCommand(() => { 
-                MainWindow.MsPlayer.PauseResume("Menu");
-                if (MuteButton == "🔊")
-                {
-                    MuteButton = "🔇";
-                }
-                else
-                {
-                    MuteButton = "🔊";
-                }
-            } );
+            NewGameCommand = new NavigateCommand(NavigationList.ToArray()[0]);
+            LoadGameCommand = new NavigateCommand(NavigationList.ToArray()[1]);
+            LeaderBoardsCommand = new NavigateCommand(NavigationList.ToArray()[2]);
+            CreditsCommand = new NavigateCommand(NavigationList.ToArray()[3]);
             ExitCommand = new RelayCommand(() => System.Environment.Exit(1));
         }
     }

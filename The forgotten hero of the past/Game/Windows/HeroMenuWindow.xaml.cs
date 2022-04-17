@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,15 +18,11 @@ namespace Game.Windows
     /// <summary>
     /// Interaction logic for HeroMenuWindow.xaml
     /// </summary>
-    public partial class HeroMenuWindow : Window
+    public partial class HeroMenuWindow : Window, IClosable
     {
         public HeroMenuWindow()
         {
             InitializeComponent();
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.DialogResult = true;
         }
     }
 }

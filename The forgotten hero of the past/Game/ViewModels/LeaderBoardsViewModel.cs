@@ -1,5 +1,7 @@
 ﻿using Game.Commands;
-using Game.Stores;
+using MVVMEssentials.Commands;
+using MVVMEssentials.Services;
+using MVVMEssentials.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +15,9 @@ namespace Game.ViewModels
     {
         public ICommand NavigateHomeCommand { get; }
 
-        public LeaderBoardsViewModel(NavigationStore navigationStore)
+        public LeaderBoardsViewModel(INavigationService HomeNavigationService)
         {
-            NavigateHomeCommand = new NavigateCommand<HomeViewModel>(navigationStore, () => new HomeViewModel(navigationStore));
+            NavigateHomeCommand = new NavigateCommand(HomeNavigationService);
         }
     }
 }

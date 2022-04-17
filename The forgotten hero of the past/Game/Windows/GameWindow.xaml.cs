@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace Game.Windows
     /// </summary>
     public partial class GameWindow : Window
     {
+        GameModel model;
         public GameWindow()
         {
             InitializeComponent();
@@ -35,6 +37,13 @@ namespace Game.Windows
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             new HeroMenuWindow().ShowDialog();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            model = new GameModel();
+            display.SetupModel(model);
+            display.SetupSizes(new Size(grid.ActualWidth, grid.ActualHeight));
         }
     }
 }

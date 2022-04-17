@@ -25,41 +25,42 @@ namespace Game.Renderer
         {
             this.model = model;
         }
-        public Brush SpaceBrush
+        public Brush BackgroundBrush
         {
             get
             {
-                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "map.png"), UriKind.RelativeOrAbsolute)));
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("MapImage", "map.png"), UriKind.RelativeOrAbsolute)));
             }
         }
-        /*
-        public Brush ShipBrush
+        
+        public Brush KnightBrush
         {
             get
             {
-                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "falcon_rotated.png"), UriKind.RelativeOrAbsolute)));
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("MapImage", "knight.png"), UriKind.RelativeOrAbsolute)));
             }
         }
-
-        public Brush AsteroidBrush
+        
+        public Brush BossBrush
         {
             get
             {
-                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroid.png"), UriKind.RelativeOrAbsolute)));
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("MapImage", "boss.png"), UriKind.RelativeOrAbsolute)));
             }
-        }*/
+        }
         protected override void OnRender(DrawingContext drawingContext)
         {
             base.OnRender(drawingContext);
-            if (area.Width > 0 && area.Height > 0 && model != null)
+            if (area.Width > 0 && area.Height > 0)
             {
-                drawingContext.DrawRectangle(SpaceBrush, null, new Rect(0, 0, area.Width, area.Height));
+                drawingContext.DrawRectangle(BackgroundBrush, null, new Rect(0, 0, area.Width, area.Height));
 
-                /*drawingContext.PushTransform(new RotateTransform(model.Angle, area.Width / 2, area.Height / 2));
-                drawingContext.DrawRectangle(ShipBrush, null, new Rect(area.Width / 2 - 25, area.Height / 2 - 25, 50, 50));
-                drawingContext.Pop();
+                /*drawingContext.PushTransform(new RotateTransform(model.Angle, area.Width / 2, area.Height / 2));*/
+                drawingContext.DrawRectangle(KnightBrush, null, new Rect(0, 700, 300, 300));
+                drawingContext.DrawRectangle(BossBrush, null, new Rect(500, 550, 450, 450));
+                //drawingContext.Pop();
 
-                foreach (var item in model.Lasers)
+                /*foreach (var item in model.Lasers)
                 {
                     drawingContext.DrawEllipse(Brushes.Red, null, new Point(item.Center.X, item.Center.Y), 5, 5);
                 }

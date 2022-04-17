@@ -41,6 +41,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Game.Renderer\Game.Renderer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Art\ChampSelectBackground.webp" />
     <Resource Include="Art\Character\knight-idle.gif" />
     <Resource Include="Art\Character\StormMage-idle.gif" />

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Game.Model
 {
-    internal interface IGameModel
+    public interface IGameModel
     {
         /// <summary>
         /// Gets the Game width.
@@ -56,5 +56,4 @@ namespace Game.Model
         /// </summary>
         List<IEnemy> Enemies { get; set; }
     }
-}
 }

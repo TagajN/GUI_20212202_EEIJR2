@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game.Windows"
+        xmlns:renderer="clr-namespace:Game.Renderer;assembly=Game.Renderer"
         mc:Ignorable="d"
         Title="GameWindow" Height="450" Width="800" KeyDown="Esc" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <StackPanel >
@@ -13,7 +14,7 @@
             <Label x:Name="CoinCounter" Content="1000" Padding="10"/>
         </WrapPanel>
         <Grid>
-
+            <renderer:Display x:Name="display"/>
         </Grid>
     </StackPanel>
 </Window>

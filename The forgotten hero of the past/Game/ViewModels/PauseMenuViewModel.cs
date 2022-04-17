@@ -1,5 +1,6 @@
 ﻿using Game.Commands;
 using Microsoft.Toolkit.Mvvm.Input;
+using MVVMEssentials.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

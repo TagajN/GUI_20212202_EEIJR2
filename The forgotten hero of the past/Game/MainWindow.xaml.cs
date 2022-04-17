@@ -1,5 +1,4 @@
 ﻿using Game.Sound;
-using Game.Stores;
 using Game.ViewModels;
 using Game.Windows;
 using System;
@@ -24,14 +23,8 @@ namespace Game
     /// </summary>
     public partial class MainWindow : Window
     {
-        NavigationStore navigationStore = new NavigationStore();
-
-        public static MusicPlayer MsPlayer = new MusicPlayer();
         public MainWindow()
         {
-            navigationStore.CurrentViewModel = new HomeViewModel(navigationStore);
-            DataContext = new MainViewModel(navigationStore);
-            MsPlayer.MenuMusic();
             InitializeComponent();
         }
     }

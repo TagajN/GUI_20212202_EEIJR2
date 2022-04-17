@@ -1,7 +1,9 @@
 ﻿using Game.Commands;
-using Game.Stores;
 using Game.Windows;
 using Microsoft.Toolkit.Mvvm.Input;
+using MVVMEssentials.Commands;
+using MVVMEssentials.Services;
+using MVVMEssentials.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +22,9 @@ namespace Game.ViewModels
         public ICommand MageCommand { get; set; }
         public ICommand WarlockCommand { get; set; }
 
-        public NewGameViewModel(NavigationStore navigationStore)
+        public NewGameViewModel(INavigationService HomeNavigationService)
         {
-            NavigateHomeCommand = new NavigateCommand<HomeViewModel>(navigationStore, ()=> new HomeViewModel(navigationStore));
+            NavigateHomeCommand = new NavigateCommand(HomeNavigationService);
             KnightCommand = new RelayCommand<object>((o) => { new GameWindow().Show(); ((Window)o).Close(); }, (o) => true);
             MageCommand = new RelayCommand<object>((o) => { new GameWindow().Show(); ((Window)o).Close(); }, (o) => true);
             WarlockCommand = new RelayCommand<object>((o) => { new GameWindow().Show(); ((Window)o).Close(); }, (o) => true);

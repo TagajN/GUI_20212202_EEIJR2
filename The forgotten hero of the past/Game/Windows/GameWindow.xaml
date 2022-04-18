@@ -7,7 +7,7 @@
         xmlns:vms ="clr-namespace:Game.ViewModels"
         xmlns:Renderer ="clr-namespace:Game.Renderer;assembly=Game.Renderer"
         mc:Ignorable="d"
-        Title="GameWindow" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" KeyDown="Window_KeyDown">
+        Title="GameWindow" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize"  Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" KeyDown="Window_KeyDown">
     <Window.DataContext>
         <vms:GameViewModel/>
     </Window.DataContext>

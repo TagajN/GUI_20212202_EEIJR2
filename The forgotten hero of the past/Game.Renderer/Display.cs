@@ -15,7 +15,6 @@ namespace Game.Renderer
     {
         Size area;
         IGameModel model;
-
         public void SetupSizes(Size area)
         {
             this.area = area;
@@ -49,11 +48,12 @@ namespace Game.Renderer
             if (area.Width > 0 && area.Height>0 && model != null)
             {
                 drawingContext.DrawRectangle(BackgroundBrush, null, new Rect(0, 0, area.Width, area.Height));
+
                 drawingContext.PushTransform(new TranslateTransform(model.xCordinate,model.yCordinate));
-                drawingContext.DrawRectangle(CharacterBrush, null, new Rect(1, 810, 200,200));
+                drawingContext.DrawRectangle(CharacterBrush, null, new Rect(area.Width/2, area.Height/2, 200,200));
                 drawingContext.Pop();
 
-                drawingContext.DrawRectangle(Brushes.Red, null, new Rect(1,1010,1936,86));
+                drawingContext.DrawRectangle(Brushes.Transparent, null, new Rect(1,1010,1936,86));
             }
             
         }

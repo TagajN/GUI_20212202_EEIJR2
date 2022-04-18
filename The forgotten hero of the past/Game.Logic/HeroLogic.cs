@@ -11,6 +11,8 @@ namespace Game.Logic
         public event EventHandler Changed;
         public int xCordinate { get; set; }
         public int yCordinate { get; set; }
+        public int Direction { get; set; }
+
         public enum Controls
         {
             Left, Right, Up, Down, Attack
@@ -20,16 +22,29 @@ namespace Game.Logic
             switch (control)
             {
                 case Controls.Left:
-                    xCordinate -= 10;
+                    if(xCordinate >= 10)
+                    {
+                        xCordinate -= 10;
+                    }
                     break;
                 case Controls.Right:
-                    xCordinate += 10;
+                    if (xCordinate <= 1710)
+                    {
+                        xCordinate += 10;
+                    }
                     break;
                 case Controls.Up:
-                    yCordinate -= 10;
+                    if (yCordinate >= -800)
+                    {
+                        yCordinate -= 10;
+                    }
+                    
                     break;
                 case Controls.Down:
-                    yCordinate += 10;
+                    if (yCordinate <= -10)
+                    {
+                        yCordinate += 10;
+                    }
                     break;
                 case Controls.Attack:
                     break;

@@ -56,7 +56,7 @@ namespace Game.Windows
 
         public void AnimationTimerTick(object sender, EventArgs e)
         {
-            display.PlayPlayerAnimationAttack(Player_Canvas, playerobj);
+            display.PlayPlayerAnimationRun(Player_Canvas, playerobj);
 
         }
     }

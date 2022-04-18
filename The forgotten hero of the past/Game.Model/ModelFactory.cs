@@ -43,9 +43,9 @@ namespace Game.Model
             return new SkeletonWarriorModel(health, damage, xCordinate, yCordinate, sizew, sizeh, horizdegree);
         }
 
-        public static KnightModel CreateKnight(double xCordinate, double yCordinate, int characterWidth, int characterHeight, double horizDegree, int hp = 200, int chlevel = 0, int experience = 0, int damage = 35, string name = "Knight")
+        public static KnightModel CreateKnight(double xCordinate, double yCordinate, int characterWidth, int characterHeight, int hp = 200, int chlevel = 0, int experience = 0, int damage = 35, string name = "Knight")
         {
-            return new KnightModel(hp, chlevel, experience, damage, name, xCordinate, yCordinate, characterWidth, characterHeight, horizDegree);
+            return new KnightModel(hp, chlevel, experience, damage, name, xCordinate, yCordinate, characterWidth, characterHeight);
         }
         public static StormMageModel CreateStormMage(double xCordinate, double yCordinate, int characterWidth, int characterHeight, double horizDegree, int hp = 150, int chlevel = 0, int experience = 0, int damage = 50, string name = "StormMage")
         {

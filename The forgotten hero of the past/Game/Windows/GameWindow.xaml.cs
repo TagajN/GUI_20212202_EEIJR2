@@ -1,4 +1,6 @@
 ﻿using Game.Model;
+using Game.Model.Characters;
+using Game.Renderer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +14,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+using WpfAnimatedGif;
 
 namespace Game.Windows
 {
@@ -21,9 +25,20 @@ namespace Game.Windows
     public partial class GameWindow : Window
     {
         GameModel model;
+        KnightModel playerobj = new KnightModel(100, 0, 0, 50, "Pista", 1000, 700, 400, 400);
+        Display display = new Display();
+        Task task2;
         public GameWindow()
         {
             InitializeComponent();
+            DataContext = playerobj;
+
+            var AnimationTimer = new DispatcherTimer();
+            AnimationTimer.Tick += AnimationTimerTick;
+            AnimationTimer.Interval = new TimeSpan(0, 0, 0, 0, 20);
+            task2 = new Task(AnimationTimer.Start);
+
+            task2.Start();
         }
 
         private void Esc(object sender, KeyEventArgs e)
@@ -39,11 +54,10 @@ namespace Game.Windows
             new HeroMenuWindow().ShowDialog();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        public void AnimationTimerTick(object sender, EventArgs e)
         {
-            model = new GameModel();
-            display.SetupModel(model);
-            display.SetupSizes(new Size(grid.ActualWidth, grid.ActualHeight));
+            display.PlayPlayerAnimation(Player_Canvas, playerobj);
+
         }
     }
 }

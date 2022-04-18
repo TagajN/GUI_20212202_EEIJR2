@@ -25,7 +25,7 @@ namespace Game.Model.Characters
         {
 
         }
-        public KnightModel(int hp, int chlevel, int experience, int damage, string name, double xCordinate, double yCordinate, int characterWidth, int characterHeight, double horizDegree)
+        public KnightModel(int hp, int chlevel, int experience, int damage, string name, double xCordinate, double yCordinate, int characterWidth, int characterHeight)
         {
             this.hp = hp;
             this.chlevel = chlevel;
@@ -36,7 +36,6 @@ namespace Game.Model.Characters
             this.yCordinate = yCordinate;
             this.characterWidth = characterWidth;
             this.characterHeight = characterHeight;
-            this.horizDegree = horizDegree;
         }
 
         public int Hp

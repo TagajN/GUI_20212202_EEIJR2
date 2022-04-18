@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Logic;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace Game.Renderer
     public class Display : FrameworkElement
     {
         Size area;
+        IGameModel model;
 
         public void SetupSizes(Size area)
         {
@@ -20,6 +22,11 @@ namespace Game.Renderer
             this.InvalidateVisual();
         }
 
+        public void SetupModel(IGameModel model)
+        {
+            this.model = model;
+            this.model.Changed += (sender, eventargs) => this.InvalidateVisual();
+        }
         public Brush BackgroundBrush
         {
             get
@@ -27,12 +34,26 @@ namespace Game.Renderer
                 return new ImageBrush(new BitmapImage(new Uri(Path.Combine("images","map.png"), UriKind.RelativeOrAbsolute)));
             }
         }
+
+        public Brush CharacterBrush
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("images", "mage.gif"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+
         protected override void OnRender(DrawingContext drawingContext)
         {
             base.OnRender(drawingContext);
-            if (area.Width > 0 && area.Height>0)
+            if (area.Width > 0 && area.Height>0 && model != null)
             {
                 drawingContext.DrawRectangle(BackgroundBrush, null, new Rect(0, 0, area.Width, area.Height));
+                drawingContext.PushTransform(new TranslateTransform(model.xCordinate,model.yCordinate));
+                drawingContext.DrawRectangle(CharacterBrush, null, new Rect(1, 810, 200,200));
+                drawingContext.Pop();
+
+                drawingContext.DrawRectangle(Brushes.Red, null, new Rect(1,1010,1936,86));
             }
             
         }

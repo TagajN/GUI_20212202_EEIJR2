@@ -7,7 +7,7 @@
         xmlns:vms ="clr-namespace:Game.ViewModels"
         xmlns:Renderer ="clr-namespace:Game.Renderer;assembly=Game.Renderer"
         mc:Ignorable="d"
-        Title="GameWindow" Height="450" Width="800" KeyDown="Esc" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged">
+        Title="GameWindow" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" KeyDown="Window_KeyDown">
     <Window.DataContext>
         <vms:GameViewModel/>
     </Window.DataContext>
@@ -17,9 +17,8 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        
         <Renderer:Display x:Name="display"/>
-        
+
         <StackPanel Grid.Row="0">
             <WrapPanel Margin="5">
                 <Button Content="Hero" Command="{Binding CharacterStats}" Width="80"/>

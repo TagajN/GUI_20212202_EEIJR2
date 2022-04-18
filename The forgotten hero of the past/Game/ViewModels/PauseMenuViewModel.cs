@@ -16,7 +16,8 @@ namespace Game.ViewModels
 
         public PauseMenuViewModel()
         {
-            CloseWindowCommand = new RelayCommand<IClosable>(this.CloseWindow);
+            //CloseWindowCommand = new RelayCommand<IClosable>(this.CloseWindow);
+            CloseWindowCommand = new RelayCommand(() => System.Environment.Exit(1));
         }
 
         private void CloseWindow(IClosable window)

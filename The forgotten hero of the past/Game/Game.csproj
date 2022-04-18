@@ -59,6 +59,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Game.Logic\Game.Logic.csproj" />
     <ProjectReference Include="..\Game.Renderer\Game.Renderer.csproj" />
   </ItemGroup>
 

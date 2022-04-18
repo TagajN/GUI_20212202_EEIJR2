@@ -7,13 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\mage.gif" />
     <None Remove="images\map.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="images\mage.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\map.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Game.Logic\Game.Logic.csproj" />
   </ItemGroup>
 
 </Project>

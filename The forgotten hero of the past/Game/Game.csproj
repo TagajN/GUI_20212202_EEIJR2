@@ -11,14 +11,6 @@
     <None Remove="04e1583888120761e22e97ca39b79a70.png" />
     <None Remove="7241463.webp" />
     <None Remove="7947d1bc3287fddc22a13b993f1a56a0.png" />
-    <None Remove="AnimationKnight\idle\idle1.png" />
-    <None Remove="AnimationKnight\idle\idle2.png" />
-    <None Remove="AnimationKnight\idle\idle3.png" />
-    <None Remove="AnimationKnight\idle\idle4.png" />
-    <None Remove="AnimationKnight\idle\idle5.png" />
-    <None Remove="AnimationKnight\idle\idle6.png" />
-    <None Remove="AnimationKnight\idle\idle7.png" />
-    <None Remove="AnimationKnight\idle\idle8.png" />
     <None Remove="Art\+_title.png" />
     <None Remove="Art\ChampSelectBackground.webp" />
     <None Remove="Art\Character\knight-idle.gif" />
@@ -40,6 +32,36 @@
     <None Remove="LEADERBOARDS_button.png" />
     <None Remove="LOAD_button.png" />
     <None Remove="title.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack1.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack10.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack11.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack12.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack13.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack14.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack15.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack16.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack17.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack18.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack19.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack2.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack20.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack3.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack4.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack5.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack6.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack7.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack8.png" />
+    <None Remove="Windows\AnimationKnight\attack\attack9.png" />
+    <None Remove="Windows\AnimationKnight\death\death1.png" />
+    <None Remove="Windows\AnimationKnight\death\death10.png" />
+    <None Remove="Windows\AnimationKnight\death\death2.png" />
+    <None Remove="Windows\AnimationKnight\death\death3.png" />
+    <None Remove="Windows\AnimationKnight\death\death4.png" />
+    <None Remove="Windows\AnimationKnight\death\death5.png" />
+    <None Remove="Windows\AnimationKnight\death\death6.png" />
+    <None Remove="Windows\AnimationKnight\death\death7.png" />
+    <None Remove="Windows\AnimationKnight\death\death8.png" />
+    <None Remove="Windows\AnimationKnight\death\death9.png" />
     <None Remove="Windows\AnimationKnight\idle\idle1.png" />
     <None Remove="Windows\AnimationKnight\idle\idle2.png" />
     <None Remove="Windows\AnimationKnight\idle\idle3.png" />
@@ -48,6 +70,16 @@
     <None Remove="Windows\AnimationKnight\idle\idle6.png" />
     <None Remove="Windows\AnimationKnight\idle\idle7.png" />
     <None Remove="Windows\AnimationKnight\idle\idle8.png" />
+    <None Remove="Windows\AnimationKnight\run\run1.png" />
+    <None Remove="Windows\AnimationKnight\run\run10.png" />
+    <None Remove="Windows\AnimationKnight\run\run2.png" />
+    <None Remove="Windows\AnimationKnight\run\run3.png" />
+    <None Remove="Windows\AnimationKnight\run\run4.png" />
+    <None Remove="Windows\AnimationKnight\run\run5.png" />
+    <None Remove="Windows\AnimationKnight\run\run6.png" />
+    <None Remove="Windows\AnimationKnight\run\run7.png" />
+    <None Remove="Windows\AnimationKnight\run\run8.png" />
+    <None Remove="Windows\AnimationKnight\run\run9.png" />
     <None Remove="Windows\knight-idle.gif" />
     <None Remove="Windows\warlock-idle.gif" />
     <None Remove="Views\Background2.png" />
@@ -62,30 +94,72 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="AnimationKnight\idle\idle1.png">
+    <Resource Include="Windows\AnimationKnight\attack\attack1.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="AnimationKnight\idle\idle2.png">
+    <Resource Include="Windows\AnimationKnight\attack\attack10.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="AnimationKnight\idle\idle3.png">
+    <Resource Include="Windows\AnimationKnight\attack\attack11.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="AnimationKnight\idle\idle4.png">
+    <Resource Include="Windows\AnimationKnight\attack\attack12.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="AnimationKnight\idle\idle5.png">
+    <Resource Include="Windows\AnimationKnight\attack\attack13.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="AnimationKnight\idle\idle6.png">
+    <Resource Include="Windows\AnimationKnight\attack\attack14.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="AnimationKnight\idle\idle7.png">
+    <Resource Include="Windows\AnimationKnight\attack\attack15.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="AnimationKnight\idle\idle8.png">
+    <Resource Include="Windows\AnimationKnight\attack\attack16.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Windows\AnimationKnight\attack\attack17.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\attack\attack18.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\attack\attack19.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\attack\attack2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\attack\attack20.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\attack\attack3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\attack\attack4.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\attack\attack5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\attack\attack6.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\attack\attack7.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\attack\attack8.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\attack\attack9.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\death\death8.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Art\+_title.png" />
     <Resource Include="Art\MapBackgrounds\map.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
@@ -129,6 +203,33 @@
     <Resource Include="Art\CREDITS_button.png" />
     <Resource Include="Art\HIGHSCORES_button.png" />
     <Resource Include="Art\Background4.jpg" />
+    <Resource Include="Windows\AnimationKnight\death\death1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\death\death10.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\death\death2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\death\death3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\death\death4.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\death\death5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\death\death6.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\death\death7.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\death\death9.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Windows\AnimationKnight\idle\idle1.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -153,15 +254,36 @@
     <Resource Include="Windows\AnimationKnight\idle\idle8.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="AnimationKnight\attack\" />
-    <Folder Include="AnimationKnight\death\" />
-    <Folder Include="AnimationKnight\run\" />
-    <Folder Include="Windows\AnimationKnight\attack\" />
-    <Folder Include="Windows\AnimationKnight\death\" />
-    <Folder Include="Windows\AnimationKnight\run\" />
+    <Resource Include="Windows\AnimationKnight\run\run1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\run\run10.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\run\run2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\run\run3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\run\run4.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\run\run5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\run\run6.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\run\run7.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\run\run8.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\AnimationKnight\run\run9.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

@@ -8,43 +8,12 @@
         xmlns:vms="clr-namespace:Game.ViewModels"
         xmlns:renderer="clr-namespace:Game.Renderer;assembly=Game.Renderer"
         mc:Ignorable="d"
-        Title="GameWindow" KeyDown="Esc" Height="1010" Width="19200" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="GameWindow" KeyDown="Esc" Height="1010" Width="1920" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Canvas x:Name="Parralex_canvas" Height="1010" Width="19200">
         <Image x:Name="background1" Source="/Art/MapBackgrounds/map.png" Height="1010" Width="1920" HorizontalAlignment="Left" VerticalAlignment="Top">
 
         </Image>
 
-        <Image x:Name="background2" Source="/Art/MapBackgrounds/map.png" Height="1010" Width="1920" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="1920">
-
-        </Image>
-
-        <Image x:Name="background3" Source="/Art/MapBackgrounds/map.png" Height="1010" Width="1920" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="3840">
-
-        </Image>
-
-        <Image x:Name="background4" Source="/Art/MapBackgrounds/map.png" Height="1010" Width="1920" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="5760">
-
-        </Image>
-
-        <Image x:Name="background5" Source="/Art/MapBackgrounds/map.png" Height="1010" Width="1920" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="7680"/>
-
-        <Image x:Name="background11" Source="/Art/MapBackgrounds/map.png" Height="1010" Width="1920" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="9600">
-
-        </Image>
-
-        <Image x:Name="background21" Source="/Art/MapBackgrounds/map.png" Height="1010" Width="1920" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="11520">
-
-        </Image>
-
-        <Image x:Name="background31" Source="/Art/MapBackgrounds/map.png" Height="1010" Width="1920" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="13440">
-
-        </Image>
-
-        <Image x:Name="background41" Source="/Art/MapBackgrounds/map.png" Height="1010" Width="1920" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="15360">
-
-        </Image>
-
-        <Image x:Name="background51" Source="/Art/MapBackgrounds/map.png" Height="1010" Width="1920" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="17280"/>
         <WrapPanel Margin="5" Width="300" HorizontalAlignment="Left">
             <Button Content="Hero" Click="Button_Click" Width="80"/>
             <ProgressBar x:Name="HealthBar" Maximum="100" Value="80" Width="100" Height="20" Padding="10" Margin="5"/>
@@ -52,10 +21,10 @@
         </WrapPanel>
         <ScrollViewer Name="Scroller" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Canvas.Left="5" Width="19200" Height="1010">
             <Canvas x:Name="Background_Canvas" Height="885" Width="19200">
-                <Rectangle x:Name="Player_Canvas" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.561" Height="{Binding Path=CharacterHeight}" Width="{Binding Path=CharacterWidth}">
+                <Rectangle x:Name="Player_Canvas" RenderTransformOrigin="0.5,0.561" Height="{Binding Path=CharacterHeight}" Width="{Binding Path=CharacterWidth}">
                     <Rectangle.RenderTransform>
                         <TransformGroup>
-                            <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                            <ScaleTransform ScaleY="1"/>
                             <SkewTransform AngleY="0" AngleX="0"/>
                             <RotateTransform Angle="0"/>
                             <TranslateTransform/>

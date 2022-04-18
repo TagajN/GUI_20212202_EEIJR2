@@ -35,7 +35,7 @@ namespace Game.Windows
 
             var AnimationTimer = new DispatcherTimer();
             AnimationTimer.Tick += AnimationTimerTick;
-            AnimationTimer.Interval = new TimeSpan(0, 0, 0, 0, 20);
+            AnimationTimer.Interval = new TimeSpan(0, 0, 0, 0, 40);
             task2 = new Task(AnimationTimer.Start);
 
             task2.Start();
@@ -56,7 +56,7 @@ namespace Game.Windows
 
         public void AnimationTimerTick(object sender, EventArgs e)
         {
-            display.PlayPlayerAnimation(Player_Canvas, playerobj);
+            display.PlayPlayerAnimationAttack(Player_Canvas, playerobj);
 
         }
     }

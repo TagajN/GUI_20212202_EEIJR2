@@ -36,12 +36,12 @@ namespace Game.Model.ChEnInterfaces
         /// <summary>
         /// Gets or Sets the x axis position that the player travelled on the map.
         /// </summary>
-        double XCordinate { get; set; }
+        int XCordinate { get; set; }
 
         /// <summary>
         /// Gets or Sets the y axis position that the player travelled on the map.
         /// </summary>
-        double YCordinate { get; set; }
+        int YCordinate { get; set; }
 
         /// <summary>
         /// The width of the character.
@@ -56,6 +56,6 @@ namespace Game.Model.ChEnInterfaces
         /// <summary>
         /// The horizontal degree of the character.
         /// </summary>
-        double HorizDegree { get; set; }
+        int HorizDegree { get; set; }
     }
 }

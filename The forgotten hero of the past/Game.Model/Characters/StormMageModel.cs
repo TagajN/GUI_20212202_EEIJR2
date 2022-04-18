@@ -15,17 +15,17 @@ namespace Game.Model.Characters
         private int experience;
         private int damage;
         private string name;
-        private double xCordinate;
-        private double yCordinate;
+        private int xCordinate;
+        private int yCordinate;
         private int characterWidth;
         private int characterHeight;
-        private double horizDegree;
+        private int horizDegree;
 
         public StormMageModel()
         {
 
         }
-        public StormMageModel(int hp, int chlevel, int experience, int damage, string name, double xCordinate, double yCordinate, int characterWidth, int characterHeight, double horizDegree)
+        public StormMageModel(int hp, int chlevel, int experience, int damage, string name, int xCordinate, int yCordinate, int characterWidth, int characterHeight, int horizDegree)
         {
             this.hp = hp;
             this.chlevel = chlevel;
@@ -64,12 +64,12 @@ namespace Game.Model.Characters
             get { return name; }
             set { SetProperty(ref name, value); }
         }
-        public double XCordinate
+        public int XCordinate
         {
             get { return xCordinate; }
             set { SetProperty(ref xCordinate, value); }
         }
-        public double YCordinate
+        public int YCordinate
         {
             get { return yCordinate; }
             set { SetProperty(ref yCordinate, value); }
@@ -84,7 +84,7 @@ namespace Game.Model.Characters
             get { return characterHeight; }
             set { SetProperty(ref characterHeight, value); }
         }
-        public double HorizDegree
+        public int HorizDegree
         {
             get { return horizDegree; }
             set { SetProperty(ref horizDegree, value); }

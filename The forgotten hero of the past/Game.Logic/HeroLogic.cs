@@ -22,29 +22,16 @@ namespace Game.Logic
             switch (control)
             {
                 case Controls.Left:
-                    if(xCordinate >= 10)
-                    {
                         xCordinate -= 10;
-                    }
                     break;
                 case Controls.Right:
-                    if (xCordinate <= 1710)
-                    {
                         xCordinate += 10;
-                    }
                     break;
                 case Controls.Up:
-                    if (yCordinate >= -800)
-                    {
-                        yCordinate -= 10;
-                    }
-                    
+                        yCordinate -= 100;
                     break;
                 case Controls.Down:
-                    if (yCordinate <= -10)
-                    {
                         yCordinate += 10;
-                    }
                     break;
                 case Controls.Attack:
                     break;

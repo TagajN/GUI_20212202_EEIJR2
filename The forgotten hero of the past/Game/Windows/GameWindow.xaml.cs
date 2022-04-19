@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Game.Windows
 {
@@ -26,6 +27,15 @@ namespace Game.Windows
             InitializeComponent();
              logic = new HeroLogic();
             display.SetupModel(logic);
+            DispatcherTimer dt = new DispatcherTimer();
+            dt.Interval = TimeSpan.FromMilliseconds(80);
+            dt.Tick += Dt_Tick;
+            dt.Start();
+        }
+
+        private void Dt_Tick(object? sender, EventArgs e)
+        {
+            display.InvalidateVisual();
         }
 
         private void Esc(object sender, KeyEventArgs e)

@@ -7,11 +7,43 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\frame_0_delay-0.12s.png" />
+    <None Remove="images\frame_1_delay-0.12s.png" />
+    <None Remove="images\frame_2_delay-0.12s.png" />
+    <None Remove="images\frame_3_delay-0.12s.png" />
+    <None Remove="images\frame_4_delay-0.12s.png" />
+    <None Remove="images\frame_5_delay-0.12s.png" />
+    <None Remove="images\frame_6_delay-0.12s.png" />
+    <None Remove="images\frame_7_delay-0.06s.png" />
     <None Remove="images\mage.gif" />
     <None Remove="images\map.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="images\frame_0_delay-0.12s.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\frame_1_delay-0.12s.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\frame_2_delay-0.12s.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\frame_3_delay-0.12s.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\frame_4_delay-0.12s.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\frame_5_delay-0.12s.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\frame_6_delay-0.12s.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\frame_7_delay-0.06s.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\mage.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

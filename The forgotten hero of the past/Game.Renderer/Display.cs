@@ -33,12 +33,20 @@ namespace Game.Renderer
                 return new ImageBrush(new BitmapImage(new Uri(Path.Combine("images","map.png"), UriKind.RelativeOrAbsolute)));
             }
         }
-
+        int CharacterIdle = 0;
         public Brush CharacterBrush
         {
             get
             {
-                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("images", "mage.gif"), UriKind.RelativeOrAbsolute)));
+                ImageBrush temp = new ImageBrush();
+                if (CharacterIdle == 7)
+                {
+                    CharacterIdle = 0;
+                }
+                temp = new ImageBrush(new BitmapImage(new Uri(Path.Combine("images", "frame_" + CharacterIdle + "_delay-0.12s.png"), UriKind.RelativeOrAbsolute)));
+                
+                CharacterIdle++;
+                return temp;
             }
         }
 
@@ -47,10 +55,11 @@ namespace Game.Renderer
             base.OnRender(drawingContext);
             if (area.Width > 0 && area.Height>0 && model != null)
             {
+                
                 drawingContext.DrawRectangle(BackgroundBrush, null, new Rect(0, 0, area.Width, area.Height));
-
+                
                 drawingContext.PushTransform(new TranslateTransform(model.xCordinate,model.yCordinate));
-                drawingContext.DrawRectangle(CharacterBrush, null, new Rect(area.Width/2, area.Height/2, 200,200));
+                drawingContext.DrawRectangle(CharacterBrush, null, new Rect(1, 810, 200, 200));
                 drawingContext.Pop();
 
                 drawingContext.DrawRectangle(Brushes.Transparent, null, new Rect(1,1010,1936,86));

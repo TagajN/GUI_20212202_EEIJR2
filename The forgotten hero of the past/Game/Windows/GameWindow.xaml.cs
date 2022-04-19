@@ -1,6 +1,4 @@
-﻿using Game.Model;
-using Game.Model.Characters;
-using Game.Renderer;
+﻿using Game.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-using WpfAnimatedGif;
 
 namespace Game.Windows
 {
@@ -24,21 +21,21 @@ namespace Game.Windows
     /// </summary>
     public partial class GameWindow : Window
     {
-        GameModel model;
-        KnightModel playerobj = new KnightModel(100, 0, 0, 50, "Pista", 1000, 700, 400, 400);
-        Display display = new Display();
-        Task task2;
+        HeroLogic logic;
         public GameWindow()
         {
             InitializeComponent();
-            DataContext = playerobj;
+             logic = new HeroLogic();
+            display.SetupModel(logic);
+            DispatcherTimer dt = new DispatcherTimer();
+            dt.Interval = TimeSpan.FromMilliseconds(80);
+            dt.Tick += Dt_Tick;
+            dt.Start();
+        }
 
-            var AnimationTimer = new DispatcherTimer();
-            AnimationTimer.Tick += AnimationTimerTick;
-            AnimationTimer.Interval = new TimeSpan(0, 0, 0, 0, 40);
-            task2 = new Task(AnimationTimer.Start);
-
-            task2.Start();
+        private void Dt_Tick(object? sender, EventArgs e)
+        {
+            display.InvalidateVisual();
         }
 
         private void Esc(object sender, KeyEventArgs e)
@@ -54,10 +51,34 @@ namespace Game.Windows
             new HeroMenuWindow().ShowDialog();
         }
 
-        public void AnimationTimerTick(object sender, EventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            display.PlayPlayerAnimationRun(Player_Canvas, playerobj);
+            display.SetupSizes(new Size(grid.ActualWidth, grid.ActualHeight));
+        }
 
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            display.SetupSizes(new Size(grid.ActualWidth, grid.ActualHeight));
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left)
+            {
+                logic.Control(HeroLogic.Controls.Left);
+            }
+            else if (e.Key == Key.Right)
+            {
+                logic.Control(HeroLogic.Controls.Right);
+            }
+            else if(e.Key == Key.Up)
+            {
+                logic.Control(HeroLogic.Controls.Up);
+            }
+            else if (e.Key == Key.Down)
+            {
+                logic.Control(HeroLogic.Controls.Down);
+            }
         }
     }
 }

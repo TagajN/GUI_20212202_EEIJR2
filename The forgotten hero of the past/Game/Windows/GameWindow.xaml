@@ -3,39 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:mapimage="clr-namespace:Game"
         xmlns:local="clr-namespace:Game.Windows"
-        xmlns:vms="clr-namespace:Game.ViewModels"
-        xmlns:renderer="clr-namespace:Game.Renderer;assembly=Game.Renderer"
+        xmlns:vms ="clr-namespace:Game.ViewModels"
+        xmlns:Renderer ="clr-namespace:Game.Renderer;assembly=Game.Renderer"
         mc:Ignorable="d"
-        Title="GameWindow" KeyDown="Esc" Height="1010" Width="1920" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Canvas x:Name="Parralex_canvas" Height="1010" Width="19200">
-        <Image x:Name="background1" Source="/Art/MapBackgrounds/map.png" Height="1010" Width="1920" HorizontalAlignment="Left" VerticalAlignment="Top">
+        Title="GameWindow" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize"  Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" KeyDown="Window_KeyDown">
+    <Window.DataContext>
+        <vms:GameViewModel/>
+    </Window.DataContext>
 
-        </Image>
+    <Grid x:Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Renderer:Display x:Name="display"/>
 
-        <WrapPanel Margin="5" Width="300" HorizontalAlignment="Left">
-            <Button Content="Hero" Click="Button_Click" Width="80"/>
-            <ProgressBar x:Name="HealthBar" Maximum="100" Value="80" Width="100" Height="20" Padding="10" Margin="5"/>
-            <Label x:Name="CoinCounter" Content="1000" Padding="10"/>
-        </WrapPanel>
-        <ScrollViewer Name="Scroller" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Canvas.Left="5" Width="19200" Height="1010">
-            <Canvas x:Name="Background_Canvas" Height="885" Width="19200">
-                <Rectangle x:Name="Player_Canvas" RenderTransformOrigin="0.5,0.561" Height="{Binding Path=CharacterHeight}" Width="{Binding Path=CharacterWidth}">
-                    <Rectangle.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleY="1"/>
-                            <SkewTransform AngleY="0" AngleX="0"/>
-                            <RotateTransform Angle="0"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Rectangle.RenderTransform>
-                    <Rectangle.Fill>
-                        <ImageBrush ImageSource="AnimationKnight/idle/idle1.png"/>
-                    </Rectangle.Fill>
-                </Rectangle>
-            </Canvas>
-        </ScrollViewer>
+        <StackPanel Grid.Row="0">
+            <WrapPanel Margin="5">
+                <Button Content="Hero" Command="{Binding CharacterStats}" Width="80"/>
+                <ProgressBar x:Name="HealthBar" Maximum="100" Value="80" Width="100" Height="20" Padding="10" Margin="5"/>
+                <Label x:Name="CoinCounter" Content="1000" Padding="10"/>
+            </WrapPanel>
+        </StackPanel>
 
-    </Canvas>
+        
+    </Grid>
+    
 </Window>

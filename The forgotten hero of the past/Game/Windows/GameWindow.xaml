@@ -7,27 +7,15 @@
         xmlns:vms ="clr-namespace:Game.ViewModels"
         xmlns:Renderer ="clr-namespace:Game.Renderer;assembly=Game.Renderer"
         mc:Ignorable="d"
-        Title="GameWindow" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize"  Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" KeyDown="Window_KeyDown">
+        Title="GameWindow" Height="668" Width="1200"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Window.DataContext>
         <vms:GameViewModel/>
     </Window.DataContext>
 
     <Grid x:Name="grid">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="10*"/>
-        </Grid.RowDefinitions>
+
         <Renderer:Display x:Name="display"/>
 
-        <StackPanel Grid.Row="0">
-            <WrapPanel Margin="5">
-                <Button Content="Hero" Command="{Binding CharacterStats}" Width="80"/>
-                <ProgressBar x:Name="HealthBar" Maximum="100" Value="80" Width="100" Height="20" Padding="10" Margin="5"/>
-                <Label x:Name="CoinCounter" Content="1000" Padding="10"/>
-            </WrapPanel>
-        </StackPanel>
-
-        
     </Grid>
     
 </Window>

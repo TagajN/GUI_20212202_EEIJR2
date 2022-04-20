@@ -68,12 +68,5 @@
             </Button>
         </StackPanel>
         <Image Height="100" Width="700" Source="/Art/title.png" />
-        <Button Content="{Binding MuteButton}" FontSize="22" Command="{Binding MuteCommand}" Background="Gray" Grid.Row="1" HorizontalAlignment="Left" Margin="10,0,0,10" Height="37" Width="40" VerticalAlignment="Bottom" >
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
     </Grid>
 </UserControl>

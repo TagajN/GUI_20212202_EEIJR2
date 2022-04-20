@@ -1,5 +1,4 @@
 ﻿using Game.Commands;
-using Game.Sound;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using MVVMEssentials.Commands;

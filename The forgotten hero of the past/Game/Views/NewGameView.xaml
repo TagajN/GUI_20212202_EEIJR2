@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Game.WindowUC"
              xmlns:vms="clr-namespace:Game.ViewModels"
-             xmlns:gif="http://wpfanimatedgif.codeplex.com"
+             xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
@@ -28,17 +28,17 @@
             </Grid.ColumnDefinitions>
             <Button Background="Black" VerticalContentAlignment="Bottom" Command="{Binding KnightCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
                 <Button.Content>
-                    <Image gif:ImageBehavior.AnimatedSource="/Art/Character/knight-idle.gif" />
+                    <Image gif:AnimationBehavior.SourceUri="/Art/Character/knight-idle.gif" />
                 </Button.Content>
             </Button>
             <Button Grid.Column="1" Background="Black" VerticalContentAlignment="Bottom" Command="{Binding MageCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
                 <Button.Content>
-                    <Image gif:ImageBehavior.AnimatedSource="/Art/Character/StormMage-idle.gif" Height="237" Width="206" />
+                    <Image gif:AnimationBehavior.SourceUri="/Art/Character/StormMage-idle.gif" Height="237" Width="206" />
                 </Button.Content>
             </Button>
             <Button Grid.Column="2" Background="Black" Command="{Binding WarlockCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" >
                 <Button.Content>
-                    <Image Grid.Column="2" gif:ImageBehavior.AnimatedSource="/Art/Character/warlock-idle.gif" />
+                    <Image Grid.Column="2" gif:AnimationBehavior.SourceUri="/Art/Character/warlock-idle.gif" />
                 </Button.Content>
             </Button>
 

@@ -21,21 +21,10 @@ namespace Game.Windows
     /// </summary>
     public partial class GameWindow : Window
     {
-        HeroLogic logic;
+        GameLogic logic;
         public GameWindow()
         {
             InitializeComponent();
-             logic = new HeroLogic();
-            display.SetupModel(logic);
-            DispatcherTimer dt = new DispatcherTimer();
-            dt.Interval = TimeSpan.FromMilliseconds(80);
-            dt.Tick += Dt_Tick;
-            dt.Start();
-        }
-
-        private void Dt_Tick(object? sender, EventArgs e)
-        {
-            display.InvalidateVisual();
         }
 
         private void Esc(object sender, KeyEventArgs e)
@@ -46,39 +35,23 @@ namespace Game.Windows
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            new HeroMenuWindow().ShowDialog();
-        }
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            display.SetupSizes(new Size(grid.ActualWidth, grid.ActualHeight));
+            logic = new GameLogic();
+            display.Setup(logic);
+
+            DispatcherTimer dt = new DispatcherTimer();
+            dt.Interval = TimeSpan.FromMilliseconds(50);
+            dt.Tick += Dt_Tick;
+            dt.Start();
+
         }
 
-        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        private void Dt_Tick(object? sender, EventArgs e)
         {
-            display.SetupSizes(new Size(grid.ActualWidth, grid.ActualHeight));
+            logic.Refresh();
+            display.InvalidateVisual();
         }
 
-        private void Window_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Left)
-            {
-                logic.Control(HeroLogic.Controls.Left);
-            }
-            else if (e.Key == Key.Right)
-            {
-                logic.Control(HeroLogic.Controls.Right);
-            }
-            else if(e.Key == Key.Up)
-            {
-                logic.Control(HeroLogic.Controls.Up);
-            }
-            else if (e.Key == Key.Down)
-            {
-                logic.Control(HeroLogic.Controls.Down);
-            }
-        }
     }
 }

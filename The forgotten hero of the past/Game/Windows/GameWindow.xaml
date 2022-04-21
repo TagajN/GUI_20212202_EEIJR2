@@ -11,11 +11,18 @@
     <Window.DataContext>
         <vms:GameViewModel/>
     </Window.DataContext>
-
-    <Grid x:Name="grid">
-
-        <Renderer:Display x:Name="display"/>
-
-    </Grid>
-    
+    <StackPanel>
+        <Border BorderBrush="SaddleBrown" BorderThickness="3" >
+            <WrapPanel Width="1200" HorizontalAlignment="Left" Background="SaddleBrown">
+                <Button Click="Button_Click" Background="BurlyWood">
+                    <Image Source="/Art/HEROUPGRADE_title.png" HorizontalAlignment="Center" Width="100" Height="40"/>
+                </Button>
+                <ProgressBar x:Name="HealthBar" Maximum="100" Value="80" Width="100" Height="20" Padding="10" Margin="5"/>
+                <Label x:Name="CoinCounter" Content="1000" Padding="10"/>
+            </WrapPanel>
+        </Border>
+        <Grid x:Name="grid">
+            <Renderer:Display x:Name="display"/>
+        </Grid>
+    </StackPanel>
 </Window>

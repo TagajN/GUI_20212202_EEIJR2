@@ -43,16 +43,25 @@ namespace Game.Logic.Models
         {
             Position += new Vector2(0, 5f);
         }
-        public void Jump()
+        public async void Jump()
         {
-            Position += new Vector2(0, -5f);
+            for (int i = 0; i < 5; i++)
+            {
+                Position += new Vector2(0, -5f);
+                await Task.Delay(100);
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                Gravity();
+                await Task.Delay(100);
+            }
         }
         public void Attack()
         {
 
         }
 
-        public override void Update(int ms)
+        public override async void Update(int ms)
         {
             if (Keyboard.IsKeyDown(Key.Right))
             {
@@ -69,6 +78,7 @@ namespace Game.Logic.Models
             if (Keyboard.IsKeyDown(Key.Up))
             {
                 Jump();
+                await Task.Delay(100);
             }
             if (Keyboard.IsKeyDown(Key.Space))
             {
@@ -76,7 +86,7 @@ namespace Game.Logic.Models
             }
         }
 
-        public void Gravitation()
+        public void Gravity()
         {
             Position += new Vector2(0, 5f);
         }

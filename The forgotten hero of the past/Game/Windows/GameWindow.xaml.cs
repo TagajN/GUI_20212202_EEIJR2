@@ -53,5 +53,9 @@ namespace Game.Windows
             display.InvalidateVisual();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            new HeroMenuWindow().ShowDialog();
+        }
     }
 }

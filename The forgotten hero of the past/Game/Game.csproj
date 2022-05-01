@@ -15,6 +15,34 @@
     <None Remove="Art\ChampSelectBackground.webp" />
     <None Remove="Art\DAMAGE_title.png" />
     <None Remove="Art\Game\Background\map.png" />
+    <None Remove="Art\Game\Character\Knight\Death\death1.png" />
+    <None Remove="Art\Game\Character\Knight\Death\death10.png" />
+    <None Remove="Art\Game\Character\Knight\Death\death2.png" />
+    <None Remove="Art\Game\Character\Knight\Death\death3.png" />
+    <None Remove="Art\Game\Character\Knight\Death\death4.png" />
+    <None Remove="Art\Game\Character\Knight\Death\death5.png" />
+    <None Remove="Art\Game\Character\Knight\Death\death6.png" />
+    <None Remove="Art\Game\Character\Knight\Death\death7.png" />
+    <None Remove="Art\Game\Character\Knight\Death\death8.png" />
+    <None Remove="Art\Game\Character\Knight\Death\death9.png" />
+    <None Remove="Art\Game\Character\Knight\Idle\idle1.png" />
+    <None Remove="Art\Game\Character\Knight\Idle\idle2.png" />
+    <None Remove="Art\Game\Character\Knight\Idle\idle3.png" />
+    <None Remove="Art\Game\Character\Knight\Idle\idle4.png" />
+    <None Remove="Art\Game\Character\Knight\Idle\idle5.png" />
+    <None Remove="Art\Game\Character\Knight\Idle\idle6.png" />
+    <None Remove="Art\Game\Character\Knight\Idle\idle7.png" />
+    <None Remove="Art\Game\Character\Knight\Idle\idle8.png" />
+    <None Remove="Art\Game\Character\Knight\Run\run1.png" />
+    <None Remove="Art\Game\Character\Knight\Run\run10.png" />
+    <None Remove="Art\Game\Character\Knight\Run\run2.png" />
+    <None Remove="Art\Game\Character\Knight\Run\run3.png" />
+    <None Remove="Art\Game\Character\Knight\Run\run4.png" />
+    <None Remove="Art\Game\Character\Knight\Run\run5.png" />
+    <None Remove="Art\Game\Character\Knight\Run\run6.png" />
+    <None Remove="Art\Game\Character\Knight\Run\run7.png" />
+    <None Remove="Art\Game\Character\Knight\Run\run8.png" />
+    <None Remove="Art\Game\Character\Knight\Run\run9.png" />
     <None Remove="Art\HEALTH_title.png" />
     <None Remove="Art\HEROUPGRADE_title.png" />
     <None Remove="Art\MUTE.png" />
@@ -28,6 +56,7 @@
     <None Remove="EXIT_button.png" />
     <None Remove="LEADERBOARDS_button.png" />
     <None Remove="LOAD_button.png" />
+    <None Remove="Resources\idle1.png" />
     <None Remove="title.png" />
     <None Remove="Windows\knight-idle.gif" />
     <None Remove="Windows\warlock-idle.gif" />
@@ -127,7 +156,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Art\Game\Character\Knight\" />
     <Folder Include="Art\Game\Character\Enemy\" />
     <Folder Include="Art\Game\Gold\" />
     <Folder Include="Art\Game\Platform\" />
@@ -135,6 +163,35 @@
 
   <ItemGroup>
     <Resource Include="Art\Game\Background\map.png" />
+    <Resource Include="Art\Game\Character\Knight\Death\death1.png" />
+    <Resource Include="Art\Game\Character\Knight\Death\death10.png" />
+    <Resource Include="Art\Game\Character\Knight\Death\death2.png" />
+    <Resource Include="Art\Game\Character\Knight\Death\death3.png" />
+    <Resource Include="Art\Game\Character\Knight\Death\death4.png" />
+    <Resource Include="Art\Game\Character\Knight\Death\death5.png" />
+    <Resource Include="Art\Game\Character\Knight\Death\death6.png" />
+    <Resource Include="Art\Game\Character\Knight\Death\death7.png" />
+    <Resource Include="Art\Game\Character\Knight\Death\death8.png" />
+    <Resource Include="Art\Game\Character\Knight\Death\death9.png" />
+    <Resource Include="Art\Game\Character\Knight\Idle\idle1.png" />
+    <Resource Include="Art\Game\Character\Knight\Idle\idle2.png" />
+    <Resource Include="Art\Game\Character\Knight\Idle\idle3.png" />
+    <Resource Include="Art\Game\Character\Knight\Idle\idle4.png" />
+    <Resource Include="Art\Game\Character\Knight\Idle\idle5.png" />
+    <Resource Include="Art\Game\Character\Knight\Idle\idle6.png" />
+    <Resource Include="Art\Game\Character\Knight\Idle\idle7.png" />
+    <Resource Include="Art\Game\Character\Knight\Idle\idle8.png" />
+    <Resource Include="Art\Game\Character\Knight\Run\run1.png" />
+    <Resource Include="Art\Game\Character\Knight\Run\run10.png" />
+    <Resource Include="Art\Game\Character\Knight\Run\run2.png" />
+    <Resource Include="Art\Game\Character\Knight\Run\run3.png" />
+    <Resource Include="Art\Game\Character\Knight\Run\run4.png" />
+    <Resource Include="Art\Game\Character\Knight\Run\run5.png" />
+    <Resource Include="Art\Game\Character\Knight\Run\run6.png" />
+    <Resource Include="Art\Game\Character\Knight\Run\run7.png" />
+    <Resource Include="Art\Game\Character\Knight\Run\run8.png" />
+    <Resource Include="Art\Game\Character\Knight\Run\run9.png" />
+    <Resource Include="Resources\idle1.png" />
   </ItemGroup>
 
 </Project>

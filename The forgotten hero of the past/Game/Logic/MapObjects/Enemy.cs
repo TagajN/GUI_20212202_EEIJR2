@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game.Logic.MapObjects
 {
-    internal class Enemy
+    public class Enemy
     {
     }
 }

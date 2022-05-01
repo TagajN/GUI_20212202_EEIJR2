@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game.Windows"
-        xmlns:vms ="clr-namespace:Game.ViewModels"
         mc:Ignorable="d"
         Title="GameWindow" Height="719" Width="1438"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
 
@@ -15,6 +14,9 @@
             <Image x:Name="BackgroundImg3" Source="/Art/Game/Background/map.png" Height="800" Width="1500" Canvas.Left="1500" Canvas.Top="-100"/>
             <Image x:Name="BackgroundImg1" Source="/Art/Game/Background/map.png" Height="800" Width="1500" Canvas.Left="-1500" Canvas.Top="-100"/>
 
+
+            <Image x:Name="Player" Source="{Binding Image}" Height="{Binding Height}" Width="{Binding Width}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}"
+                   RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased" LayoutTransform="{Binding Mirrored}"/>
 
         </Canvas>
     </ScrollViewer>

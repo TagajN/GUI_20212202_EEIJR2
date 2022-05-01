@@ -16,7 +16,7 @@
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Grid.Row="1">
-            <Button Command="{Binding NewGameCommand}" Padding="10" Margin="10" Background="Gray" >
+            <Button Command="{Binding NewGameCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Padding="10" Margin="10" Background="Gray" >
                 <Button.Content>
                     <Image  Height="22" Width="163" Source="/Art/NEWGAME_button.png" />
                 </Button.Content>

@@ -1,4 +1,5 @@
 ﻿using Game.Commands;
+using Game.Windows;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using MVVMEssentials.Commands;
@@ -9,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Game.ViewModels
@@ -24,10 +26,10 @@ namespace Game.ViewModels
 
         public HomeViewModel(List<INavigationService> NavigationList)
         {
-            NewGameCommand = new NavigateCommand(NavigationList.ToArray()[0]);
-            LoadGameCommand = new NavigateCommand(NavigationList.ToArray()[1]);
-            LeaderBoardsCommand = new NavigateCommand(NavigationList.ToArray()[2]);
-            CreditsCommand = new NavigateCommand(NavigationList.ToArray()[3]);
+            NewGameCommand = new RelayCommand<object>((o) => { new GameWindow().Show(); ((Window)o).Close(); }, (o) => true);
+            LoadGameCommand = new NavigateCommand(NavigationList.ToArray()[0]);
+            LeaderBoardsCommand = new NavigateCommand(NavigationList.ToArray()[1]);
+            CreditsCommand = new NavigateCommand(NavigationList.ToArray()[2]);
             ExitCommand = new RelayCommand(() => System.Environment.Exit(1));
         }
     }

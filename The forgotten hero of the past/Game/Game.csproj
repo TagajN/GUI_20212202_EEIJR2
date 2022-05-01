@@ -14,6 +14,7 @@
     <None Remove="Art\+_title.png" />
     <None Remove="Art\ChampSelectBackground.webp" />
     <None Remove="Art\DAMAGE_title.png" />
+    <None Remove="Art\Game\Background\map.png" />
     <None Remove="Art\HEALTH_title.png" />
     <None Remove="Art\HEROUPGRADE_title.png" />
     <None Remove="Art\MUTE.png" />
@@ -126,9 +127,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Art\Character\Knight\" />
-    <Folder Include="Art\Character\Enemy\" />
-    <Folder Include="Logic\" />
+    <Folder Include="Art\Game\Character\Knight\" />
+    <Folder Include="Art\Game\Character\Enemy\" />
+    <Folder Include="Art\Game\Gold\" />
+    <Folder Include="Art\Game\Platform\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Art\Game\Background\map.png" />
   </ItemGroup>
 
 </Project>

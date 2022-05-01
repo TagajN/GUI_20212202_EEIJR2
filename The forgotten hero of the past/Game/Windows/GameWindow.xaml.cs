@@ -24,5 +24,10 @@ namespace Game.Windows
         {
             InitializeComponent();
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }

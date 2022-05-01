@@ -6,9 +6,17 @@
         xmlns:local="clr-namespace:Game.Windows"
         xmlns:vms ="clr-namespace:Game.ViewModels"
         mc:Ignorable="d"
-        Title="GameWindow" Height="668" Width="1200"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Window.DataContext>
-        <vms:GameViewModel/>
-    </Window.DataContext>
+        Title="GameWindow" Height="719" Width="1438"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
+
+    <ScrollViewer x:Name="SViewer" HorizontalScrollBarVisibility="Hidden" Height="719" Width="1500">
+        <Canvas x:Name="cvas" Width="30000" Height="750">
+            
+            <Image x:Name="BackgroundImg2" Source="/Art/Game/Background/map.png" Height="800" Width="1500" Canvas.Top="-100" Canvas.Left="0"/>
+            <Image x:Name="BackgroundImg3" Source="/Art/Game/Background/map.png" Height="800" Width="1500" Canvas.Left="1500" Canvas.Top="-100"/>
+            <Image x:Name="BackgroundImg1" Source="/Art/Game/Background/map.png" Height="800" Width="1500" Canvas.Left="-1500" Canvas.Top="-100"/>
+
+
+        </Canvas>
+    </ScrollViewer>
 
 </Window>

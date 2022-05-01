@@ -27,11 +27,10 @@ namespace Game.Windows
         public GameWindow()
         {
             DataContext = logic;
+            logic.Start();
 
             KeyDown += logic.player.Jump;
             KeyUp += logic.player.JumpDown;
-
-            logic.Start();
             logic.player.Moved += OnMoved;
 
             InitializeComponent();

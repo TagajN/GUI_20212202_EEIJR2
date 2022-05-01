@@ -12,16 +12,13 @@ namespace Game.Logic.MapObjects
     public class Gold : MapObject
     {
         public int count;
-        public static ImageBrush GoldImage;
-
         public Gold(double x, double y, int width, int height) : base(x, y, width, height) { }
 
-        private static int coinCounter;
-
-        public static int CoinCounter
+        private static int goldCounter;
+        public static int GoldCounter
         {
-            get { return coinCounter; }
-            set { coinCounter = value; }
+            get { return goldCounter; }
+            set { goldCounter = value; }
         }
 
         protected string[] gold =
@@ -32,21 +29,21 @@ namespace Game.Logic.MapObjects
             "/Art/Game/Gold/gold7.png",
         };
 
-        private void CoinAnimation(Gold coin)
+        private void CoinAnimation(Gold goldCoin)
         {
             if (count > gold.Length - 1)
                 count = 0;
-            coin.Image = new BitmapImage((new Uri(gold[count], UriKind.RelativeOrAbsolute)));
+            goldCoin.Image = new BitmapImage((new Uri(gold[count], UriKind.RelativeOrAbsolute)));
             count++;
         }
 
-        public static void PlayCoinAnimation(ObservableCollection<Gold> Golds, Player player)
+        public static void PlayCoinAnimation(ObservableCollection<Gold> Gold, Player player)
         {
-            foreach (Gold gold in Golds)
+            foreach (Gold coin in Gold)
             {
-                if (gold.X >= player.X - 500 && gold.X <= player.X + 1300)
+                if (coin.X >= player.X - 300 && coin.X <= player.X + 1300)
                 {
-                    gold.CoinAnimation(gold);
+                    coin.CoinAnimation(coin);
                 }
             }
         }

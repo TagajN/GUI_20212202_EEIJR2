@@ -1,6 +1,7 @@
 ﻿using Game.Logic.MapObjects;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +12,18 @@ namespace Game.Logic
 {
     class GameLogic : Window
     {
-        private DispatcherTimer Timer;
+        public DispatcherTimer Timer;
         public DispatcherTimer Animation;
 
-        public Player player = new Player();
+        public ObservableCollection<Gold> GoldCoins { get; set; }
+        public ObservableCollection<Rect> Platforms { get; set; }
+
+        public Player player;
 
         public void Start()
         {
+            InitMapObjects();
+            MapCreator();
             GameTimer();
             AnimationTimer();
 
@@ -34,6 +40,13 @@ namespace Game.Logic
             Timer.Start();
         }
 
+        public void InitMapObjects()
+        {
+            player = new Player();
+            GoldCoins = new ObservableCollection<Gold>();
+            Platforms = new ObservableCollection<Rect>();
+        }
+
         public void AnimationTimer()
         {
             Animation = new DispatcherTimer();
@@ -43,20 +56,30 @@ namespace Game.Logic
             Animation.Start();
         }
 
-        private void Animation_Tick(object? sender, EventArgs e)
+        public void Animation_Tick(object? sender, EventArgs e)
         {
             this.Dispatcher.Invoke(() =>
             {
                 player.AnimatePlayer();
+                Gold.PlayCoinAnimation(GoldCoins, player);
             });
         }
 
-        private void Timer_Tick(object? sender, EventArgs e)
+        public void Timer_Tick(object? sender, EventArgs e)
         {
             this.Dispatcher.Invoke(() =>
             {
                 player.InitializeMovement();
                 player.UpdateGravity();
+            });
+        }
+
+        public void MapCreator()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                Map.Map.Platforms(Platforms);
+                Map.Map.Coins(GoldCoins);
             });
         }
     }

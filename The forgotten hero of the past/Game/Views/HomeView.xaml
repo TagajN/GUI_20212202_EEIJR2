@@ -9,7 +9,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Art/Background.webp"/>
+            <ImageBrush ImageSource="/Art/Menu/Background.webp"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -18,7 +18,7 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Grid.Row="1">
             <Button Command="{Binding NewGameCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Padding="10" Margin="10" Background="Gray" >
                 <Button.Content>
-                    <Image  Height="22" Width="163" Source="/Art/NEWGAME_button.png" />
+                    <Image  Height="22" Width="163" Source="/Art/Menu/NEWGAME_button.png" />
                 </Button.Content>
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -28,7 +28,7 @@
             </Button>
             <Button Command="{Binding LoadGameCommand}" Padding="10" Margin="10" Background="Gray">
                 <Button.Content>
-                    <Image  Height="22" Width="163" Source="/Art/LOAD_button.png"  />
+                    <Image  Height="22" Width="163" Source="/Art/Menu/LOAD_button.png"  />
                 </Button.Content>
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -38,7 +38,7 @@
             </Button>
             <Button Command="{Binding LeaderBoardsCommand}" Padding="10" Margin="10" Background="Gray">
                 <Button.Content>
-                    <Image  Height="22" Width="163" Source="/Art/HIGHSCORES_button.png" />
+                    <Image  Height="22" Width="163" Source="/Art/Menu/HIGHSCORES_button.png" />
                 </Button.Content>
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -48,7 +48,7 @@
             </Button>
             <Button Command="{Binding CreditsCommand}" Padding="10" Margin="10" Background="Gray">
                 <Button.Content>
-                    <Image  Height="22" Width="163" Source="/Art/CREDITS_button.png" />
+                    <Image  Height="22" Width="163" Source="/Art/Menu/CREDITS_button.png" />
                 </Button.Content>
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -58,7 +58,7 @@
             </Button>
             <Button Command="{Binding ExitCommand}" Padding="10" Margin="10" Background="Gray">
                 <Button.Content>
-                    <Image  Height="22" Width="163" Source="/Art/EXIT_button.png"  />
+                    <Image  Height="22" Width="163" Source="/Art/Menu/EXIT_button.png"  />
                 </Button.Content>
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -67,6 +67,6 @@
                 </Button.Resources>
             </Button>
         </StackPanel>
-        <Image Height="100" Width="700" Source="/Art/title.png" />
+        <Image Height="100" Width="700" Source="/Art/Menu/title.png" />
     </Grid>
 </UserControl>

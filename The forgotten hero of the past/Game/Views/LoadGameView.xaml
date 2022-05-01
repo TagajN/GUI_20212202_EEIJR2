@@ -8,14 +8,14 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Art/Background3.jpg"/>
+            <ImageBrush ImageSource="/Art/Menu/Background3.jpg"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Image  HorizontalAlignment="Center" Height="40" Source="/Art/LOADGAME_button.png"/>
+        <Image  HorizontalAlignment="Center" Height="40" Source="/Art/Menu/LOADGAME_button.png"/>
         <ListBox Grid.Row="1" Background="Transparent" BorderBrush="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -25,7 +25,7 @@
         </ListBox>
         <Button Grid.Row="2" Command="{Binding NavigateHomeCommand}" Padding="10" Margin="10" Width="200" Background="Gray">
             <Button.Content>
-                <Image  Height="22" Width="163" Source="/Art/BACK_button.png"/>
+                <Image  Height="22" Width="163" Source="/Art/Menu/BACK_button.png"/>
             </Button.Content>
             <Button.Resources>
                 <Style TargetType="Border">

@@ -13,9 +13,6 @@
     <None Remove="7947d1bc3287fddc22a13b993f1a56a0.png" />
     <None Remove="Art\+_title.png" />
     <None Remove="Art\ChampSelectBackground.webp" />
-    <None Remove="Art\Character\knight-idle.gif" />
-    <None Remove="Art\Character\StormMage-idle.gif" />
-    <None Remove="Art\Character\warlock-idle.gif" />
     <None Remove="Art\DAMAGE_title.png" />
     <None Remove="Art\HEALTH_title.png" />
     <None Remove="Art\HEROUPGRADE_title.png" />
@@ -45,19 +42,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Art\+_title.png">
+    <Content Include="Art\Menu\+_title.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\PAUSED_title.png">
+    <Content Include="Art\Menu\PAUSED_title.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\RESUME_title.png">
+    <Content Include="Art\Menu\RESUME_title.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\SAVE_title.png">
+    <Content Include="Art\Menu\SAVE_title.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\SPEED_title.png">
+    <Content Include="Art\Menu\SPEED_title.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -69,72 +66,69 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Art\ChampSelectBackground.webp">
+    <Content Include="Art\Menu\ChampSelectBackground.webp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Art\Character\knight-idle.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Art\Character\StormMage-idle.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Art\Character\warlock-idle.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Content Include="Art\DAMAGE_title.png">
+    <Content Include="Art\Menu\DAMAGE_title.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\HEALTH_title.png">
+    <Content Include="Art\Menu\HEALTH_title.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\HEROUPGRADE_title.png">
+    <Content Include="Art\Menu\HEROUPGRADE_title.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\PLAY_button.png">
+    <Content Include="Art\Menu\PLAY_button.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\Background.webp">
+    <Content Include="Art\Menu\Background.webp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\EXIT_button.png">
+    <Content Include="Art\Menu\EXIT_button.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\LOAD_button.png">
+    <Content Include="Art\Menu\LOAD_button.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\SELECT_title.png">
+    <Content Include="Art\Menu\SELECT_title.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\StatBackground.jpg">
+    <Content Include="Art\Menu\StatBackground.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\Title.png">
+    <Content Include="Art\Menu\Title.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\Background2.png">
+    <Content Include="Art\Menu\Background2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\BACK_button.png">
+    <Content Include="Art\Menu\BACK_button.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\Background3.jpg">
+    <Content Include="Art\Menu\Background3.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\LOADGAME_button.png">
+    <Content Include="Art\Menu\LOADGAME_button.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\NEWGAME_button.png">
+    <Content Include="Art\Menu\NEWGAME_button.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\CREDITS_button.png">
+    <Content Include="Art\Menu\CREDITS_button.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\HIGHSCORES_button.png">
+    <Content Include="Art\Menu\HIGHSCORES_button.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Art\Background4.jpg">
+    <Content Include="Art\Menu\Background4.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Art\Character\Knight\" />
+    <Folder Include="Art\Character\Enemy\" />
+    <Folder Include="Logic\" />
   </ItemGroup>
 
 </Project>

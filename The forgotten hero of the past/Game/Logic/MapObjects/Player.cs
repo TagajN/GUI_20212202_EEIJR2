@@ -79,7 +79,7 @@ namespace Game.Logic.MapObjects
         {
             if (Y == Ground)
             {
-                JumpStrength = -25;
+                JumpStrength = -50;
                 Jumping = false;
             }
         }
@@ -245,7 +245,7 @@ namespace Game.Logic.MapObjects
             count++;
         }
 
-        public void AnimatePlayer()
+        public void AnimatePlayer(ObservableCollection<Rect> Platforms)
         {
             if (IsRight && !Jumping)
                 AnimateRuntoRight();
@@ -259,7 +259,7 @@ namespace Game.Logic.MapObjects
             if (Health <= 0)
                 AnimateDeath();
 
-            if (Y < Ground)
+            if (Y < Ground && !CollisionDetection.CollisionDetection.PlatformCollision(this, Platforms))
             {
                 AnimateJumpUp();
 

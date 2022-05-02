@@ -62,7 +62,7 @@ namespace Game.Logic
         {
             this.Dispatcher.Invoke(() =>
             {
-                player.AnimatePlayer();
+                player.AnimatePlayer(Platforms);
                 Gold.PlayCoinAnimation(GoldCoins, player);
                 Enemy.PlayEnemyAnimation(player, Enemies);
             });
@@ -74,6 +74,7 @@ namespace Game.Logic
             {
                 player.InitializeMovement();
                 player.UpdateGravity();
+                CollisionDetection.CollisionDetection.PlatformCollision(player, Platforms);
                 Enemy.Follow(player, Enemies);
             });
         }

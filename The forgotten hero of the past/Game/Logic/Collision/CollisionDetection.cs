@@ -35,5 +35,30 @@ namespace Game.Logic.CollisionDetection
             return false;
         }
 
+        public static bool PlayerRightCollision(Player Player, ObservableCollection<Rect> Platform)
+        {
+            Rect PlayerHitbox = new Rect(Player.X + Player.Width - 80, Player.Y + 1, 1, Player.Height - 55);
+
+            for (int i = Platform.Count - 1; i >= 0; i--) {
+                Rect PlatformHitbox = new Rect(Platform[i].X, Platform[i].Y, Platform[i].Width - 65, Platform[i].Height - 45);
+                if (PlayerHitbox.IntersectsWith(PlatformHitbox) && !OnPlatform)
+                    return true;
+            }
+            return false;
+        }
+
+        public static bool PlayerLeftCollision(Player Player, ObservableCollection<Rect> Platform)
+        {
+            Rect PlayerHitbox = new Rect(Player.X + 10, Player.Y + 1, 1, Player.Height - 55);
+
+            for (int i = Platform.Count - 1; i >= 0; i--)
+            {
+                Rect PlatformHitbox = new Rect(Platform[i].X, Platform[i].Y, Platform[i].Width - 65, Platform[i].Height - 45);
+                if (PlayerHitbox.IntersectsWith(PlatformHitbox) && !OnPlatform)
+                    return true;
+            }
+            return false;
+        }
+
     }
 }

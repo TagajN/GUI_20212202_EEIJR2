@@ -90,11 +90,11 @@ namespace Game.Logic.MapObjects
                 JumpStrength = -12.5;
         }
 
-        public void InitializeMovement()
+        public void InitializeMovement(ObservableCollection<Rect> platform)
         {
-            if (IsRight && X + Width < screenwidth)
+            if (IsRight && X + Width < screenwidth && !CollisionDetection.CollisionDetection.PlayerRightCollision(this, platform))
                 MoveRight();
-            if (IsLeft &&  X > 0)
+            if (IsLeft &&  X > 0 && !CollisionDetection.CollisionDetection.PlayerLeftCollision(this, platform))
                 MoveLeft();
             if (Jumping &&  Y > 30)
                 Jump();

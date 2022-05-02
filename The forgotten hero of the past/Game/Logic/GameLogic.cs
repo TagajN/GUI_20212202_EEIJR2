@@ -72,7 +72,7 @@ namespace Game.Logic
         {
             this.Dispatcher.Invoke(() =>
             {
-                player.InitializeMovement();
+                player.InitializeMovement(Platforms);
                 player.UpdateGravity();
                 CollisionDetection.CollisionDetection.PlatformCollision(player, Platforms);
                 Enemy.Follow(player, Enemies);

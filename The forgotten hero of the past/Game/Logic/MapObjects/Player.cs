@@ -14,8 +14,9 @@ namespace Game.Logic.MapObjects
     public class Player : MapObject
     {
         private int count;
-        private static int Ground = 550;
+        private static int Ground = 490;
         private int health;
+        private int damage;
 
         public int Health
         {
@@ -23,6 +24,16 @@ namespace Game.Logic.MapObjects
             set
             {
                 health = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public int Damage
+        {
+            get { return damage; }
+            set
+            {
+                damage = value;
                 NotifyPropertyChanged();
             }
         }
@@ -42,7 +53,7 @@ namespace Game.Logic.MapObjects
         private int screenwidth = 30000;
 
         public Player(double x, double y, int width, int height) : base(x, y, width, height) { }
-        public Player() : this(10, Ground, 70, 150) { }
+        public Player() : this(10, Ground, 200, 200) { }
 
         public void KeyDown(object sender, KeyEventArgs e)
         {
@@ -139,6 +150,19 @@ namespace Game.Logic.MapObjects
             "/Art/Game/Character/Knight/Death/death7.png","/Art/Game/Character/Knight/Death/death8.png",
             "/Art/Game/Character/Knight/Death/death9.png","/Art/Game/Character/Knight/Death/death10.png",
         };
+        protected string[] Attack =
+       {
+            "/Art/Game/Character/Knight/Attack/attack1.png","/Art/Game/Character/Knight/Attack/attack2.png",
+            "/Art/Game/Character/Knight/Attack/attack3.png","/Art/Game/Character/Knight/Attack/attack4.png",
+            "/Art/Game/Character/Knight/Attack/attack5.png","/Art/Game/Character/Knight/Attack/attack6.png",
+            "/Art/Game/Character/Knight/Attack/attack7.png","/Art/Game/Character/Knight/Attack/attack8.png",
+            "/Art/Game/Character/Knight/Attack/attack9.png","/Art/Game/Character/Knight/Attack/attack10.png",
+            "/Art/Game/Character/Knight/Attack/attack11.png","/Art/Game/Character/Knight/Attack/attack12.png",
+            "/Art/Game/Character/Knight/Attack/attack13.png","/Art/Game/Character/Knight/Attack/attack14.png",
+            "/Art/Game/Character/Knight/Attack/attack15.png","/Art/Game/Character/Knight/Attack/attack16.png",
+            "/Art/Game/Character/Knight/Attack/attack17.png","/Art/Game/Character/Knight/Attack/attack18.png",
+            "/Art/Game/Character/Knight/Attack/attack19.png","/Art/Game/Character/Knight/Attack/attack20.png",
+        };
 
         protected string[] Stunned =
         {
@@ -176,6 +200,23 @@ namespace Game.Logic.MapObjects
             if (count > Run.Length - 1)
                 count = 0;
             Image = new BitmapImage(new Uri(Run[count], UriKind.RelativeOrAbsolute));
+            count++;
+        }
+        private void AnimateAttacktoRight()
+        {
+            Mirrored = new ScaleTransform() { ScaleX = +1 };
+            if (count > Attack.Length - 1)
+                count = 0;
+            Image = new BitmapImage(new Uri(Attack[count], UriKind.RelativeOrAbsolute));
+            count++;
+        }
+
+        private void AnimateAttacktoLeft()
+        {
+            Mirrored = new ScaleTransform() { ScaleX = -1 };
+            if (count > Attack.Length - 1)
+                count = 0;
+            Image = new BitmapImage(new Uri(Attack[count], UriKind.RelativeOrAbsolute));
             count++;
         }
 
@@ -228,7 +269,6 @@ namespace Game.Logic.MapObjects
                 }
             }
         }
-
 
     }
 }

@@ -19,6 +19,7 @@ namespace Game.Logic
         public ObservableCollection<Rect> Platforms { get; set; }
 
         public Player player;
+        public ObservableCollection<Enemy> Enemies { get; set; }
 
         public void Start()
         {
@@ -45,6 +46,7 @@ namespace Game.Logic
             player = new Player();
             GoldCoins = new ObservableCollection<Gold>();
             Platforms = new ObservableCollection<Rect>();
+            Enemies = new ObservableCollection<Enemy>();
         }
 
         public void AnimationTimer()
@@ -62,6 +64,7 @@ namespace Game.Logic
             {
                 player.AnimatePlayer();
                 Gold.PlayCoinAnimation(GoldCoins, player);
+                Enemy.PlayEnemyAnimation(player, Enemies);
             });
         }
 
@@ -71,6 +74,7 @@ namespace Game.Logic
             {
                 player.InitializeMovement();
                 player.UpdateGravity();
+                Enemy.Follow(player, Enemies);
             });
         }
 
@@ -80,6 +84,7 @@ namespace Game.Logic
             {
                 Map.Map.Platforms(Platforms);
                 Map.Map.Coins(GoldCoins);
+                Map.Map.CreateEnemies(Enemies);
             });
         }
     }

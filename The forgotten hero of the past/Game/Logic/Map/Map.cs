@@ -29,5 +29,14 @@ namespace Game.Logic.Map
                 Coins.Add(new Gold(400 + i * 2000, 160, 40, 40));
             }
         }
+        public static void CreateEnemies(ObservableCollection<Enemy> Enemies)
+        {
+            for (int i = 1; i <= 20; i++)
+            {
+               Enemies.Add(new Enemy(i * 1500, 500, 200, 200,"skeleton"));
+               Enemies.Add(new Enemy(i * 2000, 515, 130, 130, "mushroom"));
+               Enemies.Add(new Enemy(i * 3000, 400, 250, 250, "griffin"));
+            }
+        }
     }
 }

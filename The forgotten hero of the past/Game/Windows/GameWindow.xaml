@@ -17,7 +17,26 @@
 
             <Image x:Name="Player" Source="{Binding Image}" Height="{Binding Height}" Width="{Binding Width}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}"
                    RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased" LayoutTransform="{Binding Mirrored}"/>
-            
+            <ItemsControl ItemsSource="{Binding Enemies}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="ContentPresenter">
+                        <Setter Property="Canvas.Left" Value="{Binding X}"/>
+                        <Setter Property="Canvas.Top" Value="{Binding Y}"/>
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding Image}" Height="{Binding Height}" Width="{Binding Width}"
+                               RenderOptions.BitmapScalingMode="NearestNeighbor" LayoutTransform="{Binding Mirrored}" RenderOptions.EdgeMode="Aliased"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
             <ItemsControl ItemsSource="{Binding Platforms}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>

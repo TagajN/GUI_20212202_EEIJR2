@@ -26,6 +26,7 @@ namespace Game.Logic.MapObjects
         public bool IsRight { get; set; }
         public double Speed { get; set; }
         public double JumpStrength { get; set; }
+        public bool Attacking { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged([CallerMemberName] string propertyname = "")

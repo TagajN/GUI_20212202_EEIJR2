@@ -38,7 +38,7 @@ namespace Game.Logic.MapObjects
             }
         }
 
-        public Enemy(double x, double y, int width, int height,string name) : base(x, y, width, height) { this.Name = name; }
+        public Enemy(double x, double y, int width, int height,string name, int health, int damage) : base(x, y, width, height) { this.Name = name; this.Health = health; this.damage = damage; }
 
         protected string[] RunBoss =
         {
@@ -474,48 +474,97 @@ namespace Game.Logic.MapObjects
         {
                 foreach (Enemy enemy in Enemies)
                 {
-                    if (enemy.X >= player.X - 500 && enemy.X <= player.X + 1300)
+                    if (enemy.X >= player.X - 500 && enemy.X <= player.X + 1300 && !enemy.IsDeath && !player.IsDeath)
                     {
+
                         if (enemy.Name == "skeleton")
                         {
-                            enemy.AnimateIdleSkeleton();
-                            if ((enemy.X - player.X) < 55 && enemy.IsLeft)
+                            if (enemy.Health <= 0 && !enemy.IsDeath)
+                            {
+                                enemy.AnimateDeathSkeleton();
+                                enemy.IsDeath = true;
+                            }
+                            else if ((enemy.X - player.X) < 55 && enemy.IsLeft && player.Y == 490)
                             {
                                 enemy.AnimateAttacktoLeftSkeleton();
+                                if((enemy.X - player.X) < 50)
+                                {
+                                    player.Health -= enemy.Damage; //todo ellenállás számítás
+                                }
                             }
-                            else if ((player.X - enemy.X) < 60 && enemy.IsRight)
+                            else if ((player.X - enemy.X) < 60 && enemy.IsRight && player.Y == 490)
                             {
                                 enemy.AnimateAttacktoRightSkeleton();
+                                if ((player.X - enemy.X) < 55)
+                                {
+                                    player.Health -= enemy.Damage; //todo ellenállás számítás
+                                }
+                            }
+                            else
+                            {
+                                enemy.AnimateIdleSkeleton();
                             }
                         }
                         else if (enemy.Name == "mushroom")
                         {
-                            enemy.AnimateIdleMushroom();
-                            if ((enemy.X - player.X) < 105 && enemy.IsLeft)
+                            if (enemy.Health <= 0 && !enemy.IsDeath)
+                            {
+                                enemy.AnimateDeathMushroom();
+                                enemy.IsDeath = true;
+                            }
+                            else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490)
                             {
                                 enemy.AnimateAttacktoLeftMushroom();
+                                if ((enemy.X - player.X) < 100)
+                                {
+                                    player.Health -= enemy.Damage; //todo ellenállás számítás
+                                }
                             }
-                            else if ((player.X - enemy.X) < 85 && enemy.IsRight)
+                            else if ((player.X - enemy.X) < 85 && enemy.IsRight && player.Y == 490)
                             {
                                 enemy.AnimateAttacktoRightMushroom();
+                                if ((player.X - enemy.X) < 80)
+                                {
+                                    player.Health -= enemy.Damage; //todo ellenállás számítás
+                                }
                             }
+                            else
+                            {
+                                enemy.AnimateIdleMushroom();
+                            }
+
                         }
                         else if (enemy.Name == "griffin")
                         {
-                            enemy.AnimateIdleGriffin();
-                            if ((enemy.X - player.X) < 105 && enemy.IsLeft)
+                            if (enemy.Health <= 0 && !enemy.IsDeath)
+                            {
+                                enemy.AnimateDeathGriffin();
+                                enemy.IsDeath = true;
+                            }
+                            else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490)
                             {
                                 enemy.AnimateAttacktoLeftGriffin();
+                                if ((enemy.X - player.X) < 100)
+                                {
+                                    player.Health -= enemy.Damage; //todo ellenállás számítás
+                                }
                             }
-                            else if ((player.X - enemy.X) < 165 && enemy.IsRight)
+                            else if ((player.X - enemy.X) < 165 && enemy.IsRight && player.Y == 490)
                             {
                                 enemy.AnimateAttacktoRightGriffin();
+                                if ((player.X - enemy.X) < 160)
+                                {
+                                    player.Health -= enemy.Damage; //todo ellenállás számítás
+                                }
+                            }
+                            else
+                            {
+                                enemy.AnimateIdleGriffin();
                             }
                         }
                     }
                 }
         }
-
 
         public bool PlayerSpotted(Player player)
         {
@@ -530,7 +579,7 @@ namespace Game.Logic.MapObjects
         {
             foreach (Enemy enemy in Enemies)
             {
-                if (player.X < enemy.X && enemy.PlayerSpotted(player))
+                if (player.X < enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDeath && !player.IsDeath && player.Y == 490)
                 {
                     if (enemy.Name == "skeleton" && player.X + 50 < enemy.X)
                     {
@@ -554,7 +603,7 @@ namespace Game.Logic.MapObjects
                         enemy.IsRight = false;
                     }
                 }
-                else if (player.X > enemy.X && enemy.PlayerSpotted(player))
+                else if (player.X > enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDeath && !player.IsDeath && player.Y == 490)
                 {
 
                     if (enemy.Name == "boss" && player.X-265 > enemy.X)

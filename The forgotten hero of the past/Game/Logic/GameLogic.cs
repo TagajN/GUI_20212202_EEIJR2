@@ -28,7 +28,8 @@ namespace Game.Logic
             GameTimer();
             AnimationTimer();
 
-            player.Health = 100;
+            player.Health = 350;
+            player.Damage = 35;
             player.Speed = 10;
             player.JumpStrength = -10;
         }
@@ -62,7 +63,7 @@ namespace Game.Logic
         {
             this.Dispatcher.Invoke(() =>
             {
-                player.AnimatePlayer(Platforms);
+                player.AnimatePlayer(Platforms, Enemies);
                 Gold.PlayCoinAnimation(GoldCoins, player);
                 Enemy.PlayEnemyAnimation(player, Enemies);
             });

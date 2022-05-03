@@ -15,8 +15,9 @@ namespace Game.Logic.MapObjects
     {
         private int count;
         private static int Ground = 490;
-        private int health;
-        private int damage;
+        private int health = 350;
+        private int damage = 25;
+        private bool whichSide = false;
 
         public int Health
         {
@@ -59,9 +60,10 @@ namespace Game.Logic.MapObjects
         {
             switch (e.Key)
             {
-                case Key.A: IsLeft = true; break;
-                case Key.D: IsRight = true; break;
+                case Key.A: IsLeft = true; whichSide = true; break;
+                case Key.D: IsRight = true; whichSide = false; break;
                 case Key.W: Jumping = true; break;
+                case Key.Space: IsAttack = true; break;
             }
         }
 
@@ -72,12 +74,13 @@ namespace Game.Logic.MapObjects
                 case Key.A: IsLeft = false; break;
                 case Key.D: IsRight = false; break;
                 case Key.W: Jumping = false; break;
+                case Key.Space: IsAttack = false; break;
             }
         }
 
         public void Jump(object sender, KeyEventArgs e)
         {
-            if (Y == Ground)
+            if (Y == Ground || CollisionDetection.CollisionDetection.OnPlatform)
             {
                 JumpStrength = -50;
                 Jumping = false;
@@ -86,8 +89,11 @@ namespace Game.Logic.MapObjects
 
         public void JumpDown(object sender, KeyEventArgs e)
         {
-            if (JumpStrength < -12.5)
+            if (JumpStrength < -12.5 && !CollisionDetection.CollisionDetection.OnPlatform)
+            {
                 JumpStrength = -12.5;
+            }
+            
         }
 
         public void InitializeMovement(ObservableCollection<Rect> platform)
@@ -245,19 +251,145 @@ namespace Game.Logic.MapObjects
             count++;
         }
 
-        public void AnimatePlayer(ObservableCollection<Rect> Platforms)
+        public void AnimatePlayer(ObservableCollection<Rect> Platforms, ObservableCollection<Enemy> Enemies)
         {
-            if (IsRight && !Jumping)
+            if (IsRight && !Jumping && !IsDeath)
                 AnimateRuntoRight();
 
-            if (IsLeft && !Jumping)
+            if (IsLeft && !Jumping && !IsDeath)
                 AnimateRuntoLeft();
 
-            if (!IsRight && !IsLeft && !Jumping)
+            if (!IsRight && !IsLeft && !Jumping && !IsAttack && !IsDeath)
                 AnimateIdle();
 
-            if (Health <= 0)
+            if (!Jumping && IsAttack && whichSide && !IsLeft && !IsRight && !IsDeath)
+            {
+                AnimateAttacktoLeft();
+                foreach (Enemy enemy in Enemies)
+                {
+                    if (enemy.Name == "skeleton")
+                        {
+                            if ((enemy.X - X) < 55 && enemy.IsLeft)
+                            {
+                                if ((enemy.X - X) < 50)
+                                {
+                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                }
+                            }
+                            else if ((X - enemy.X) < 60 && enemy.IsRight)
+                            {
+                                if ((X - enemy.X) < 55)
+                                {
+                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                }
+                            }
+                        }
+                        else if (enemy.Name == "mushroom")
+                        {
+                            if ((enemy.X - X) < 105 && enemy.IsLeft)
+                            {
+                                if ((enemy.X - X) < 100)
+                                {
+                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                }
+                            }
+                            else if ((X - enemy.X) < 85 && enemy.IsRight)
+                            {
+                                if ((X - enemy.X) < 80)
+                                {
+                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                }
+                            }
+                        }
+                        else if (enemy.Name == "griffin")
+                        {
+                            if ((enemy.X - X) < 105 && enemy.IsLeft)
+                            {
+                                if ((enemy.X - X) < 100)
+                                {
+                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                }
+                            }
+                            else if ((X - enemy.X) < 165 && enemy.IsRight)
+                            {
+                                if ((X - enemy.X) < 160)
+                                {
+                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                }
+                            }
+                        }
+
+                }
+            }
+
+            if (!Jumping && IsAttack && !whichSide && !IsLeft && !IsRight && !IsDeath)
+            {
+                AnimateAttacktoRight();
+                foreach (Enemy enemy in Enemies)
+                {
+                    if (enemy.X >= X - 500 && enemy.X <= X + 1300)
+                    {
+                        if (enemy.Name == "skeleton")
+                        {
+                            if ((enemy.X - X) < 55 && enemy.IsLeft)
+                            {
+                                if ((enemy.X - X) < 50)
+                                {
+                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                }
+                            }
+                            else if ((X - enemy.X) < 60 && enemy.IsRight)
+                            {
+                                if ((X - enemy.X) < 55)
+                                {
+                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                }
+                            }
+                        }
+                        else if (enemy.Name == "mushroom")
+                        {
+                            if ((enemy.X - X) < 105 && enemy.IsLeft)
+                            {
+                                if ((enemy.X - X) < 100)
+                                {
+                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                }
+                            }
+                            else if ((X - enemy.X) < 85 && enemy.IsRight)
+                            {
+                                if ((X - enemy.X) < 80)
+                                {
+                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                }
+                            }
+                        }
+                        else if (enemy.Name == "griffin")
+                        {
+                            if ((enemy.X - X) < 105 && enemy.IsLeft)
+                            {
+                                if ((enemy.X - X) < 100)
+                                {
+                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                }
+                            }
+                            else if ((X - enemy.X) < 165 && enemy.IsRight)
+                            {
+                                if ((X - enemy.X) < 160)
+                                {
+                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            if (Health <= 0 && !IsDeath)
+            {
                 AnimateDeath();
+                IsDeath = true;
+            }
 
             if (Y < Ground && !CollisionDetection.CollisionDetection.PlatformCollision(this, Platforms))
             {

@@ -22,8 +22,10 @@ namespace Game.Logic.MapObjects
 
         public float Gravity { get; set; }
         public bool Jumping { get; set; }
+        public bool IsAttack { get; set; }
         public bool IsLeft { get; set; }
         public bool IsRight { get; set; }
+        public bool IsDeath { get; set; }
         public double Speed { get; set; }
         public double JumpStrength { get; set; }
         public bool Attacking { get; set; }

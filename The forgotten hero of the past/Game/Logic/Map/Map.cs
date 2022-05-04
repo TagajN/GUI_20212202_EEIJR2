@@ -30,6 +30,14 @@ namespace Game.Logic.Map
             }
             
         }
+
+        public static void Potions(ObservableCollection<Potion> Potions)
+        {
+            for (int i = 1; i <= 15; i++)
+            {
+                Potions.Add(new Potion(i * 100, 580, 40, 40));
+            }
+        }
     
         public static void CreateEnemies(ObservableCollection<Enemy> Enemies)
         {

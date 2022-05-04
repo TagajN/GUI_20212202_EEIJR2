@@ -14,13 +14,6 @@ namespace Game.Logic.MapObjects
         public int count;
         public Gold(double x, double y, int width, int height) : base(x, y, width, height) { }
 
-        private static int goldCounter;
-        public static int GoldCounter
-        {
-            get { return goldCounter; }
-            set { goldCounter = value; }
-        }
-
         protected string[] gold =
         {
             "/Art/Game/Gold/gold1.png","/Art/Game/Gold/gold2.png",

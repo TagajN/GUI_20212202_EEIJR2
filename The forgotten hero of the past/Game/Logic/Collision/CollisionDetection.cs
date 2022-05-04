@@ -76,5 +76,21 @@ namespace Game.Logic.CollisionDetection
             }
         }
 
+        public static void PotionCollision(Player Player, ObservableCollection<Potion> potions)
+        {
+            Rect PlayerHitbox = new Rect(Player.X + Player.Width - 80, Player.Y + 1, 1, Player.Height - 55);
+
+            for (int i = potions.Count - 1; i >= 0; i--)
+            {
+                Rect PotionHitBox = new Rect(potions[i].X, potions[i].Y, potions[i].Width, potions[i].Height);
+
+                if (PlayerHitbox.IntersectsWith(PotionHitBox))
+                {
+                    potions.RemoveAt(i);
+                    Player.Health += 50;
+                }
+            }
+        }
+
     }
 }

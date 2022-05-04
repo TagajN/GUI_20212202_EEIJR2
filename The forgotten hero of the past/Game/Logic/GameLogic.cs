@@ -18,6 +18,8 @@ namespace Game.Logic
         public ObservableCollection<Gold> GoldCoins { get; set; }
         public ObservableCollection<Rect> Platforms { get; set; }
 
+        public ObservableCollection<Potion> Potions { get; set; }
+
         public Player player;
         public ObservableCollection<Enemy> Enemies { get; set; }
 
@@ -48,6 +50,7 @@ namespace Game.Logic
             GoldCoins = new ObservableCollection<Gold>();
             Platforms = new ObservableCollection<Rect>();
             Enemies = new ObservableCollection<Enemy>();
+            Potions = new ObservableCollection<Potion>();
         }
 
         public void AnimationTimer()
@@ -65,7 +68,9 @@ namespace Game.Logic
             {
                 player.AnimatePlayer(Platforms, Enemies);
                 Gold.PlayCoinAnimation(GoldCoins, player);
+                Potion.PlayPotionAnimation(Potions, player);
                 Enemy.PlayEnemyAnimation(player, Enemies);
+                Potion.PlayPotionAnimation(Potions, player);
             });
         }
 
@@ -78,6 +83,7 @@ namespace Game.Logic
                 CollisionDetection.CollisionDetection.PlatformCollision(player, Platforms);
                 Enemy.Follow(player, Enemies);
                 CollisionDetection.CollisionDetection.GoldCollision(player, GoldCoins);
+                CollisionDetection.CollisionDetection.PotionCollision(player, Potions);
             });
         }
 
@@ -88,6 +94,7 @@ namespace Game.Logic
                 Map.Map.Platforms(Platforms);
                 Map.Map.Coins(GoldCoins);
                 Map.Map.CreateEnemies(Enemies);
+                Map.Map.Potions(Potions);
             });
         }
     }

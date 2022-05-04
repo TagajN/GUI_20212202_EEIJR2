@@ -58,13 +58,13 @@ namespace Game.Logic.MapObjects
 
         public void KeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.Key)
-            {
-                case Key.A: IsLeft = true; whichSide = true; break;
-                case Key.D: IsRight = true; whichSide = false; break;
-                case Key.W: Jumping = true; break;
-                case Key.Space: IsAttack = true; break;
-            }
+                switch (e.Key)
+                {
+                    case Key.A: IsLeft = true; whichSide = true; break;
+                    case Key.D: IsRight = true; whichSide = false; break;
+                    case Key.W: Jumping = true; break;
+                    case Key.Space: IsAttack = true; break;
+                }      
         }
 
         public void KeyUp(object sender, KeyEventArgs e)
@@ -98,12 +98,15 @@ namespace Game.Logic.MapObjects
 
         public void InitializeMovement(ObservableCollection<Rect> platform)
         {
-            if (IsRight && X + Width < screenwidth && !CollisionDetection.CollisionDetection.PlayerRightCollision(this, platform))
-                MoveRight();
-            if (IsLeft &&  X > 0 && !CollisionDetection.CollisionDetection.PlayerLeftCollision(this, platform))
-                MoveLeft();
-            if (Jumping &&  Y > 30)
-                Jump();
+            if (!IsDead)
+            {
+                if (IsRight && X + Width < screenwidth && !CollisionDetection.CollisionDetection.PlayerRightCollision(this, platform))
+                    MoveRight();
+                if (IsLeft && X > 0 && !CollisionDetection.CollisionDetection.PlayerLeftCollision(this, platform))
+                    MoveLeft();
+                if (Jumping && Y > 30)
+                    Jump();
+            } 
         }
 
         public void UpdateGravity()
@@ -160,14 +163,7 @@ namespace Game.Logic.MapObjects
        {
             "/Art/Game/Character/Knight/Attack/attack1.png","/Art/Game/Character/Knight/Attack/attack2.png",
             "/Art/Game/Character/Knight/Attack/attack3.png","/Art/Game/Character/Knight/Attack/attack4.png",
-            "/Art/Game/Character/Knight/Attack/attack5.png","/Art/Game/Character/Knight/Attack/attack6.png",
-            "/Art/Game/Character/Knight/Attack/attack7.png","/Art/Game/Character/Knight/Attack/attack8.png",
-            "/Art/Game/Character/Knight/Attack/attack9.png","/Art/Game/Character/Knight/Attack/attack10.png",
-            "/Art/Game/Character/Knight/Attack/attack11.png","/Art/Game/Character/Knight/Attack/attack12.png",
-            "/Art/Game/Character/Knight/Attack/attack13.png","/Art/Game/Character/Knight/Attack/attack14.png",
-            "/Art/Game/Character/Knight/Attack/attack15.png","/Art/Game/Character/Knight/Attack/attack16.png",
-            "/Art/Game/Character/Knight/Attack/attack17.png","/Art/Game/Character/Knight/Attack/attack18.png",
-            "/Art/Game/Character/Knight/Attack/attack19.png","/Art/Game/Character/Knight/Attack/attack20.png",
+            "/Art/Game/Character/Knight/Attack/attack5.png"
         };
 
         protected string[] Stunned =
@@ -215,6 +211,10 @@ namespace Game.Logic.MapObjects
                 count = 0;
             Image = new BitmapImage(new Uri(Attack[count], UriKind.RelativeOrAbsolute));
             count++;
+            if (count == 3)
+            {
+                Attacking = true;
+            }
         }
 
         private void AnimateAttacktoLeft()
@@ -224,6 +224,10 @@ namespace Game.Logic.MapObjects
                 count = 0;
             Image = new BitmapImage(new Uri(Attack[count], UriKind.RelativeOrAbsolute));
             count++;
+            if (count == 3)
+            {
+                Attacking = true;
+            }
         }
 
         private void AnimateIdle()
@@ -236,33 +240,28 @@ namespace Game.Logic.MapObjects
 
         public void AnimateDeath()
         {
-            if (count > Death.Length - 1)
-                count = 0;
-            Image = new BitmapImage(new Uri(Death[count], UriKind.RelativeOrAbsolute));
-            count++;
-
-        }
-
-        public void AnimateStunn()
-        {
-            if (count > Stunned.Length - 1)
-                count = 0;
-            Image = new BitmapImage(new Uri(Stunned[count], UriKind.RelativeOrAbsolute));
-            count++;
+            while(count != 9)
+            {
+                if (count > Death.Length - 1)
+                    count = 0;
+                Image = new BitmapImage(new Uri(Death[count], UriKind.RelativeOrAbsolute));
+                count++;
+            }
         }
 
         public void AnimatePlayer(ObservableCollection<Rect> Platforms, ObservableCollection<Enemy> Enemies)
         {
-            if (IsRight && !Jumping && !IsDeath)
+
+            if (IsRight && !Jumping && !IsDead)
                 AnimateRuntoRight();
 
-            if (IsLeft && !Jumping && !IsDeath)
+            if (IsLeft && !Jumping && !IsDead)
                 AnimateRuntoLeft();
 
-            if (!IsRight && !IsLeft && !Jumping && !IsAttack && !IsDeath)
+            if (!IsRight && !IsLeft && !Jumping && !IsAttack && !IsDead)
                 AnimateIdle();
 
-            if (!Jumping && IsAttack && whichSide && !IsLeft && !IsRight && !IsDeath)
+            if (!Jumping && IsAttack && whichSide && !IsLeft && !IsRight && !IsDead)
             {
                 AnimateAttacktoLeft();
                 foreach (Enemy enemy in Enemies)
@@ -280,7 +279,11 @@ namespace Game.Logic.MapObjects
                             {
                                 if ((X - enemy.X) < 55)
                                 {
-                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                    if (Attacking)
+                                    {
+                                        enemy.Health -= Damage; //todo ellenállás számítás
+                                        Attacking = false;
+                                    }
                                 }
                             }
                         }
@@ -322,7 +325,7 @@ namespace Game.Logic.MapObjects
                 }
             }
 
-            if (!Jumping && IsAttack && !whichSide && !IsLeft && !IsRight && !IsDeath)
+            if (!Jumping && IsAttack && !whichSide && !IsLeft && !IsRight && !IsDead)
             {
                 AnimateAttacktoRight();
                 foreach (Enemy enemy in Enemies)
@@ -335,7 +338,11 @@ namespace Game.Logic.MapObjects
                             {
                                 if ((enemy.X - X) < 50)
                                 {
-                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                    if (Attacking)
+                                    {
+                                        enemy.Health -= Damage; //todo ellenállás számítás
+                                        Attacking = false;
+                                    }
                                 }
                             }
                             else if ((X - enemy.X) < 60 && enemy.IsRight)
@@ -385,10 +392,10 @@ namespace Game.Logic.MapObjects
                 }
             }
 
-            if (Health <= 0 && !IsDeath)
+            if (Health <= 0 && !IsDead)
             {
                 AnimateDeath();
-                IsDeath = true;
+                IsDead = true;
             }
 
             if (Y < Ground && !CollisionDetection.CollisionDetection.PlatformCollision(this, Platforms))

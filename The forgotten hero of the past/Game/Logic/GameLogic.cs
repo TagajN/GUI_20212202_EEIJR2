@@ -28,8 +28,8 @@ namespace Game.Logic
             GameTimer();
             AnimationTimer();
 
-            player.Health = 350;
-            player.Damage = 35;
+            player.Health = 100;
+            player.Damage = 25;
             player.Speed = 10;
             player.JumpStrength = -10;
         }

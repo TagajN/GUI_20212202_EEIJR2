@@ -17,7 +17,6 @@ namespace Game.Logic.MapObjects
         private int health;
         private int damage;
         public string Name;
-
         public int Health
         {
             get { return health; }
@@ -39,107 +38,6 @@ namespace Game.Logic.MapObjects
         }
 
         public Enemy(double x, double y, int width, int height,string name, int health, int damage) : base(x, y, width, height) { this.Name = name; this.Health = health; this.damage = damage; }
-
-        protected string[] RunBoss =
-        {
-             "/Art/Game/Enemy/Boss/Run/run1.png","/Art/Game/Enemy/Boss/Run/run2.png",
-             "/Art/Game/Enemy/Boss/Run/run3.png","/Art/Game/Enemy/Boss/Run/run4.png",
-             "/Art/Game/Enemy/Boss/Run/run5.png","/Art/Game/Enemy/Boss/Run/run6.png",
-             "/Art/Game/Enemy/Boss/Run/run7.png","/Art/Game/Enemy/Boss/Run/run8.png",
-        };
-
-        protected string[] IdleBoss =
-        {
-            "/Art/Game/Enemy/Boss/Idle/idle1.png","/Art/Game/Enemy/Boss/Idle/idle2.png",
-            "/Art/Game/Enemy/Boss/Idle/idle3.png","/Art/Game/Enemy/Boss/Idle/idle4.png",
-            "/Art/Game/Enemy/Boss/Idle/idle5.png","/Art/Game/Enemy/Boss/Idle/idle6.png",
-        };
-
-        protected string[] DeathBoss =
-        {
-            "/Art/Game/Enemy/Boss/Death/death1.png","/Art/Game/Enemy/Boss/Death/death2.png",
-            "/Art/Game/Enemy/Boss/Death/death3.png","/Art/Game/Enemy/Boss/Death/death4.png",
-            "/Art/Game/Enemy/Boss/Death/death5.png","/Art/Game/Enemy/Boss/Death/death6.png",
-            "/Art/Game/Enemy/Boss/Death/death7.png","/Art/Game/Enemy/Boss/Death/death8.png",
-            "/Art/Game/Enemy/Boss/Death/death9.png",
-        };
-
-        protected string[] AttackBoss =
-       {
-            "/Art/Game/Enemy/Boss/Attack/attack1.png","/Art/Game/Enemy/Boss/Attack/attack2.png",
-            "/Art/Game/Enemy/Boss/Attack/attack3.png","/Art/Game/Enemy/Boss/Attack/attack4.png",
-            "/Art/Game/Enemy/Boss/Attack/attack5.png","/Art/Game/Enemy/Boss/Attack/attack6.png",
-            "/Art/Game/Enemy/Boss/Attack/attack7.png","/Art/Game/Enemy/Boss/Attack/attack8.png",
-            "/Art/Game/Enemy/Boss/Attack/attack9.png","/Art/Game/Enemy/Boss/Attack/attack10.png",
-            "/Art/Game/Enemy/Boss/Attack/attack11.png","/Art/Game/Enemy/Boss/Attack/attack12.png",
-            "/Art/Game/Enemy/Boss/Attack/attack13.png","/Art/Game/Enemy/Boss/Attack/attack14.png",
-            "/Art/Game/Enemy/Boss/Attack/attack15.png",
-
-        };
-        protected string[] StunnedBoss =
-        {
-            "/Art/Game/Enemy/Boss/Death/death2.png"
-        };
-        private void AnimateRuntoRightBoss()
-        {
-            Mirrored = new ScaleTransform() { ScaleX = +1 };
-            if (count > RunBoss.Length - 1)
-                count = 0;
-            Image = new BitmapImage(new Uri(RunBoss[count], UriKind.RelativeOrAbsolute));
-            count++;
-        }
-
-        private void AnimateRuntoLeftBoss()
-        {
-            Mirrored = new ScaleTransform() { ScaleX = -1 };
-            if (count > RunBoss.Length - 1)
-                count = 0;
-            Image = new BitmapImage(new Uri(RunBoss[count], UriKind.RelativeOrAbsolute));
-            count++;
-        }
-
-        private void AnimateIdleBoss()
-        {
-            if (count > IdleBoss.Length - 1)
-                count = 0;
-            Image = new BitmapImage(new Uri(IdleBoss[count], UriKind.RelativeOrAbsolute));
-            count++;
-        }
-
-        public void AnimateDeathBoss()
-        {
-            if (count > DeathBoss.Length - 1)
-                count = 0;
-            Image = new BitmapImage(new Uri(DeathBoss[count], UriKind.RelativeOrAbsolute));
-            count++;
-
-        }
-
-        private void AnimateAttacktoRightBoss()
-        {
-            Mirrored = new ScaleTransform() { ScaleX = +1 };
-            if (count > AttackBoss.Length - 1)
-                count = 0;
-            Image = new BitmapImage(new Uri(AttackBoss[count], UriKind.RelativeOrAbsolute));
-            count++;
-        }
-
-        private void AnimateAttacktoLeftBoss()
-        {
-            Mirrored = new ScaleTransform() { ScaleX = -1 };
-            if (count > AttackBoss.Length - 1)
-                count = 0;
-            Image = new BitmapImage(new Uri(AttackBoss[count], UriKind.RelativeOrAbsolute));
-            count++;
-        }
-
-        public void AnimateStunnBoss()
-        {
-            if (count > StunnedBoss.Length - 1)
-                count = 0;
-            Image = new BitmapImage(new Uri(StunnedBoss[count], UriKind.RelativeOrAbsolute));
-            count++;
-        }
 
         protected string[] RunSkeleton =
         {
@@ -170,17 +68,12 @@ namespace Game.Logic.MapObjects
 
         protected string[] AttackSkeleton =
        {
-            "/Art/Game/Enemy/Skeleton/Attack/attack1.png","/Art/Game/Enemy/Skeleton/Attack/attack2.png",
-            "/Art/Game/Enemy/Skeleton/Attack/attack3.png","/Art/Game/Enemy/Skeleton/Attack/attack4.png",
             "/Art/Game/Enemy/Skeleton/Attack/attack5.png","/Art/Game/Enemy/Skeleton/Attack/attack6.png",
             "/Art/Game/Enemy/Skeleton/Attack/attack7.png","/Art/Game/Enemy/Skeleton/Attack/attack8.png",
             "/Art/Game/Enemy/Skeleton/Attack/attack9.png","/Art/Game/Enemy/Skeleton/Attack/attack10.png",
-            "/Art/Game/Enemy/Skeleton/Attack/attack11.png","/Art/Game/Enemy/Skeleton/Attack/attack12.png",
-            "/Art/Game/Enemy/Skeleton/Attack/attack13.png","/Art/Game/Enemy/Skeleton/Attack/attack14.png",
-            "/Art/Game/Enemy/Skeleton/Attack/attack15.png","/Art/Game/Enemy/Skeleton/Attack/attack16.png",
-            "/Art/Game/Enemy/Skeleton/Attack/attack17.png",
-
+            "/Art/Game/Enemy/Skeleton/Attack/attack11.png","/Art/Game/Enemy/Skeleton/Attack/attack12.png"
         };
+
         protected string[] StunnedSkeleton =
         {
             "/Art/Game/Enemy/Skeleton/Death/death2.png"
@@ -213,11 +106,13 @@ namespace Game.Logic.MapObjects
 
         public void AnimateDeathSkeleton()
         {
-            if (count > DeathSkeleton.Length - 1)
-                count = 0;
-            Image = new BitmapImage(new Uri(DeathSkeleton[count], UriKind.RelativeOrAbsolute));
-            count++;
-
+            while(count != 11)
+            {
+                if (count > DeathSkeleton.Length - 1)
+                    count = 0;
+                Image = new BitmapImage(new Uri(DeathSkeleton[count], UriKind.RelativeOrAbsolute));
+                count++;
+            }
         }
 
         private void AnimateAttacktoRightSkeleton()
@@ -227,6 +122,11 @@ namespace Game.Logic.MapObjects
                 count = 0;
             Image = new BitmapImage(new Uri(AttackSkeleton[count], UriKind.RelativeOrAbsolute));
             count++;
+            if (count == 4)
+            {
+                Attacking = true;
+            }
+
         }
 
         private void AnimateAttacktoLeftSkeleton()
@@ -236,14 +136,18 @@ namespace Game.Logic.MapObjects
                 count = 0;
             Image = new BitmapImage(new Uri(AttackSkeleton[count], UriKind.RelativeOrAbsolute));
             count++;
+            if (count == 4)
+            {
+                Attacking = true;
+            }
         }
 
         public void AnimateStunnSkeleton()
         {
-            if (count > StunnedSkeleton.Length - 1)
-                count = 0;
-            Image = new BitmapImage(new Uri(StunnedSkeleton[count], UriKind.RelativeOrAbsolute));
-            count++;
+                if (count > StunnedSkeleton.Length - 1)
+                    count = 0;
+                Image = new BitmapImage(new Uri(StunnedSkeleton[count], UriKind.RelativeOrAbsolute));
+                count++;
         }
 
         protected string[] RunMushroom =
@@ -295,6 +199,7 @@ namespace Game.Logic.MapObjects
             "/Art/Game/Enemy/Mushroom/Attack/attack15.png","/Art/Game/Enemy/Mushroom/Attack/attack16.png",
 
         };
+
         protected string[] StunnedMushroom =
         {
             "/Art/Game/Enemy/Mushroom/Death/death2.png"
@@ -327,11 +232,13 @@ namespace Game.Logic.MapObjects
 
         public void AnimateDeathMushroom()
         {
-            if (count > DeathMushroom.Length - 1)
-                count = 0;
-            Image = new BitmapImage(new Uri(DeathMushroom[count], UriKind.RelativeOrAbsolute));
-            count++;
-
+            while(count != 13)
+            {
+                if (count > DeathMushroom.Length - 1)
+                    count = 0;
+                Image = new BitmapImage(new Uri(DeathMushroom[count], UriKind.RelativeOrAbsolute));
+                count++;
+            }
         }
 
         private void AnimateAttacktoRightMushroom()
@@ -341,6 +248,10 @@ namespace Game.Logic.MapObjects
                 count = 0;
             Image = new BitmapImage(new Uri(AttackMushroom[count], UriKind.RelativeOrAbsolute));
             count++;
+            if (count == 6)
+            {
+                Attacking = true;
+            }
         }
 
         private void AnimateAttacktoLeftMushroom()
@@ -350,6 +261,10 @@ namespace Game.Logic.MapObjects
                 count = 0;
             Image = new BitmapImage(new Uri(AttackMushroom[count], UriKind.RelativeOrAbsolute));
             count++;
+            if (count == 6)
+            {
+                Attacking = true;
+            }
         }
 
         public void AnimateStunnMushroom()
@@ -406,6 +321,7 @@ namespace Game.Logic.MapObjects
             "/Art/Game/Enemy/Griffin/Attack/attack13.png","/Art/Game/Enemy/Griffin/Attack/attack14.png",
 
         };
+
         protected string[] StunnedGriffin =
         {
             "/Art/Game/Enemy/Griffin/Death/death2.png"
@@ -438,12 +354,15 @@ namespace Game.Logic.MapObjects
 
         public void AnimateDeathGriffin()
         {
-            if (count > DeathGriffin.Length - 1)
-                count = 0;
-            Image = new BitmapImage(new Uri(DeathGriffin[count], UriKind.RelativeOrAbsolute));
-            count++;
-
+            while(count != 13)
+            {
+                if (count > DeathGriffin.Length - 1)
+                    count = 0;
+                Image = new BitmapImage(new Uri(DeathGriffin[count], UriKind.RelativeOrAbsolute));
+                count++;
+            }
         }
+
         private void AnimateAttacktoRightGriffin()
         {
             Mirrored = new ScaleTransform() { ScaleX = +1 };
@@ -451,6 +370,10 @@ namespace Game.Logic.MapObjects
                 count = 0;
             Image = new BitmapImage(new Uri(AttackGriffin[count], UriKind.RelativeOrAbsolute));
             count++;
+            if (count == 6)
+            {
+                Attacking = true;
+            }
         }
 
         private void AnimateAttacktoLeftGriffin()
@@ -460,6 +383,10 @@ namespace Game.Logic.MapObjects
                 count = 0;
             Image = new BitmapImage(new Uri(AttackGriffin[count], UriKind.RelativeOrAbsolute));
             count++;
+            if (count == 6)
+            {
+                Attacking = true;
+            }
         }
 
         public void AnimateStunnGriffin()
@@ -474,30 +401,32 @@ namespace Game.Logic.MapObjects
         {
                 foreach (Enemy enemy in Enemies)
                 {
-                    if (enemy.X >= player.X - 500 && enemy.X <= player.X + 1300 && !enemy.IsDeath && !player.IsDeath)
+                    if (enemy.X >= player.X - 500 && enemy.X <= player.X + 1300 && !enemy.IsDead)
                     {
 
                         if (enemy.Name == "skeleton")
                         {
-                            if (enemy.Health <= 0 && !enemy.IsDeath)
+                            if (enemy.Health <= 0 && !enemy.IsDead)
                             {
                                 enemy.AnimateDeathSkeleton();
-                                enemy.IsDeath = true;
+                                enemy.IsDead = true;
                             }
-                            else if ((enemy.X - player.X) < 55 && enemy.IsLeft && player.Y == 490)
+                            else if ((enemy.X - player.X) < 55 && enemy.IsLeft && player.Y == 490 && !player.IsDead)
                             {
                                 enemy.AnimateAttacktoLeftSkeleton();
-                                if((enemy.X - player.X) < 50)
+                                if(enemy.Attacking)
                                 {
-                                    player.Health -= enemy.Damage; //todo ellenállás számítás
+                                    player.Health -= enemy.Damage;
+                                    enemy.Attacking = false;
                                 }
                             }
-                            else if ((player.X - enemy.X) < 60 && enemy.IsRight && player.Y == 490)
+                            else if ((player.X - enemy.X) < 60 && enemy.IsRight && player.Y == 490 && !player.IsDead)
                             {
                                 enemy.AnimateAttacktoRightSkeleton();
-                                if ((player.X - enemy.X) < 55)
+                                if (enemy.Attacking)
                                 {
-                                    player.Health -= enemy.Damage; //todo ellenállás számítás
+                                    player.Health -= enemy.Damage;
+                                    enemy.Attacking = false;
                                 }
                             }
                             else
@@ -507,25 +436,27 @@ namespace Game.Logic.MapObjects
                         }
                         else if (enemy.Name == "mushroom")
                         {
-                            if (enemy.Health <= 0 && !enemy.IsDeath)
+                            if (enemy.Health <= 0 && !enemy.IsDead)
                             {
                                 enemy.AnimateDeathMushroom();
-                                enemy.IsDeath = true;
+                                enemy.IsDead = true;
                             }
                             else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490)
                             {
                                 enemy.AnimateAttacktoLeftMushroom();
-                                if ((enemy.X - player.X) < 100)
+                                if (enemy.Attacking)
                                 {
-                                    player.Health -= enemy.Damage; //todo ellenállás számítás
+                                    player.Health -= enemy.Damage;
+                                    enemy.Attacking = false;
                                 }
                             }
                             else if ((player.X - enemy.X) < 85 && enemy.IsRight && player.Y == 490)
                             {
                                 enemy.AnimateAttacktoRightMushroom();
-                                if ((player.X - enemy.X) < 80)
+                                if (enemy.Attacking)
                                 {
-                                    player.Health -= enemy.Damage; //todo ellenállás számítás
+                                    player.Health -= enemy.Damage;
+                                    enemy.Attacking = false;
                                 }
                             }
                             else
@@ -536,17 +467,18 @@ namespace Game.Logic.MapObjects
                         }
                         else if (enemy.Name == "griffin")
                         {
-                            if (enemy.Health <= 0 && !enemy.IsDeath)
+                            if (enemy.Health <= 0 && !enemy.IsDead)
                             {
                                 enemy.AnimateDeathGriffin();
-                                enemy.IsDeath = true;
+                                enemy.IsDead = true;
                             }
                             else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490)
                             {
                                 enemy.AnimateAttacktoLeftGriffin();
-                                if ((enemy.X - player.X) < 100)
+                                if (enemy.Attacking)
                                 {
-                                    player.Health -= enemy.Damage; //todo ellenállás számítás
+                                    player.Health -= enemy.Damage;
+                                    enemy.Attacking = false;
                                 }
                             }
                             else if ((player.X - enemy.X) < 165 && enemy.IsRight && player.Y == 490)
@@ -579,7 +511,7 @@ namespace Game.Logic.MapObjects
         {
             foreach (Enemy enemy in Enemies)
             {
-                if (player.X < enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDeath && !player.IsDeath && player.Y == 490)
+                if (player.X < enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead && player.Y == 490)
                 {
                     if (enemy.Name == "skeleton" && player.X + 50 < enemy.X)
                     {
@@ -603,17 +535,9 @@ namespace Game.Logic.MapObjects
                         enemy.IsRight = false;
                     }
                 }
-                else if (player.X > enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDeath && !player.IsDeath && player.Y == 490)
+                else if (player.X > enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead && player.Y == 490)
                 {
-
-                    if (enemy.Name == "boss" && player.X-265 > enemy.X)
-                    {
-                        enemy.X += 6;
-                        enemy.AnimateRuntoRightBoss();
-                        enemy.IsLeft = false;
-                        enemy.IsRight = true;
-                    }
-                    else if (enemy.Name == "skeleton" && player.X- 50 > enemy.X)
+                    if (enemy.Name == "skeleton" && player.X- 50 > enemy.X)
                     {
                         enemy.X += 3;
                         enemy.AnimateRuntoRightSkeleton();

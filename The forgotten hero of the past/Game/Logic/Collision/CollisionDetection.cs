@@ -60,5 +60,21 @@ namespace Game.Logic.CollisionDetection
             return false;
         }
 
+        public static void GoldCollision(Player Player, ObservableCollection<Gold> coins)
+        {
+            Rect PlayerHitbox = new Rect(Player.X + Player.Width - 80, Player.Y + 1, 1, Player.Height - 55);
+
+            for (int i = coins.Count - 1; i >= 0; i--)
+            {
+                Rect CoinHitBox = new Rect(coins[i].X, coins[i].Y, coins[i].Width, coins[i].Height);
+
+                if (PlayerHitbox.IntersectsWith(CoinHitBox))
+                {
+                    coins.RemoveAt(i);
+                    Player.Gold++;
+                }
+            }
+        }
+
     }
 }

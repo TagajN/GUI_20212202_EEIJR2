@@ -77,6 +77,7 @@ namespace Game.Logic
                 player.UpdateGravity();
                 CollisionDetection.CollisionDetection.PlatformCollision(player, Platforms);
                 Enemy.Follow(player, Enemies);
+                CollisionDetection.CollisionDetection.GoldCollision(player, GoldCoins);
             });
         }
 

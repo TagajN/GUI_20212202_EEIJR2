@@ -15,29 +15,29 @@ namespace Game.Logic.Map
         {
             for (int i = 1; i <= 20; i++)
             {
-                Platforms.Add(new Rect(300 + i * 1700, 570, 200, 50));
-                Platforms.Add(new Rect(200 + i * 1200, 350, 200, 50));
-                Platforms.Add(new Rect(300 + i * 1500, 300, 200, 50));
-                Platforms.Add(new Rect(400 + i * 2000, 200, 100, 50));
+                //Platforms.Add(new Rect(300 + i * 1700, 570, 200, 50));
+                //Platforms.Add(new Rect(200 + i * 1200, 350, 200, 50));
+                //Platforms.Add(new Rect(300 + i * 1500, 300, 200, 50));
+                //Platforms.Add(new Rect(400 + i * 2000, 200, 100, 50));
             }
         }
 
         public static void Coins(ObservableCollection<Gold> Coins)
         {
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 15; i++)
             {
-                Coins.Add(new Gold(400 + i * 2000, 160, 40, 40));
-                Coins.Add(new Gold(400 + i * 2000, 160, 40, 40));
-                Coins.Add(new Gold(400 + i * 2000, 160, 40, 40));
+                Coins.Add(new Gold(i * 100, 540, 40, 40));
             }
+            
         }
+    
         public static void CreateEnemies(ObservableCollection<Enemy> Enemies)
         {
             for (int i = 1; i <= 20; i++)
             {
-               Enemies.Add(new Enemy(i * 1500, 500, 200, 200,"skeleton",100,25));
-               Enemies.Add(new Enemy(i * 2000, 515, 130, 130, "mushroom",100,12));
-               Enemies.Add(new Enemy(i * 3000, 400, 250, 250, "griffin",230, 30));
+               //Enemies.Add(new Enemy(i * 1500, 500, 200, 200,"skeleton",100,25));
+               //Enemies.Add(new Enemy(i * 2000, 515, 130, 130, "mushroom",100,12));
+               //Enemies.Add(new Enemy(i * 3000, 400, 250, 250, "griffin",230, 30));
             }
         }
     }

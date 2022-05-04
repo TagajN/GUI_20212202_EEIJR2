@@ -17,7 +17,7 @@ namespace Game.Logic.MapObjects
         private static int Ground = 490;
         private int health = 350;
         private int damage = 25;
-        private bool whichSide = false;
+        private bool direction = false;
 
         public int Health
         {
@@ -60,8 +60,8 @@ namespace Game.Logic.MapObjects
         {
                 switch (e.Key)
                 {
-                    case Key.A: IsLeft = true; whichSide = true; break;
-                    case Key.D: IsRight = true; whichSide = false; break;
+                    case Key.A: IsLeft = true; direction = true; break;
+                    case Key.D: IsRight = true; direction = false; break;
                     case Key.W: Jumping = true; break;
                     case Key.Space: IsAttack = true; break;
                 }      
@@ -261,129 +261,84 @@ namespace Game.Logic.MapObjects
             if (!IsRight && !IsLeft && !Jumping && !IsAttack && !IsDead)
                 AnimateIdle();
 
-            if (!Jumping && IsAttack && whichSide && !IsLeft && !IsRight && !IsDead)
+            if (!Jumping && IsAttack && direction && !IsLeft && !IsRight && !IsDead)
             {
                 AnimateAttacktoLeft();
                 foreach (Enemy enemy in Enemies)
                 {
-                    if (enemy.Name == "skeleton")
+                    if (enemy.Name == "skeleton" && !enemy.IsDead)
                         {
-                            if ((enemy.X - X) < 55 && enemy.IsLeft)
+                            if ((X - enemy.X) < 85 && enemy.IsRight)
                             {
-                                if ((enemy.X - X) < 50)
-                                {
-                                    enemy.Health -= Damage; //todo ellenállás számítás
-                                }
-                            }
-                            else if ((X - enemy.X) < 60 && enemy.IsRight)
-                            {
-                                if ((X - enemy.X) < 55)
-                                {
                                     if (Attacking)
                                     {
                                         enemy.Health -= Damage; //todo ellenállás számítás
                                         Attacking = false;
                                     }
-                                }
                             }
-                        }
-                        else if (enemy.Name == "mushroom")
+                    }
+                        else if (enemy.Name == "mushroom" && !enemy.IsDead)
                         {
-                            if ((enemy.X - X) < 105 && enemy.IsLeft)
+                            if ((X - enemy.X) < 140 && enemy.IsRight)
                             {
-                                if ((enemy.X - X) < 100)
+                                if (Attacking)
                                 {
                                     enemy.Health -= Damage; //todo ellenállás számítás
-                                }
-                            }
-                            else if ((X - enemy.X) < 85 && enemy.IsRight)
-                            {
-                                if ((X - enemy.X) < 80)
-                                {
-                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                    Attacking = false;
                                 }
                             }
                         }
-                        else if (enemy.Name == "griffin")
+                        else if (enemy.Name == "griffin" && !enemy.IsDead)
                         {
-                            if ((enemy.X - X) < 105 && enemy.IsLeft)
+                            if ((X - enemy.X) < 175 && enemy.IsRight)
                             {
-                                if ((enemy.X - X) < 100)
+                                if (Attacking)
                                 {
                                     enemy.Health -= Damage; //todo ellenállás számítás
-                                }
-                            }
-                            else if ((X - enemy.X) < 165 && enemy.IsRight)
-                            {
-                                if ((X - enemy.X) < 160)
-                                {
-                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                    Attacking = false;
                                 }
                             }
                         }
-
                 }
             }
 
-            if (!Jumping && IsAttack && !whichSide && !IsLeft && !IsRight && !IsDead)
+            if (!Jumping && IsAttack && !direction && !IsLeft && !IsRight && !IsDead)
             {
                 AnimateAttacktoRight();
                 foreach (Enemy enemy in Enemies)
                 {
                     if (enemy.X >= X - 500 && enemy.X <= X + 1300)
                     {
-                        if (enemy.Name == "skeleton")
+                        if (enemy.Name == "skeleton" && !enemy.IsDead)
                         {
-                            if ((enemy.X - X) < 55 && enemy.IsLeft)
+                            if ((enemy.X - X) <= 85 && enemy.IsLeft)
                             {
-                                if ((enemy.X - X) < 50)
-                                {
-                                    if (Attacking)
-                                    {
-                                        enemy.Health -= Damage; //todo ellenállás számítás
-                                        Attacking = false;
-                                    }
-                                }
+                                 if (Attacking)
+                                 {
+                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                    Attacking = false;
+                                 }
                             }
-                            else if ((X - enemy.X) < 60 && enemy.IsRight)
+                        }
+                        else if (enemy.Name == "mushroom" && !enemy.IsDead)
+                        {
+                            if ((enemy.X - X) <= 140 && enemy.IsLeft)
                             {
-                                if ((X - enemy.X) < 55)
+                                if (Attacking)
                                 {
                                     enemy.Health -= Damage; //todo ellenállás számítás
+                                    Attacking = false;
                                 }
                             }
                         }
-                        else if (enemy.Name == "mushroom")
+                        else if (enemy.Name == "griffin" && !enemy.IsDead) 
                         {
-                            if ((enemy.X - X) < 105 && enemy.IsLeft)
+                            if ((enemy.X - X) <= 120 && enemy.IsLeft)
                             {
-                                if ((enemy.X - X) < 100)
+                                if (Attacking)
                                 {
                                     enemy.Health -= Damage; //todo ellenállás számítás
-                                }
-                            }
-                            else if ((X - enemy.X) < 85 && enemy.IsRight)
-                            {
-                                if ((X - enemy.X) < 80)
-                                {
-                                    enemy.Health -= Damage; //todo ellenállás számítás
-                                }
-                            }
-                        }
-                        else if (enemy.Name == "griffin")
-                        {
-                            if ((enemy.X - X) < 105 && enemy.IsLeft)
-                            {
-                                if ((enemy.X - X) < 100)
-                                {
-                                    enemy.Health -= Damage; //todo ellenállás számítás
-                                }
-                            }
-                            else if ((X - enemy.X) < 165 && enemy.IsRight)
-                            {
-                                if ((X - enemy.X) < 160)
-                                {
-                                    enemy.Health -= Damage; //todo ellenállás számítás
+                                     Attacking = false;
                                 }
                             }
                         }

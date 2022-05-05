@@ -34,7 +34,7 @@ namespace Game.Logic.MapObjects
         {
             foreach (Gold coin in Gold)
             {
-                if (coin.X >= player.X - 300 && coin.X <= player.X + 1300)
+                if (coin.X >= player.X - 520 && coin.X <= player.X + 1300)
                 {
                     coin.CoinAnimation(coin);
                 }

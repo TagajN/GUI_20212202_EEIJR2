@@ -17,6 +17,7 @@ namespace Game.Logic.MapObjects
         private int health;
         private int damage;
         public string Name;
+        public static int SkeletonRoam = 0;
         public int Health
         {
             get { return health; }
@@ -401,7 +402,7 @@ namespace Game.Logic.MapObjects
         {
                 foreach (Enemy enemy in Enemies)
                 {
-                    if (enemy.X >= player.X - 500 && enemy.X <= player.X + 1300 && !enemy.IsDead)
+                    if (enemy.X >= player.X - 700 && enemy.X <= player.X + 1300 && !enemy.IsDead)
                     {
 
                         if (enemy.Name == "skeleton")
@@ -412,7 +413,7 @@ namespace Game.Logic.MapObjects
                                 enemy.IsDead = true;
                                 player.KillCounter += 1;
                             }
-                            else if ((enemy.X - player.X) < 55 && enemy.IsLeft && player.Y == 490 && !player.IsDead)
+                            else if ((enemy.X - player.X) < 55 && (enemy.X - player.X) > 0 && player.Y == 490 && enemy.IsLeft && !player.IsDead)
                             {
                                 enemy.AnimateAttacktoLeftSkeleton();
                                 if(enemy.Attacking)
@@ -421,7 +422,7 @@ namespace Game.Logic.MapObjects
                                     enemy.Attacking = false;
                                 }
                             }
-                            else if ((player.X - enemy.X) < 60 && enemy.IsRight && player.Y == 490 && !player.IsDead)
+                            else if ((player.X - enemy.X) < 60 && (player.X - enemy.X) > 0 && player.Y == 490 && enemy.IsRight && !player.IsDead)
                             {
                                 enemy.AnimateAttacktoRightSkeleton();
                                 if (enemy.Attacking)
@@ -430,10 +431,37 @@ namespace Game.Logic.MapObjects
                                     enemy.Attacking = false;
                                 }
                             }
-                            else
+                        else if (!Follow(player, Enemies))
+                        {
+                            if (SkeletonRoam >= 0 && SkeletonRoam < 100)
                             {
-                                enemy.AnimateIdleSkeleton();
+                                SkeletonRoam++;
+                                enemy.X -= 3;
+                                enemy.AnimateRuntoLeftSkeleton();
+                                enemy.IsLeft = true;
+                                enemy.IsRight = false;
+                                if (SkeletonRoam == 99)
+                                {
+                                    SkeletonRoam = -1;
+                                }
                             }
+                            if (SkeletonRoam < 0 && SkeletonRoam > -100)
+                            {
+                                SkeletonRoam--;
+                                enemy.X += 3;
+                                enemy.AnimateRuntoRightSkeleton();
+                                enemy.IsRight = true;
+                                enemy.IsLeft = false;
+                                if (SkeletonRoam == -99)
+                                {
+                                    SkeletonRoam = 0;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            enemy.AnimateIdleSkeleton();
+                        }
                         }
                         else if (enemy.Name == "mushroom")
                         {
@@ -510,7 +538,7 @@ namespace Game.Logic.MapObjects
             else return followPlayer == false;
         }
 
-        public static void Follow(Player player, ObservableCollection<Enemy> Enemies)
+        public static bool Follow(Player player, ObservableCollection<Enemy> Enemies)
         {
             foreach (Enemy enemy in Enemies)
             {
@@ -537,6 +565,7 @@ namespace Game.Logic.MapObjects
                         enemy.IsLeft = true;
                         enemy.IsRight = false;
                     }
+                    return true;
                 }
                 else if (player.X > enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead )
                 {
@@ -561,8 +590,10 @@ namespace Game.Logic.MapObjects
                         enemy.IsLeft = false;
                         enemy.IsRight = true;
                     }
+                    return true;
                 }
             }
+            return false;
         }
 
     }

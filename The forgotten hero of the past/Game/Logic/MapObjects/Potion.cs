@@ -31,7 +31,7 @@ namespace Game.Logic.MapObjects
         {
             foreach (Potion item in potion)
             {
-                if (item.X >= player.X - 300 && item.X <= player.X + 1300)
+                if (item.X >= player.X - 520 && item.X <= player.X + 1300)
                 {
                     item.PotionAnimation(item);
                 }

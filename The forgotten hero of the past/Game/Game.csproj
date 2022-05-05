@@ -14,6 +14,7 @@
     <None Remove="Art\+_title.png" />
     <None Remove="Art\ChampSelectBackground.webp" />
     <None Remove="Art\DAMAGE_title.png" />
+    <None Remove="Art\Game\Background\killcounter.png" />
     <None Remove="Art\Game\Background\map.png" />
     <None Remove="Art\Game\Character\Knight\Attack\attack1.png" />
     <None Remove="Art\Game\Character\Knight\Attack\attack10.png" />
@@ -396,6 +397,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Art\Game\Background\killcounter.png" />
     <Resource Include="Art\Game\Background\map.png" />
     <Resource Include="Art\Game\Character\Knight\Attack\attack1.png" />
     <Resource Include="Art\Game\Character\Knight\Attack\attack10.png" />

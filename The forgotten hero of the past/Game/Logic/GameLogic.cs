@@ -118,7 +118,7 @@ namespace Game.Logic
 
         public void SaveScore()
         {
-            string output = DateTime.Now.ToString().Replace(" ", string.Empty) + " " + player.Gold.ToString() + " " + player.killcounter.ToString();
+            string output = DateTime.Now.ToString().Replace(" ", string.Empty) + " " + player.Gold.ToString() + " " + player.KillCounter.ToString();
             File.AppendAllText("score.txt", output + Environment.NewLine);
         }
 

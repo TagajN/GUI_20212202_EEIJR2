@@ -49,7 +49,7 @@ namespace Game.Logic.CollisionDetection
 
         public static bool PlayerLeftCollision(Player Player, ObservableCollection<Rect> Platform)
         {
-            Rect PlayerHitbox = new Rect(Player.X + 10, Player.Y + 1, 1, Player.Height - 55);
+            Rect PlayerHitbox = new Rect(Player.X + 20, Player.Y + 1, 1, Player.Height - 55);
 
             for (int i = Platform.Count - 1; i >= 0; i--)
             {
@@ -62,7 +62,7 @@ namespace Game.Logic.CollisionDetection
 
         public static void GoldCollision(Player Player, ObservableCollection<Gold> coins)
         {
-            Rect PlayerHitbox = new Rect(Player.X + Player.Width - 80, Player.Y + 1, 1, Player.Height - 55);
+            Rect PlayerHitbox = new Rect(Player.X + Player.Width - 100, Player.Y + 1, 1, Player.Height - 55);
 
             for (int i = coins.Count - 1; i >= 0; i--)
             {
@@ -78,7 +78,7 @@ namespace Game.Logic.CollisionDetection
 
         public static void PotionCollision(Player Player, ObservableCollection<Potion> potions)
         {
-            Rect PlayerHitbox = new Rect(Player.X + Player.Width - 80, Player.Y + 1, 1, Player.Height - 55);
+            Rect PlayerHitbox = new Rect(Player.X + Player.Width - 100, Player.Y + 1, 1, Player.Height - 55);
 
             for (int i = potions.Count - 1; i >= 0; i--)
             {

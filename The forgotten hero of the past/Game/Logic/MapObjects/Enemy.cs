@@ -410,7 +410,7 @@ namespace Game.Logic.MapObjects
                             {
                                 enemy.AnimateDeathSkeleton();
                                 enemy.IsDead = true;
-                                player.killcounter += 1;
+                                player.KillCounter += 1;
                             }
                             else if ((enemy.X - player.X) < 55 && enemy.IsLeft && player.Y == 490 && !player.IsDead)
                             {
@@ -441,7 +441,7 @@ namespace Game.Logic.MapObjects
                             {
                                 enemy.AnimateDeathMushroom();
                                 enemy.IsDead = true;
-                                player.killcounter += 1;
+                                player.KillCounter += 1;
                             }
                             else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490)
                             {
@@ -473,7 +473,7 @@ namespace Game.Logic.MapObjects
                             {
                                 enemy.AnimateDeathGriffin();
                                 enemy.IsDead = true;
-                                player.killcounter += 1;
+                                player.KillCounter += 1;
                             }
                             else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490)
                             {
@@ -514,7 +514,7 @@ namespace Game.Logic.MapObjects
         {
             foreach (Enemy enemy in Enemies)
             {
-                if (player.X < enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead && player.Y == 490)
+                if (player.X < enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead )
                 {
                     if (enemy.Name == "skeleton" && player.X + 50 < enemy.X)
                     {
@@ -538,7 +538,7 @@ namespace Game.Logic.MapObjects
                         enemy.IsRight = false;
                     }
                 }
-                else if (player.X > enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead && player.Y == 490)
+                else if (player.X > enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead )
                 {
                     if (enemy.Name == "skeleton" && player.X- 50 > enemy.X)
                     {

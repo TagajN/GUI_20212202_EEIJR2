@@ -45,7 +45,6 @@ namespace Game.Windows
             logic.player.KeyDown(sender, e);
             if (logic.Pause(e))
             {
-                logic.SaveScore();
                 pauseMenuWindow = new PauseMenuWindow();
                 pauseMenuWindow.ShowDialog();
                 if (!pauseMenuWindow.IsVisible)
@@ -72,5 +71,10 @@ namespace Game.Windows
             BackgroundAnimation.UpdateLeft(BackgroundImg1, BackgroundImg2, BackgroundImg3, logic.player, BackgroundAnimation.rightOffset);
         }
 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            logic.SaveScore();
+            
+        }
     }
 }

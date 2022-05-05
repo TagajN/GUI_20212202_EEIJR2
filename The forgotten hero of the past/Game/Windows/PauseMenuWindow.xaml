@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Game.Windows"
         xmlns:vms="clr-namespace:Game.ViewModels"
         mc:Ignorable="d"
-        Title="PauseMenuWindow" Height="450" Width="512" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" BorderBrush="Black" BorderThickness="3" x:Name="PauseMenu">
+        Title="PauseMenuWindow" Height="200" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" BorderBrush="Black" BorderThickness="3" x:Name="PauseMenu" KeyDown="PauseMenu_KeyDown">
     <Window.DataContext>
         <vms:PauseMenuViewModel/>
     </Window.DataContext>
@@ -16,32 +16,19 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Image Grid.Column="1" Source="/Art/Menu/PAUSED_title.png" HorizontalAlignment="Center" Margin="15"/>
-        <StackPanel Grid.Row="1" VerticalAlignment="Center">
-            <Button Padding="10" Margin="10" Background="Gray" Width="250" Command="{Binding ResumeCommand, Mode=OneWay}" CommandParameter="{Binding ElementName=PauseMenu}" >
-                <Button.Content>
-                    <Image  Height="22" Width="163" Source="/Art/Menu/RESUME_title.png"  />
-                </Button.Content>
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Button Padding="10" Margin="10" Background="Gray" Width="250" Command="{Binding CloseWindowCommand, Mode=OneWay}" CommandParameter="{Binding ElementName=PauseMenu}">
-                <Button.Content>
-                    <Image  Height="22" Width="163" Source="/Art/Menu/EXIT_button.png" />
-                </Button.Content>
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-        </StackPanel>
-
+        <Image Grid.Row="0" Source="/Art/Menu/PAUSED_title.png" HorizontalAlignment="Center" Margin="15"/>
+        <Button Grid.Row="2" Padding="10" Margin="10" Background="Gray" Width="250" Click="Button_Click">
+            <Button.Content>
+                <Image  Height="22" Width="163" Source="/Art/Menu/EXIT_button.png" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 
 </Window>

@@ -18,11 +18,23 @@ namespace Game.Windows
     /// <summary>
     /// Interaction logic for PauseMenuWindow.xaml
     /// </summary>
-    public partial class PauseMenuWindow : Window, IClosable
+    public partial class PauseMenuWindow : Window
     {
         public PauseMenuWindow()
         {
             InitializeComponent();
+        }
+
+        private void PauseMenu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                this.Close();
+            }
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

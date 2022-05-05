@@ -104,6 +104,8 @@ namespace Game.Logic
             if(e.Key == Key.Escape)
             {
                 Animation.Stop();
+                player.IsLeft = false;
+                player.IsRight = false;
                 return true;
             }
             return false;
@@ -117,7 +119,8 @@ namespace Game.Logic
         public void SaveScore()
         {
             string gold = player.Gold.ToString();
-            File.WriteAllText("score.txt", gold);
+            File.AppendAllText("score.txt",DateTime.Now.ToString() + " " + gold.ToString() + Environment.NewLine);
         }
+
     }
 }

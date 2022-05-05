@@ -18,6 +18,7 @@ namespace Game.Logic.MapObjects
         private int health = 350;
         private int damage = 25;
         private bool direction = false;
+        public int killcounter = 0;
 
         public int Health
         {

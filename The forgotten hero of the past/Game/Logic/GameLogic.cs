@@ -118,8 +118,8 @@ namespace Game.Logic
 
         public void SaveScore()
         {
-            string gold = player.Gold.ToString();
-            File.AppendAllText("score.txt",DateTime.Now.ToString() + " " + gold.ToString() + Environment.NewLine);
+            string output = DateTime.Now.ToString() + " " + player.Gold.ToString() + " " + player.killcounter.ToString();
+            File.AppendAllText("score.txt", output + Environment.NewLine);
         }
 
     }

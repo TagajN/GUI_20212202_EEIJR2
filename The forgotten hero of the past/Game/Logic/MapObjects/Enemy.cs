@@ -410,6 +410,7 @@ namespace Game.Logic.MapObjects
                             {
                                 enemy.AnimateDeathSkeleton();
                                 enemy.IsDead = true;
+                                player.killcounter += 1;
                             }
                             else if ((enemy.X - player.X) < 55 && enemy.IsLeft && player.Y == 490 && !player.IsDead)
                             {
@@ -440,6 +441,7 @@ namespace Game.Logic.MapObjects
                             {
                                 enemy.AnimateDeathMushroom();
                                 enemy.IsDead = true;
+                                player.killcounter += 1;
                             }
                             else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490)
                             {
@@ -471,6 +473,7 @@ namespace Game.Logic.MapObjects
                             {
                                 enemy.AnimateDeathGriffin();
                                 enemy.IsDead = true;
+                                player.killcounter += 1;
                             }
                             else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490)
                             {

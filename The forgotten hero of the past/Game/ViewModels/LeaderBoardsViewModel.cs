@@ -22,19 +22,16 @@ namespace Game.ViewModels
         public LeaderBoardsViewModel(INavigationService HomeNavigationService)
         {
             scores = new ObservableCollection<Score>();
-            scores.Add(new Score()
-            {
-                Points = 10
-            });
-            scores.Add(new Score()
-            {
-                Points = 30
-            });
-            scores.Add(new Score()
-            {
-                Points = 50
-            });
+            LoadScore();
             NavigateHomeCommand = new NavigateCommand(HomeNavigationService);
+        }
+
+        public void LoadScore()
+        {
+            scores.Add(new Score()
+            {
+                Points = int.Parse(File.ReadAllText("score.txt"))
+            });
         }
     }
 }

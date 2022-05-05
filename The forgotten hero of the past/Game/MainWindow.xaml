@@ -13,9 +13,6 @@
             <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
                 <views:HomeView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewmodels:LoadGameViewModel}">
-                <views:LoadGameView/>
-            </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:LeaderBoardsViewModel}">
                 <views:LeaderBoardsView/>
             </DataTemplate>

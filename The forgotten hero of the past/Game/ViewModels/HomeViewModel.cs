@@ -27,9 +27,8 @@ namespace Game.ViewModels
         public HomeViewModel(List<INavigationService> NavigationList)
         {
             NewGameCommand = new RelayCommand<object>((o) => { new GameWindow().Show(); ((Window)o).Close(); }, (o) => true);
-            LoadGameCommand = new NavigateCommand(NavigationList.ToArray()[0]);
-            LeaderBoardsCommand = new NavigateCommand(NavigationList.ToArray()[1]);
-            CreditsCommand = new NavigateCommand(NavigationList.ToArray()[2]);
+            LeaderBoardsCommand = new NavigateCommand(NavigationList.ToArray()[0]);
+            CreditsCommand = new NavigateCommand(NavigationList.ToArray()[1]);
             ExitCommand = new RelayCommand(() => System.Environment.Exit(1));
         }
     }

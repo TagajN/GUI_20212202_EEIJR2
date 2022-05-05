@@ -50,7 +50,6 @@ namespace Game
 
         private HomeViewModel CreateHomeViewModel()
         {
-            navigationlist.Add(new NavigationService<LoadGameViewModel>(navigationStore, CreateLoadGameViewModel));
             navigationlist.Add(new NavigationService<LeaderBoardsViewModel>(navigationStore, CreateLeaderBoardsViewModel));
             navigationlist.Add(new NavigationService<CreditsViewModel>(navigationStore, CreateCreditsViewModel));
             return new HomeViewModel(navigationlist);
@@ -64,11 +63,6 @@ namespace Game
         private LeaderBoardsViewModel CreateLeaderBoardsViewModel()
         {
             return new LeaderBoardsViewModel(CreateHomeNavigationService());
-        }
-
-        private LoadGameViewModel CreateLoadGameViewModel()
-        {
-            return new LoadGameViewModel(CreateHomeNavigationService());
         }
 
     }

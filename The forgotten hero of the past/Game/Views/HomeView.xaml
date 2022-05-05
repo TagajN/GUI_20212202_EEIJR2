@@ -26,16 +26,6 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button Command="{Binding LoadGameCommand}" Padding="10" Margin="10" Background="Gray">
-                <Button.Content>
-                    <Image  Height="22" Width="163" Source="/Art/Menu/LOAD_button.png"  />
-                </Button.Content>
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
             <Button Command="{Binding LeaderBoardsCommand}" Padding="10" Margin="10" Background="Gray">
                 <Button.Content>
                     <Image  Height="22" Width="163" Source="/Art/Menu/HIGHSCORES_button.png" />

@@ -89,7 +89,7 @@ namespace Game.Logic.MapObjects
 
         public void JumpDown(object sender, KeyEventArgs e)
         {
-            if (JumpStrength < -12.5 && !CollisionDetection.CollisionDetection.OnPlatform)
+            if (JumpStrength < -12.5)
             {
                 JumpStrength = -12.5;
             }
@@ -109,6 +109,7 @@ namespace Game.Logic.MapObjects
             } 
         }
 
+
         public void UpdateGravity()
         {
             if (Y > Ground)
@@ -126,7 +127,7 @@ namespace Game.Logic.MapObjects
             if (Gravity > 25f)
                 Gravity = 25f;
 
-            Gravity += 0.2f;
+            Gravity = 10f;
         }
 
         protected string[] JumpUp =
@@ -353,7 +354,7 @@ namespace Game.Logic.MapObjects
                 IsDead = true;
             }
 
-            if (Y < Ground && !CollisionDetection.CollisionDetection.PlatformCollision(this, Platforms))
+            if (Y < Ground && Jumping )
             {
                 AnimateJumpUp();
 

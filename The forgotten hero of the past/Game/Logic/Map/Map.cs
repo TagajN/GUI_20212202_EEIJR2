@@ -13,6 +13,9 @@ namespace Game.Logic.Map
     {
         public static void Platforms(ObservableCollection<Rect> Platforms)
         {
+            //Platforms.Add(new Rect(500, 570, 200, 50));
+                //Platforms.Add(new Rect(800, 530, 200, 50));
+            //Platforms.Add(new Rect(1110, 480, 200, 50));
             for (int i = 1; i <= 20; i++)
             {
                 //Platforms.Add(new Rect(300 + i * 1700, 570, 200, 50));
@@ -26,7 +29,7 @@ namespace Game.Logic.Map
         {
             for (int i = 1; i <= 15; i++)
             {
-                Coins.Add(new Gold(i * 100, 540, 40, 40));
+                //Coins.Add(new Gold(i * 500, 540, 40, 40));
             }
             
         }
@@ -35,7 +38,7 @@ namespace Game.Logic.Map
         {
             for (int i = 1; i <= 15; i++)
             {
-                Potions.Add(new Potion(i * 100, 580, 40, 40));
+                //Potions.Add(new Potion(i * 100, 580, 40, 40));
             }
         }
     
@@ -43,7 +46,7 @@ namespace Game.Logic.Map
         {
             for (int i = 1; i <= 20; i++)
             {
-               //Enemies.Add(new Enemy(i * 1500, 500, 200, 200,"skeleton",100,25));
+               Enemies.Add(new Enemy(i * 1500, 500, 200, 200,"skeleton",100,25));
                //Enemies.Add(new Enemy(i * 2000, 515, 130, 130, "mushroom",100,12));
                //Enemies.Add(new Enemy(i * 3000, 400, 250, 250, "griffin",230, 30));
             }

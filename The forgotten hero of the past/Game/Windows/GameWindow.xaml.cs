@@ -40,7 +40,6 @@ namespace Game.Windows
             Player.DataContext = logic.player;
             grid.DataContext = logic.player;
 
-
         }
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {

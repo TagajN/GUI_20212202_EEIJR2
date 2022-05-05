@@ -87,13 +87,13 @@ namespace Game.Logic.CollisionDetection
                 if (PlayerHitbox.IntersectsWith(PotionHitBox))
                 {
                     potions.RemoveAt(i);
-                    if (Player.Health + 30 <= 100)
+                    if (Player.Health + 30 <= Player.MaxHP)
                     {
                         Player.Health += 30;
                     }
                     else
                     {
-                        Player.Health = 100;
+                        Player.Health = Player.MaxHP;
                     }
                     
                 }

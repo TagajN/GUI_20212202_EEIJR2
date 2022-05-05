@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.Input;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -19,6 +20,13 @@ namespace Game.Logic.MapObjects
         private int damage = 25;
         private bool direction = false;
         private int killcounter = 0;
+        private static int maxHP = 100;
+
+        public static int MaxHP
+        {
+            get { return maxHP; }
+            set { maxHP = value; }
+        }
 
         public int KillCounter
         {
@@ -59,8 +67,8 @@ namespace Game.Logic.MapObjects
 
         private int screenwidth = 30000;
 
-        public Player(double x, double y, int width, int height) : base(x, y, width, height) { }
-        public Player() : this(10, Ground, 200, 200) { }
+        public Player(double x, double y, int width, int height) : base(x, y, width, height) {}
+        public Player() : this(10, Ground, 200, 200) {}
 
         public void KeyDown(object sender, KeyEventArgs e)
         {
@@ -81,6 +89,18 @@ namespace Game.Logic.MapObjects
                 case Key.D: IsRight = false; break;
                 case Key.W: Jumping = false; break;
                 case Key.Space: IsAttack = false; break;
+                case Key.H: HP(); break;
+                case Key.M: MS(); break;
+                case Key.P: DM(); break;
+            }
+        }
+
+        private void DM()
+        {
+            if (Gold >= 5)
+            {
+                Gold -= 5;
+                Damage += 10;
             }
         }
 
@@ -371,5 +391,31 @@ namespace Game.Logic.MapObjects
             }
         }
 
+        public void HP()
+        {
+            if (Gold >= 5)
+            {
+                if (Health < 100)
+                {
+                    Gold -= 5;
+                    Health = 100;
+                }
+                else
+                {
+                    MaxHP += 10;
+                    Gold -= 5;
+                    Health = MaxHP;
+                }
+            }
+        }
+
+        public void MS()
+        {
+            if (Gold >= 5)
+            {
+                Gold -= 5;
+                Speed += 10;
+            }
+        }
     }
 }

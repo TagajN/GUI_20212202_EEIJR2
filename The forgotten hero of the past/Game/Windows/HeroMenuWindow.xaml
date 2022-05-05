@@ -11,7 +11,7 @@
         <vms:HeroMenuViewModel/>
     </Window.DataContext>
     <Window.Background>
-        <ImageBrush ImageSource="/Art/StatBackground.jpg"/>
+        <ImageBrush ImageSource="/Art/Menu/StatBackground.jpg"/>
     </Window.Background>
 
     <Grid>
@@ -26,11 +26,11 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <Image Grid.Column="1" Source="/Art/HEROUPGRADE_title.png" HorizontalAlignment="Center" Height="40"/>
+        <Image Grid.Column="1" Source="/Art//Menu/HEROUPGRADE_title.png" HorizontalAlignment="Center" Height="40"/>
         <StackPanel  Grid.Row="1" >
-            <Image Source="/Art/HEALTH_title.png"  Height="40" Width="70"/>
-            <Image Source="/Art/SPEED_title.png"  Height="40" Width="70"/>
-            <Image Source="/Art/DAMAGE_title.png"  Height="40" Width="70"/>
+            <Image Source="/Art/Menu/HEALTH_title.png"  Height="40" Width="70"/>
+            <Image Source="/Art/Menu/SPEED_title.png"  Height="40" Width="70"/>
+            <Image Source="/Art/Menu/DAMAGE_title.png"  Height="40" Width="70"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="1" >
@@ -42,7 +42,7 @@
         <StackPanel  Grid.Row="1" Grid.Column="2" >
             <Button Grid.Row="2" Grid.Column="1" Height="30" Width="40" Margin="5"  Background="Gray">
                 <Button.Content>
-                    <Image Source="/Art/+_title.png"/>
+                    <Image Source="/Art/Menu/+_title.png"/>
                 </Button.Content>
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -52,7 +52,7 @@
             </Button>
             <Button Grid.Row="2" Grid.Column="1"  Height="30" Width="40" Margin="5"  Background="Gray">
                 <Button.Content>
-                    <Image Source="/Art/+_title.png"/>
+                    <Image Source="/Art/Menu/+_title.png"/>
                 </Button.Content>
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -64,7 +64,7 @@
 
             <Button Grid.Row="2" Grid.Column="1"  Height="30" Width="40" Margin="5"  Background="Gray">
                 <Button.Content>
-                    <Image Source="/Art/+_title.png"/>
+                    <Image Source="/Art/Menu/+_title.png"/>
                 </Button.Content>
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -76,7 +76,7 @@
 
         <Button Grid.Row="2" Grid.Column="1" Command="{Binding CloseWindowCommand, Mode=OneWay}" CommandParameter="{Binding ElementName=HeroMenu}" Padding="10" Margin="10" Width="200" Background="Gray">
             <Button.Content>
-                <Image  Height="22" Width="163" Source="/Art/BACK_button.png"/>
+                <Image  Height="22" Width="163" Source="/Art/Menu/BACK_button.png"/>
             </Button.Content>
             <Button.Resources>
                 <Style TargetType="Border">

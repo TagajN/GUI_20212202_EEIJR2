@@ -1,5 +1,6 @@
 ﻿using Game.Logic.MapObjects;
 using Game.Windows;
+using Microsoft.Toolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,7 +18,6 @@ namespace Game.Logic
     {
         public DispatcherTimer Timer;
         public DispatcherTimer Animation;
-
         public ObservableCollection<Gold> GoldCoins { get; set; }
         public ObservableCollection<Rect> Platforms { get; set; }
 
@@ -121,6 +121,5 @@ namespace Game.Logic
             string output = DateTime.Now.ToString().Replace(" ", string.Empty) + " " + player.Gold.ToString() + " " + player.KillCounter.ToString();
             File.AppendAllText("score.txt", output + Environment.NewLine);
         }
-
     }
 }

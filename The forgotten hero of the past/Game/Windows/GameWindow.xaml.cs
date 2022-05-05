@@ -38,6 +38,7 @@ namespace Game.Windows
             InitializeComponent();
 
             Player.DataContext = logic.player;
+            bar.DataContext = logic.player;
 
         }
         private void Window_KeyDown(object sender, KeyEventArgs e)
@@ -69,6 +70,8 @@ namespace Game.Windows
             BackgroundAnimation.UpdateRight(BackgroundImg1, BackgroundImg2, BackgroundImg3, logic.player, BackgroundAnimation.leftOffset);
 
             BackgroundAnimation.UpdateLeft(BackgroundImg1, BackgroundImg2, BackgroundImg3, logic.player, BackgroundAnimation.rightOffset);
+
+            BackgroundAnimation.MoveHPBar(bar, logic.player, 500);
         }
 
         private void Window_Closed(object sender, EventArgs e)

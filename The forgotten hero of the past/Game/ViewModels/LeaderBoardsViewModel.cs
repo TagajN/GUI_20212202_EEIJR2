@@ -28,10 +28,18 @@ namespace Game.ViewModels
 
         public void LoadScore()
         {
-            scores.Add(new Score()
+            foreach(string line in System.IO.File.ReadLines("score.txt"))
             {
-                Points = int.Parse(File.ReadAllText("score.txt"))
-            });
+                string item = line;
+                string[] values = item.Split(" ");
+                scores.Add(new Score()
+                {
+                    Date = values[0],
+                    Points = int.Parse(values[1]),
+                    Kill = int.Parse(values[2]),
+                });
+            }
+
         }
     }
 }

@@ -19,7 +19,16 @@
         <ListBox Grid.Row="1" Background="Transparent" BorderBrush="Transparent" ItemsSource="{Binding scores}" HorizontalContentAlignment="Stretch">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Foreground="White" Content="{Binding Points}"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="2" Foreground="White" Content="{Binding Date}" ContentStringFormat="Date: {0}"/>
+                        <Label Grid.Column="0" Foreground="White" Content="{Binding Points}" ContentStringFormat="Golds: {0}"/>
+                        <Label Grid.Column="1" Foreground="White" Content="{Binding Kill}" ContentStringFormat="Kills: {0}"/>
+                    </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

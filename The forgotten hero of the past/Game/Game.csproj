@@ -397,7 +397,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Art\Game\Background\killcounter.png" />
     <Resource Include="Art\Game\Background\map.png" />
     <Resource Include="Art\Game\Character\Knight\Attack\attack1.png" />
     <Resource Include="Art\Game\Character\Knight\Attack\attack10.png" />

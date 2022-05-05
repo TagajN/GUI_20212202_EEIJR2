@@ -4,9 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game.Windows"
+        xmlns:helper="clr-namespace:Game.Logic.Helper"
         mc:Ignorable="d"
         Title="GameWindow" Height="690" Width="1438"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize" KeyDown="Window_KeyDown" WindowStyle="None" KeyUp="Window_KeyUp" Closed="Window_Closed">
 
+    <Window.Resources>
+        <helper:NumberToColorConverter x:Key="colorconverter"/>
+    </Window.Resources>
+    
     <ScrollViewer x:Name="SViewer" HorizontalScrollBarVisibility="Hidden" Height="719" Width="1500">
         <Canvas x:Name="cvas" Width="30000" Height="750">
 
@@ -101,7 +106,7 @@
             </ItemsControl>
             
             <Grid x:Name="grid" Canvas.Left="-205" Canvas.Top="25">
-                <ProgressBar Name="bar" Width="200" Height="25" Minimum="1" Maximum="100" Value="{Binding Health, Mode=OneWay}" Canvas.Left="-233" Canvas.Top="25"/>
+                <ProgressBar Name="bar" Width="200" Height="25" Minimum="1" Maximum="100" Value="{Binding Health, Mode=OneWay}" Foreground="{Binding Health, Mode=OneWay, Converter={StaticResource colorconverter}}" Canvas.Left="-233" Canvas.Top="25"/>
                 <TextBlock FontSize="15" Text="{Binding Health}"  
            HorizontalAlignment="Center" 
            VerticalAlignment="Center" />

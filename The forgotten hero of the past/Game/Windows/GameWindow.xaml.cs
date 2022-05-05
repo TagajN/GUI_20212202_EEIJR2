@@ -22,10 +22,12 @@ namespace Game.Windows
     /// </summary>
     public partial class GameWindow : Window
     {
-        private GameLogic logic = new GameLogic(); 
+        private GameLogic logic = new GameLogic();
+        PauseMenuWindow pauseMenuWindow;
 
         public GameWindow()
         {
+            
             DataContext = logic;
             logic.Start();
 
@@ -41,11 +43,21 @@ namespace Game.Windows
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             logic.player.KeyDown(sender, e);
+            if (logic.Pause(e))
+            {
+                pauseMenuWindow = new PauseMenuWindow();
+                pauseMenuWindow.ShowDialog();
+                if (!pauseMenuWindow.IsVisible)
+                {
+                    logic.Resume();
+                }
+            }
         }
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
             logic.player.KeyUp(sender, e);
+
         }
 
         private void OnMoved(object sender, double x)
@@ -58,5 +70,6 @@ namespace Game.Windows
 
             BackgroundAnimation.UpdateLeft(BackgroundImg1, BackgroundImg2, BackgroundImg3, logic.player, BackgroundAnimation.rightOffset);
         }
+
     }
 }

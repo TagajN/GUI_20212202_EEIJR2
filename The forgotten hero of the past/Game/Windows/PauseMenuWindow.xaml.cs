@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace Game.Windows
     /// <summary>
     /// Interaction logic for PauseMenuWindow.xaml
     /// </summary>
-    public partial class PauseMenuWindow : Window
+    public partial class PauseMenuWindow : Window, IClosable
     {
         public PauseMenuWindow()
         {

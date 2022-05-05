@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game.Windows"
         mc:Ignorable="d"
-        Title="GameWindow" Height="719" Width="1438"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
+        Title="GameWindow" Height="719" Width="1438"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp" >
 
     <ScrollViewer x:Name="SViewer" HorizontalScrollBarVisibility="Hidden" Height="719" Width="1500">
         <Canvas x:Name="cvas" Width="30000" Height="750">

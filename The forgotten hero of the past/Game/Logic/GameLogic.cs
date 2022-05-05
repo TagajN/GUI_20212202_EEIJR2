@@ -1,4 +1,5 @@
 ﻿using Game.Logic.MapObjects;
+using Game.Windows;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Threading;
 
 namespace Game.Logic
@@ -22,7 +24,6 @@ namespace Game.Logic
 
         public Player player;
         public ObservableCollection<Enemy> Enemies { get; set; }
-
         public void Start()
         {
             InitMapObjects();
@@ -30,7 +31,7 @@ namespace Game.Logic
             GameTimer();
             AnimationTimer();
 
-            player.Health = 1000;
+            player.Health = 100;
             player.Damage = 200;
             player.Speed = 10;
             player.JumpStrength = -10;
@@ -71,6 +72,7 @@ namespace Game.Logic
                 Potion.PlayPotionAnimation(Potions, player);
                 Enemy.PlayEnemyAnimation(player, Enemies);
                 Potion.PlayPotionAnimation(Potions, player);
+                Enemy.Follow(player, Enemies);
             });
         }
 
@@ -81,7 +83,6 @@ namespace Game.Logic
                 player.InitializeMovement(Platforms);
                 player.UpdateGravity();
                 CollisionDetection.CollisionDetection.PlatformCollision(player, Platforms);
-                Enemy.Follow(player, Enemies);
                 CollisionDetection.CollisionDetection.GoldCollision(player, GoldCoins);
                 CollisionDetection.CollisionDetection.PotionCollision(player, Potions);
             });
@@ -96,6 +97,20 @@ namespace Game.Logic
                 Map.Map.CreateEnemies(Enemies);
                 Map.Map.Potions(Potions);
             });
+        }
+        public bool Pause(KeyEventArgs e)
+        {
+            if(e.Key == Key.Escape)
+            {
+                Animation.Stop();
+                return true;
+            }
+            return false;
+        }
+
+        public void Resume()
+        {
+            Animation.Start();
         }
     }
 }

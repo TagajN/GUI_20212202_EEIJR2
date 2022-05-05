@@ -38,7 +38,7 @@ namespace Game.Logic.Map
         {
             for (int i = 1; i <= 15; i++)
             {
-               Potions.Add(new Potion(i * 100, 580, 40, 40));
+               //Potions.Add(new Potion(i * 100, 580, 40, 40));
             }
         }
     

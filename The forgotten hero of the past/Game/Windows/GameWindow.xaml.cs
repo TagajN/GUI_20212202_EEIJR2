@@ -45,6 +45,7 @@ namespace Game.Windows
             logic.player.KeyDown(sender, e);
             if (logic.Pause(e))
             {
+                logic.SaveScore();
                 pauseMenuWindow = new PauseMenuWindow();
                 pauseMenuWindow.ShowDialog();
                 if (!pauseMenuWindow.IsVisible)

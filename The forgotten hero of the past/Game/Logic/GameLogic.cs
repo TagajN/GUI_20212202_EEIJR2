@@ -3,6 +3,7 @@ using Game.Windows;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -111,6 +112,12 @@ namespace Game.Logic
         public void Resume()
         {
             Animation.Start();
+        }
+
+        public void SaveScore()
+        {
+            string gold = player.Gold.ToString();
+            File.WriteAllText("score.txt", gold);
         }
     }
 }

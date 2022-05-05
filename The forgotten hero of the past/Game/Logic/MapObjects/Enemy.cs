@@ -443,7 +443,7 @@ namespace Game.Logic.MapObjects
                                 enemy.IsDead = true;
                                 player.KillCounter += 1;
                             }
-                            else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490)
+                            else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490 && !player.IsDead)
                             {
                                 enemy.AnimateAttacktoLeftMushroom();
                                 if (enemy.Attacking)
@@ -452,7 +452,7 @@ namespace Game.Logic.MapObjects
                                     enemy.Attacking = false;
                                 }
                             }
-                            else if ((player.X - enemy.X) < 85 && enemy.IsRight && player.Y == 490)
+                            else if ((player.X - enemy.X) < 85 && enemy.IsRight && player.Y == 490 && !player.IsDead)
                             {
                                 enemy.AnimateAttacktoRightMushroom();
                                 if (enemy.Attacking)
@@ -475,7 +475,7 @@ namespace Game.Logic.MapObjects
                                 enemy.IsDead = true;
                                 player.KillCounter += 1;
                             }
-                            else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490)
+                            else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490 && !player.IsDead )
                             {
                                 enemy.AnimateAttacktoLeftGriffin();
                                 if (enemy.Attacking)
@@ -484,7 +484,7 @@ namespace Game.Logic.MapObjects
                                     enemy.Attacking = false;
                                 }
                             }
-                            else if ((player.X - enemy.X) < 165 && enemy.IsRight && player.Y == 490)
+                            else if ((player.X - enemy.X) < 165 && enemy.IsRight && player.Y == 490 && !player.IsDead)
                             {
                                 enemy.AnimateAttacktoRightGriffin();
                                 if ((player.X - enemy.X) < 160)

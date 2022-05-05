@@ -37,6 +37,7 @@ namespace Game.ViewModels
                     Date = values[0],
                     Points = int.Parse(values[1]),
                     Kill = int.Parse(values[2]),
+                    Progress = int.Parse(values[3]),
                 });
             }
 

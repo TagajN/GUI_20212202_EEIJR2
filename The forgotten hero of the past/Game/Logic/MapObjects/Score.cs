@@ -12,6 +12,7 @@ namespace Game.Logic.MapObjects
         private int points;
         private string date;
         private int kill;
+        private int progress;
 
         public int Points
         {
@@ -29,6 +30,12 @@ namespace Game.Logic.MapObjects
         {
             get { return date; }
             set { date = value; }
+        }
+
+        public int Progress
+        {
+            get { return progress; }
+            set { progress = value; }
         }
     }
 }

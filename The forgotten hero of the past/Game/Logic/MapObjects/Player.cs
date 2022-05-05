@@ -108,7 +108,7 @@ namespace Game.Logic.MapObjects
         {
             if (Y == Ground || CollisionDetection.CollisionDetection.OnPlatform)
             {
-                JumpStrength = -50;
+                JumpStrength = -60;
                 Jumping = false;
             }
         }
@@ -398,7 +398,7 @@ namespace Game.Logic.MapObjects
                 if (Health < 100)
                 {
                     Gold -= 5;
-                    Health = 100;
+                    Health = MaxHP;
                 }
                 else
                 {

@@ -16,10 +16,10 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Image Source="/Art/Menu/HIGHSCORES_button.png" HorizontalAlignment="Center" Height="40"/>
-        <ListBox Grid.Row="1" Background="Transparent" BorderBrush="Transparent">
+        <ListBox Grid.Row="1" Background="Transparent" BorderBrush="Transparent" ItemsSource="{Binding scores}" HorizontalContentAlignment="Stretch">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="Player Data"/>
+                    <Label Foreground="White" Content="{Binding Points}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

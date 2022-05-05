@@ -9,7 +9,7 @@
 
     <ScrollViewer x:Name="SViewer" HorizontalScrollBarVisibility="Hidden" Height="719" Width="1500">
         <Canvas x:Name="cvas" Width="30000" Height="750">
-            
+
             <Image x:Name="BackgroundImg2" Source="/Art/Game/Background/map.png" Height="800" Width="1500" Canvas.Top="-100" Canvas.Left="0"/>
             <Image x:Name="BackgroundImg3" Source="/Art/Game/Background/map.png" Height="800" Width="1500" Canvas.Left="1500" Canvas.Top="-100"/>
             <Image x:Name="BackgroundImg1" Source="/Art/Game/Background/map.png" Height="800" Width="1500" Canvas.Left="-1500" Canvas.Top="-100"/>
@@ -99,10 +99,12 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-
-            <ProgressBar Name="bar" Margin="10" Width="200" Height="25" Minimum="1" Maximum="100" Value="{Binding Health, Mode=OneWay}">
-                
-            </ProgressBar>
+            <Grid x:Name="grid" Canvas.Left="-205" Canvas.Top="25">
+                <ProgressBar Name="bar" Width="200" Height="25" Minimum="1" Maximum="100" Value="{Binding Health, Mode=OneWay}" Canvas.Left="-233" Canvas.Top="25"/>
+                <TextBlock FontSize="15" Text="{Binding Health}"  
+           HorizontalAlignment="Center" 
+           VerticalAlignment="Center" />
+            </Grid>
 
         </Canvas>
     </ScrollViewer>

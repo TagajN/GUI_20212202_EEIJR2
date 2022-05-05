@@ -71,13 +71,13 @@ namespace Game.Logic.Background
             }
         }
 
-        public static void MoveHPBar(ProgressBar bar, Player player, double offset)
+        public static void MoveHPBar(Grid bar, Player player, double offset)
         {
             if (player.IsRight || player.IsLeft)
             {
                 if (player.X >= 500 || player.X <= 500)
                 {
-                    Canvas.SetLeft(bar, player.X - 500);
+                    Canvas.SetLeft(bar, player.X - 470);
                 }
             }
 

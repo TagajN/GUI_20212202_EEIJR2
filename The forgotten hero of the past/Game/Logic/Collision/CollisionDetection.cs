@@ -91,6 +91,10 @@ namespace Game.Logic.CollisionDetection
                     {
                         Player.Health += 30;
                     }
+                    else
+                    {
+                        Player.Health = 100;
+                    }
                     
                 }
             }

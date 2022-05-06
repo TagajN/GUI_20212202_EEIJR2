@@ -15,8 +15,10 @@ namespace Game.Logic.Map
         {
             Platforms.Add(new Rect(500, 570, 200, 50));
             Platforms.Add(new Rect(1000, 570, 200, 50));
-            //Platforms.Add(new Rect(800, 530, 200, 50));
-            //Platforms.Add(new Rect(1110, 480, 200, 50));
+            Platforms.Add(new Rect(800, 500, 200, 50));
+            Platforms.Add(new Rect(1110, 400, 200, 50));
+            Platforms.Add(new Rect(1300, 300, 200, 50));
+            Platforms.Add(new Rect(1500, 200, 200, 50));
             for (int i = 1; i <= 20; i++)
             {
                 //Platforms.Add(new Rect(300 + i * 1700, 570, 200, 50));
@@ -47,9 +49,9 @@ namespace Game.Logic.Map
         {
             for (int i = 1; i <= 20; i++)
             {
-               Enemies.Add(new Enemy(i * 800, 500, 200, 200,"skeleton",100,5));
-               Enemies.Add(new Enemy(i * 800, 515, 130, 130, "mushroom",100,12));
-               Enemies.Add(new Enemy(i * 800, 400, 250, 250, "griffin",230, 30));
+               //Enemies.Add(new Enemy(i * 800, 500, 200, 200,"skeleton",100,5));
+               //Enemies.Add(new Enemy(i * 800, 515, 130, 130, "mushroom",100,12));
+               //Enemies.Add(new Enemy(i * 800, 400, 250, 250, "griffin",230, 30));
             }
         }
     }

@@ -130,7 +130,7 @@ namespace Game.Logic.MapObjects
                     MoveRight();
                 if (IsLeft && X > 0 && !CollisionDetection.CollisionDetection.LeftCollision(this, platform))
                     MoveLeft();
-                if (Jumping && Y > 30)
+                if (Jumping)
                     Jump();
             } 
         }

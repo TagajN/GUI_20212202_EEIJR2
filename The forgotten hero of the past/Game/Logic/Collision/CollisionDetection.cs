@@ -81,9 +81,9 @@ namespace Game.Logic.CollisionDetection
 
             for (int i = chests.Count - 1; i >= 0; i--)
             {
-                Rect CoinHitBox = new Rect(chests[i].X, chests[i].Y, chests[i].Width, chests[i].Height);
+                Rect ChestHitBox = new Rect(chests[i].X, chests[i].Y, chests[i].Width, chests[i].Height);
 
-                if (PlayerHitbox.IntersectsWith(CoinHitBox))
+                if (PlayerHitbox.IntersectsWith(ChestHitBox))
                 {
                     //play animation todo
                     Player.Gold += 25;

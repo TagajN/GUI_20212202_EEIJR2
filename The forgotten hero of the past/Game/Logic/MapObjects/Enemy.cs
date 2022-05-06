@@ -18,6 +18,8 @@ namespace Game.Logic.MapObjects
         private int damage;
         public string Name;
         public static int SkeletonRoam = 0;
+        public static int MushroomRoam = 0;
+        public static int GriffRoam = 0;
         public int Health
         {
             get { return health; }
@@ -384,7 +386,7 @@ namespace Game.Logic.MapObjects
                 count = 0;
             Image = new BitmapImage(new Uri(AttackGriffin[count], UriKind.RelativeOrAbsolute));
             count++;
-            if (count == 6)
+            if (count == 7)
             {
                 Attacking = true;
             }
@@ -471,7 +473,7 @@ namespace Game.Logic.MapObjects
                                 enemy.IsDead = true;
                                 player.KillCounter += 1;
                             }
-                            else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490 && !player.IsDead)
+                            else if ((enemy.X - player.X) < 105 && (enemy.X - player.X) > 0 &&  enemy.IsLeft && player.Y == 490 && !player.IsDead)
                             {
                                 enemy.AnimateAttacktoLeftMushroom();
                                 if (enemy.Attacking)
@@ -480,7 +482,7 @@ namespace Game.Logic.MapObjects
                                     enemy.Attacking = false;
                                 }
                             }
-                            else if ((player.X - enemy.X) < 85 && enemy.IsRight && player.Y == 490 && !player.IsDead)
+                            else if ((player.X - enemy.X) < 85 && (player.X - enemy.X) > 0 && enemy.IsRight && player.Y == 490 && !player.IsDead)
                             {
                                 enemy.AnimateAttacktoRightMushroom();
                                 if (enemy.Attacking)
@@ -489,7 +491,34 @@ namespace Game.Logic.MapObjects
                                     enemy.Attacking = false;
                                 }
                             }
-                            else
+                        else if (!Follow(player, Enemies))
+                        {
+                            if (MushroomRoam >= 0 && MushroomRoam < 100)
+                            {
+                                MushroomRoam++;
+                                enemy.X -= 3;
+                                enemy.AnimateRuntoLeftMushroom();
+                                enemy.IsLeft = true;
+                                enemy.IsRight = false;
+                                if (MushroomRoam == 99)
+                                {
+                                    MushroomRoam = -1;
+                                }
+                            }
+                            if (MushroomRoam < 0 && MushroomRoam > -100)
+                            {
+                                MushroomRoam--;
+                                enemy.X += 3;
+                                enemy.AnimateRuntoRightMushroom();
+                                enemy.IsRight = true;
+                                enemy.IsLeft = false;
+                                if (MushroomRoam == -99)
+                                {
+                                    MushroomRoam = 0;
+                                }
+                            }
+                        }
+                        else
                             {
                                 enemy.AnimateIdleMushroom();
                             }
@@ -503,7 +532,7 @@ namespace Game.Logic.MapObjects
                                 enemy.IsDead = true;
                                 player.KillCounter += 1;
                             }
-                            else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490 && !player.IsDead )
+                            else if ((enemy.X - player.X) < 105 && (enemy.X - player.X) > 0 && enemy.IsLeft && player.Y == 490 && !player.IsDead )
                             {
                                 enemy.AnimateAttacktoLeftGriffin();
                                 if (enemy.Attacking)
@@ -512,15 +541,43 @@ namespace Game.Logic.MapObjects
                                     enemy.Attacking = false;
                                 }
                             }
-                            else if ((player.X - enemy.X) < 165 && enemy.IsRight && player.Y == 490 && !player.IsDead)
+                            else if ((player.X - enemy.X) < 165 && (player.X - enemy.X) > 0 && enemy.IsRight && player.Y == 490 && !player.IsDead)
                             {
                                 enemy.AnimateAttacktoRightGriffin();
-                                if ((player.X - enemy.X) < 160)
+                                if (enemy.Attacking)
                                 {
-                                    player.Health -= enemy.Damage; //todo ellenállás számítás
+                                    player.Health -= enemy.Damage;
+                                    enemy.Attacking = false;
                                 }
                             }
-                            else
+                        else if (!Follow(player, Enemies))
+                        {
+                            if (GriffRoam >= 0 && GriffRoam < 100)
+                            {
+                                GriffRoam++;
+                                enemy.X -= 3;
+                                enemy.AnimateRuntoLeftGriffin();
+                                enemy.IsLeft = true;
+                                enemy.IsRight = false;
+                                if (GriffRoam == 99)
+                                {
+                                    GriffRoam = -1;
+                                }
+                            }
+                            if (GriffRoam < 0 && GriffRoam > -100)
+                            {
+                                GriffRoam--;
+                                enemy.X += 3;
+                                enemy.AnimateRuntoRightGriffin();
+                                enemy.IsRight = true;
+                                enemy.IsLeft = false;
+                                if (GriffRoam == -99)
+                                {
+                                    GriffRoam = 0;
+                                }
+                            }
+                        }
+                        else
                             {
                                 enemy.AnimateIdleGriffin();
                             }

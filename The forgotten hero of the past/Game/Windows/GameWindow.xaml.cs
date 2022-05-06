@@ -65,7 +65,7 @@ namespace Game.Windows
         {
             SViewer.ScrollToHorizontalOffset(x - BackgroundAnimation.leftOffset);
 
-            BackgroundAnimation.Move(BackgroundImg1, BackgroundImg2, BackgroundImg3, logic.player, 2);
+            BackgroundAnimation.Move(BackgroundImg1, BackgroundImg2, BackgroundImg3, logic.player, 1);
 
             BackgroundAnimation.UpdateRight(BackgroundImg1, BackgroundImg2, BackgroundImg3, logic.player, BackgroundAnimation.leftOffset);
 

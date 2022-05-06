@@ -20,6 +20,7 @@ namespace Game.Logic.MapObjects
         public static int SkeletonRoam = 0;
         public static int MushroomRoam = 0;
         public static int GriffRoam = 0;
+        public bool IsFollowing = false;
         public int Health
         {
             get { return health; }
@@ -433,7 +434,7 @@ namespace Game.Logic.MapObjects
                                     enemy.Attacking = false;
                                 }
                             }
-                        else if (!Follow(player, Enemies))
+                        else if (!enemy.IsFollowing)
                         {
                             if (SkeletonRoam >= 0 && SkeletonRoam < 100)
                             {
@@ -491,7 +492,7 @@ namespace Game.Logic.MapObjects
                                     enemy.Attacking = false;
                                 }
                             }
-                        else if (!Follow(player, Enemies))
+                        else if (!enemy.IsFollowing)
                         {
                             if (MushroomRoam >= 0 && MushroomRoam < 100)
                             {
@@ -550,7 +551,7 @@ namespace Game.Logic.MapObjects
                                     enemy.Attacking = false;
                                 }
                             }
-                        else if (!Follow(player, Enemies))
+                        else if (!enemy.IsFollowing)
                         {
                             if (GriffRoam >= 0 && GriffRoam < 100)
                             {
@@ -595,11 +596,11 @@ namespace Game.Logic.MapObjects
             else return followPlayer == false;
         }
 
-        public static bool Follow(Player player, ObservableCollection<Enemy> Enemies)
+        public static void Follow(Player player, ObservableCollection<Enemy> Enemies)
         {
             foreach (Enemy enemy in Enemies)
             {
-                if (player.X < enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead )
+                if (player.X < enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead && player.Y > 300)
                 {
                     if (enemy.Name == "skeleton" && player.X + 50 < enemy.X)
                     {
@@ -607,6 +608,7 @@ namespace Game.Logic.MapObjects
                         enemy.AnimateRuntoLeftSkeleton();
                         enemy.IsLeft = true;
                         enemy.IsRight = false;
+                        enemy.IsFollowing = true;
                     }
                     else if (enemy.Name == "mushroom" && player.X + 105 < enemy.X)
                     {
@@ -614,6 +616,7 @@ namespace Game.Logic.MapObjects
                         enemy.AnimateRuntoLeftMushroom();
                         enemy.IsLeft = true;
                         enemy.IsRight = false;
+                        enemy.IsFollowing = true;
                     }
                     else if (enemy.Name == "griffin" && player.X + 100 < enemy.X)
                     {
@@ -621,10 +624,10 @@ namespace Game.Logic.MapObjects
                         enemy.AnimateRuntoLeftGriffin();
                         enemy.IsLeft = true;
                         enemy.IsRight = false;
+                        enemy.IsFollowing = true;
                     }
-                    return true;
                 }
-                else if (player.X > enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead )
+                else if (player.X > enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead && player.Y > 300)
                 {
                     if (enemy.Name == "skeleton" && player.X- 50 > enemy.X)
                     {
@@ -632,6 +635,7 @@ namespace Game.Logic.MapObjects
                         enemy.AnimateRuntoRightSkeleton();
                         enemy.IsLeft = false;
                         enemy.IsRight = true;
+                        enemy.IsFollowing = true;
                     }
                     else if (enemy.Name == "mushroom" && player.X-40 > enemy.X)
                     {
@@ -639,6 +643,7 @@ namespace Game.Logic.MapObjects
                         enemy.AnimateRuntoRightMushroom();
                         enemy.IsLeft = false;
                         enemy.IsRight = true;
+                        enemy.IsFollowing = true;
                     }
                     else if (enemy.Name == "griffin" && player.X - 145 > enemy.X)
                     {
@@ -646,11 +651,14 @@ namespace Game.Logic.MapObjects
                         enemy.AnimateRuntoRightGriffin();
                         enemy.IsLeft = false;
                         enemy.IsRight = true;
+                        enemy.IsFollowing = true;
                     }
-                    return true;
+                }
+                else
+                {
+                    enemy.IsFollowing = false;
                 }
             }
-            return false;
         }
 
     }

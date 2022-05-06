@@ -61,19 +61,63 @@ namespace Game.Logic.Map
 
         public static void Coins(ObservableCollection<Gold> Coins)
         {
-            for (int i = 1; i <= 15; i++)
-            {
-                Coins.Add(new Gold(i * 500, 540, 40, 40));
-            }
-            
+            //First part
+            Coins.Add(new Gold(575, 430, 40, 40));
+            Coins.Add(new Gold(825, 400, 40, 40));
+            Coins.Add(new Gold(575, 250, 40, 40));
+            Coins.Add(new Gold(1100, 575, 40, 40));
+            Coins.Add(new Gold(1200, 575, 40, 40));
+            Coins.Add(new Gold(1300, 575, 40, 40));
+
+
+            //Second part
+            Coins.Add(new Gold(1675, 430, 40, 40));
+            Coins.Add(new Gold(1875, 400, 40, 40));
+
+            //third part
+
+            Coins.Add(new Gold(2875, 430, 40, 40));
+            Coins.Add(new Gold(3125, 400, 40, 40));
+            Coins.Add(new Gold(3575, 200, 40, 40));
+            Coins.Add(new Gold(4000, 575, 40, 40));
+            Coins.Add(new Gold(4100, 575, 40, 40));
+            Coins.Add(new Gold(4200, 575, 40, 40));
+
+            //fourth part
+            Coins.Add(new Gold(4575, 430, 40, 40));
+            Coins.Add(new Gold(4375, 400, 40, 40));
+            Coins.Add(new Gold(4575, 150, 40, 40));
+            Coins.Add(new Gold(5000, 575, 40, 40));
+            Coins.Add(new Gold(5100, 575, 40, 40));
+            Coins.Add(new Gold(5200, 575, 40, 40));
+
+            //fifth part
+            Coins.Add(new Gold(6075, 430, 40, 40));
+            Coins.Add(new Gold(6305, 400, 40, 40));
+            Coins.Add(new Gold(6500, 575, 40, 40));
+            Coins.Add(new Gold(6600, 575, 40, 40));
+            Coins.Add(new Gold(6700, 575, 40, 40));
         }
 
         public static void Potions(ObservableCollection<Potion> Potions)
         {
-            for (int i = 1; i <= 15; i++)
-            {
-               Potions.Add(new Potion(i * 400, 580, 40, 40));
-            }
+            //first part -30 -75
+            Potions.Add(new Potion(1075, 220, 40, 40));
+
+            //second part
+            Potions.Add(new Potion(2075, 320, 40, 40));
+            Potions.Add(new Potion(2400, 590, 40, 40));
+
+            //third part
+            Potions.Add(new Potion(3775, 170, 40, 40));
+            Potions.Add(new Potion(3500, 590, 40, 40));
+
+            //fourth part
+            Potions.Add(new Potion(5075, 170, 40, 40));
+            Potions.Add(new Potion(4900, 590, 40, 40));
+
+            //fifth part
+            Potions.Add(new Potion(6765, 420, 40, 40));
         }
     
         public static void CreateEnemies(ObservableCollection<Enemy> Enemies)
@@ -84,6 +128,33 @@ namespace Game.Logic.Map
               // Enemies.Add(new Enemy(i * 2000, 515, 130, 130, "mushroom",100,12));
                //Enemies.Add(new Enemy(i * 3000, 400, 250, 250, "griffin",230, 30));
             }
+
+            //first part
+            Enemies.Add(new Enemy(500, 500, 200, 200, "skeleton", 120, 15));
+            Enemies.Add(new Enemy(800, 515, 130, 130, "mushroom", 100, 12));
+            Enemies.Add(new Enemy(1100, 500, 200, 200, "skeleton", 120, 15));
+            Enemies.Add(new Enemy(1500, 400, 250, 250, "griffin", 200, 25));
+
+
+            //second part
+            Enemies.Add(new Enemy(1800, 500, 200, 200, "skeleton", 120, 15));
+            Enemies.Add(new Enemy(2200, 500, 200, 200, "skeleton", 120, 15));
+            Enemies.Add(new Enemy(2600, 515, 130, 130, "mushroom", 100, 12));
+
+            //third part
+            Enemies.Add(new Enemy(2800, 515, 130, 130, "mushroom", 100, 12));
+            Enemies.Add(new Enemy(3600, 400, 250, 250, "griffin", 200, 25));
+
+            //fourth part
+            Enemies.Add(new Enemy(4300, 500, 200, 200, "skeleton", 120, 15));
+            Enemies.Add(new Enemy(4800, 500, 200, 200, "skeleton", 120, 15));
+            Enemies.Add(new Enemy(5400, 400, 250, 250, "griffin", 200, 25));
+
+            //fifth part
+            Enemies.Add(new Enemy(6000, 515, 130, 130, "mushroom", 100, 12));
+            Enemies.Add(new Enemy(6300, 500, 200, 200, "skeleton", 120, 15));
+            Enemies.Add(new Enemy(7100, 400, 250, 250, "griffin", 200, 25));
+
         }
     }
 }

@@ -105,7 +105,7 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
             
-            <Grid x:Name="grid" Canvas.Left="-205" Canvas.Top="25">
+            <Grid x:Name="grid" Canvas.Left="-300" Canvas.Top="25">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>

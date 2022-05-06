@@ -21,11 +21,20 @@ namespace Game.Logic.MapObjects
         private bool direction = false;
         private int killcounter = 0;
         private static int maxHP = 100;
+        private static int maxXP = 10000;
+        private int experience;
+        private int level;
 
         public static int MaxHP
         {
             get { return maxHP; }
             set { maxHP = value; }
+        }
+
+        public static int MaxXP
+        {
+            get { return maxXP; }
+            set { maxXP = value; }
         }
 
         public int KillCounter
@@ -39,6 +48,24 @@ namespace Game.Logic.MapObjects
             set
             {
                 health = value;
+                NotifyPropertyChanged();
+            }
+        }
+        public int Experience
+        {
+            get { return experience; }
+            set
+            {
+                experience = value;
+                NotifyPropertyChanged();
+            }
+        }
+        public int Level
+        {
+            get { return level; }
+            set
+            {
+                level = value;
                 NotifyPropertyChanged();
             }
         }

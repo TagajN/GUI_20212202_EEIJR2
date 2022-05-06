@@ -30,6 +30,8 @@ namespace Game.Logic.MapObjects
         public double JumpStrength { get; set; }
         public bool Attacking { get; set; }
 
+        public string Name { get; set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged([CallerMemberName] string propertyname = "")
         {
@@ -38,12 +40,13 @@ namespace Game.Logic.MapObjects
 
         public ObservableCollection<MapObject> MapObjects { get; set; }
 
-        public MapObject(double x, double y, int width, int height)
+        public MapObject(double x, double y, int width, int height, string name)
         {
             X = x;
             Y = y;
             Width = width;
             Height = height;
+            Name = name;
 
             MapObjects = new ObservableCollection<MapObject>();
         }

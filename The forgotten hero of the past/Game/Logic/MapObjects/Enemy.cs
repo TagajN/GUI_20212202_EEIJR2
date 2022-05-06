@@ -41,7 +41,7 @@ namespace Game.Logic.MapObjects
             }
         }
 
-        public Enemy(double x, double y, int width, int height,string name, int health, int damage) : base(x, y, width, height) { this.Name = name; this.Health = health; this.damage = damage; }
+        public Enemy(double x, double y, int width, int height,string name, int health, int damage) : base(x, y, width, height, name) { this.Name = name; this.Health = health; this.damage = damage; }
 
         protected string[] RunSkeleton =
         {

@@ -35,9 +35,9 @@ namespace Game.Logic.CollisionDetection
             return false;
         }
 
-        public static bool PlayerRightCollision(Player Player, ObservableCollection<Rect> Platform)
+        public static bool RightCollision(MapObject Object, ObservableCollection<Rect> Platform)
         {
-            Rect PlayerHitbox = new Rect(Player.X + Player.Width - 80, Player.Y + 1, 1, Player.Height - 55);
+            Rect PlayerHitbox = new Rect(Object.X + Object.Width - 80, Object.Y + 1, 1, Object.Height - 55);
 
             for (int i = Platform.Count - 1; i >= 0; i--) {
                 Rect PlatformHitbox = new Rect(Platform[i].X, Platform[i].Y, Platform[i].Width - 65, Platform[i].Height - 45);
@@ -47,9 +47,9 @@ namespace Game.Logic.CollisionDetection
             return false;
         }
 
-        public static bool PlayerLeftCollision(Player Player, ObservableCollection<Rect> Platform)
+        public static bool LeftCollision(MapObject Object, ObservableCollection<Rect> Platform)
         {
-            Rect PlayerHitbox = new Rect(Player.X + 20, Player.Y + 1, 1, Player.Height - 55);
+            Rect PlayerHitbox = new Rect(Object.X + 20, Object.Y + 1, 1, Object.Height - 55);
 
             for (int i = Platform.Count - 1; i >= 0; i--)
             {

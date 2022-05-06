@@ -12,7 +12,7 @@ namespace Game.Logic.MapObjects
     public class Gold : MapObject
     {
         public int count;
-        public Gold(double x, double y, int width, int height) : base(x, y, width, height) { }
+        public Gold(double x, double y, int width, int height) : base(x, y, width, height, "gold") { }
 
         protected string[] gold =
         {

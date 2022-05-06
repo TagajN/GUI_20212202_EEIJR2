@@ -67,7 +67,7 @@ namespace Game.Logic.MapObjects
 
         private int screenwidth = 30000;
 
-        public Player(double x, double y, int width, int height) : base(x, y, width, height) {}
+        public Player(double x, double y, int width, int height) : base(x, y, width, height, "player") {}
         public Player() : this(10, Ground, 200, 200) {}
 
         public void KeyDown(object sender, KeyEventArgs e)
@@ -126,9 +126,9 @@ namespace Game.Logic.MapObjects
         {
             if (!IsDead)
             {
-                if (IsRight && X + Width < screenwidth && !CollisionDetection.CollisionDetection.PlayerRightCollision(this, platform))
+                if (IsRight && X + Width < screenwidth && !CollisionDetection.CollisionDetection.RightCollision(this, platform))
                     MoveRight();
-                if (IsLeft && X > 0 && !CollisionDetection.CollisionDetection.PlayerLeftCollision(this, platform))
+                if (IsLeft && X > 0 && !CollisionDetection.CollisionDetection.LeftCollision(this, platform))
                     MoveLeft();
                 if (Jumping && Y > 30)
                     Jump();

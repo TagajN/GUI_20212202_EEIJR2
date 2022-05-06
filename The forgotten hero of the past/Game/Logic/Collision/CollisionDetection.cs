@@ -48,11 +48,11 @@ namespace Game.Logic.CollisionDetection
             }
             if (Object.Name == "mushroom")
             {
-                Hitbox = new Rect(Object.X + Object.Width - 80, Object.Y + 1, 1, Object.Height - 55);
+                Hitbox = new Rect(Object.X + Object.Width - 40, Object.Y + 1, 1, Object.Height - 55);
             }
             if (Object.Name == "griffin")
             {
-                Hitbox = new Rect(Object.X + Object.Width - 80, Object.Y + 1, 1, Object.Height - 55);
+                Hitbox = new Rect(Object.X + Object.Width - 40, Object.Y + 1, 1, Object.Height - 55);
             }
 
             for (int i = Platform.Count - 1; i >= 0; i--) {
@@ -85,11 +85,11 @@ namespace Game.Logic.CollisionDetection
             }
             if (Object.Name == "mushroom")
             {
-                Hitbox = new Rect(Object.X + Object.Width - 80, Object.Y + 1, 1, Object.Height - 55);
+                Hitbox = new Rect(Object.X + Object.Width - 160, Object.Y + 1, 1, Object.Height - 55);
             }
             if (Object.Name == "griffin")
             {
-                Hitbox = new Rect(Object.X + Object.Width - 80, Object.Y + 1, 1, Object.Height - 55);
+                Hitbox = new Rect(Object.X + Object.Width - 250, Object.Y + 1, 1, Object.Height - 55);
             }
 
             for (int i = Platform.Count - 1; i >= 0; i--)

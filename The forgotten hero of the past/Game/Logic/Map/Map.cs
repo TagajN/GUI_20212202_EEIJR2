@@ -48,8 +48,8 @@ namespace Game.Logic.Map
             for (int i = 1; i <= 20; i++)
             {
                Enemies.Add(new Enemy(i * 800, 500, 200, 200,"skeleton",100,5));
-               //Enemies.Add(new Enemy(i * 2000, 515, 130, 130, "mushroom",100,12));
-               //Enemies.Add(new Enemy(i * 3000, 400, 250, 250, "griffin",230, 30));
+               Enemies.Add(new Enemy(i * 800, 515, 130, 130, "mushroom",100,12));
+               Enemies.Add(new Enemy(i * 800, 400, 250, 250, "griffin",230, 30));
             }
         }
     }

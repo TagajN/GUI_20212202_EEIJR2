@@ -443,11 +443,7 @@ namespace Game.Logic.MapObjects
                                 enemy.AnimateRuntoLeftSkeleton();
                                 enemy.IsLeft = true;
                                 enemy.IsRight = false;
-                                if (SkeletonRoam == 99)
-                                {
-                                    SkeletonRoam = -1;
-                                }
-                                if (CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
+                                if (SkeletonRoam == 99 || CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
                                 {
                                     SkeletonRoam = -1;
                                 }
@@ -459,11 +455,7 @@ namespace Game.Logic.MapObjects
                                 enemy.AnimateRuntoRightSkeleton();
                                 enemy.IsRight = true;
                                 enemy.IsLeft = false;
-                                if (SkeletonRoam == -99)
-                                {
-                                    SkeletonRoam = 0;
-                                }
-                                if (CollisionDetection.CollisionDetection.RightCollision(enemy, platforms))
+                                if (SkeletonRoam == -99 || CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
                                 {
                                     SkeletonRoam = 0;
                                 }
@@ -509,7 +501,7 @@ namespace Game.Logic.MapObjects
                                 enemy.AnimateRuntoLeftMushroom();
                                 enemy.IsLeft = true;
                                 enemy.IsRight = false;
-                                if (MushroomRoam == 99)
+                                if (MushroomRoam == 99 || CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
                                 {
                                     MushroomRoam = -1;
                                 }
@@ -521,7 +513,7 @@ namespace Game.Logic.MapObjects
                                 enemy.AnimateRuntoRightMushroom();
                                 enemy.IsRight = true;
                                 enemy.IsLeft = false;
-                                if (MushroomRoam == -99)
+                                if (MushroomRoam == -99 || CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
                                 {
                                     MushroomRoam = 0;
                                 }
@@ -568,7 +560,7 @@ namespace Game.Logic.MapObjects
                                 enemy.AnimateRuntoLeftGriffin();
                                 enemy.IsLeft = true;
                                 enemy.IsRight = false;
-                                if (GriffRoam == 99)
+                                if (GriffRoam == 99 || CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
                                 {
                                     GriffRoam = -1;
                                 }
@@ -580,7 +572,7 @@ namespace Game.Logic.MapObjects
                                 enemy.AnimateRuntoRightGriffin();
                                 enemy.IsRight = true;
                                 enemy.IsLeft = false;
-                                if (GriffRoam == -99)
+                                if (GriffRoam == -99 || CollisionDetection.CollisionDetection.RightCollision(enemy, platforms))
                                 {
                                     GriffRoam = 0;
                                 }
@@ -618,7 +610,7 @@ namespace Game.Logic.MapObjects
                         enemy.IsRight = false;
                         enemy.IsFollowing = true;
                     }
-                    else if (enemy.Name == "mushroom" && player.X + 105 < enemy.X)
+                    else if (enemy.Name == "mushroom" && player.X + 105 < enemy.X && !CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
                     {
                         enemy.X -= 6;
                         enemy.AnimateRuntoLeftMushroom();
@@ -626,7 +618,7 @@ namespace Game.Logic.MapObjects
                         enemy.IsRight = false;
                         enemy.IsFollowing = true;
                     }
-                    else if (enemy.Name == "griffin" && player.X + 100 < enemy.X)
+                    else if (enemy.Name == "griffin" && player.X + 100 < enemy.X && !CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
                     {
                         enemy.X -= 6;
                         enemy.AnimateRuntoLeftGriffin();
@@ -645,7 +637,7 @@ namespace Game.Logic.MapObjects
                         enemy.IsRight = true;
                         enemy.IsFollowing = true;
                     }
-                    else if (enemy.Name == "mushroom" && player.X-40 > enemy.X)
+                    else if (enemy.Name == "mushroom" && player.X-40 > enemy.X && !CollisionDetection.CollisionDetection.RightCollision(enemy, platforms))
                     {
                         enemy.X += 6;
                         enemy.AnimateRuntoRightMushroom();
@@ -653,7 +645,7 @@ namespace Game.Logic.MapObjects
                         enemy.IsRight = true;
                         enemy.IsFollowing = true;
                     }
-                    else if (enemy.Name == "griffin" && player.X - 145 > enemy.X)
+                    else if (enemy.Name == "griffin" && player.X - 145 > enemy.X && !CollisionDetection.CollisionDetection.RightCollision(enemy, platforms))
                     {
                         enemy.X += 6;
                         enemy.AnimateRuntoRightGriffin();

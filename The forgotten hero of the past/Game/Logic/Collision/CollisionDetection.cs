@@ -36,26 +36,75 @@ namespace Game.Logic.CollisionDetection
         }
 
         public static bool RightCollision(MapObject Object, ObservableCollection<Rect> Platform)
-        {
-            Rect PlayerHitbox = new Rect(Object.X + Object.Width - 80, Object.Y + 1, 1, Object.Height - 55);
+        { 
+            Rect Hitbox;
+            if (Object.Name == "player")
+            {
+                Hitbox = new Rect(Object.X + Object.Width - 80, Object.Y + 1, 1, Object.Height - 55);
+            }
+            if (Object.Name == "skeleton")
+            {
+                Hitbox = new Rect(Object.X + Object.Width - 100, Object.Y + 1, 1, Object.Height - 55);
+            }
+            if (Object.Name == "mushroom")
+            {
+                Hitbox = new Rect(Object.X + Object.Width - 80, Object.Y + 1, 1, Object.Height - 55);
+            }
+            if (Object.Name == "griffin")
+            {
+                Hitbox = new Rect(Object.X + Object.Width - 80, Object.Y + 1, 1, Object.Height - 55);
+            }
 
             for (int i = Platform.Count - 1; i >= 0; i--) {
                 Rect PlatformHitbox = new Rect(Platform[i].X, Platform[i].Y, Platform[i].Width - 65, Platform[i].Height - 45);
-                if (PlayerHitbox.IntersectsWith(PlatformHitbox) && !OnPlatform)
-                    return true;
+
+                if (Object.Name =="player")
+                {
+                    if (Hitbox.IntersectsWith(PlatformHitbox) && !OnPlatform)
+                        return true;
+                }
+                else
+                {
+                    if (Hitbox.IntersectsWith(PlatformHitbox))
+                        return true;
+                }
             }
             return false;
         }
 
         public static bool LeftCollision(MapObject Object, ObservableCollection<Rect> Platform)
         {
-            Rect PlayerHitbox = new Rect(Object.X + 20, Object.Y + 1, 1, Object.Height - 55);
+            Rect Hitbox;
+            if (Object.Name == "player")
+            {
+                Hitbox = new Rect(Object.X + 20, Object.Y + 1, 1, Object.Height - 55);
+            }
+            if (Object.Name == "skeleton")
+            {
+                Hitbox = new Rect(Object.X + 35, Object.Y + 1, 1, Object.Height - 55);
+            }
+            if (Object.Name == "mushroom")
+            {
+                Hitbox = new Rect(Object.X + Object.Width - 80, Object.Y + 1, 1, Object.Height - 55);
+            }
+            if (Object.Name == "griffin")
+            {
+                Hitbox = new Rect(Object.X + Object.Width - 80, Object.Y + 1, 1, Object.Height - 55);
+            }
 
             for (int i = Platform.Count - 1; i >= 0; i--)
             {
                 Rect PlatformHitbox = new Rect(Platform[i].X, Platform[i].Y, Platform[i].Width - 65, Platform[i].Height - 45);
-                if (PlayerHitbox.IntersectsWith(PlatformHitbox) && !OnPlatform)
-                    return true;
+                if (Object.Name == "player")
+                {
+                    if (Hitbox.IntersectsWith(PlatformHitbox) && !OnPlatform)
+                        return true;
+                }
+                else
+                {
+                    if (Hitbox.IntersectsWith(PlatformHitbox))
+                        return true;
+                }
             }
             return false;
         }

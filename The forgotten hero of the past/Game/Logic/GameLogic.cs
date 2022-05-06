@@ -71,9 +71,9 @@ namespace Game.Logic
                 player.AnimatePlayer(Platforms, Enemies);
                 Gold.PlayCoinAnimation(GoldCoins, player);
                 Potion.PlayPotionAnimation(Potions, player);
-                Enemy.PlayEnemyAnimation(player, Enemies);
+                Enemy.PlayEnemyAnimation(player, Enemies, Platforms);
                 Potion.PlayPotionAnimation(Potions, player);
-                Enemy.Follow(player, Enemies);
+                Enemy.Follow(player, Enemies, Platforms);
             });
         }
 

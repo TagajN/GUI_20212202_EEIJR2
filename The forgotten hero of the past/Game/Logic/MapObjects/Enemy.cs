@@ -401,7 +401,7 @@ namespace Game.Logic.MapObjects
             count++;
         }
 
-        public static void PlayEnemyAnimation(Player player, ObservableCollection<Enemy> Enemies)
+        public static void PlayEnemyAnimation(Player player, ObservableCollection<Enemy> Enemies, ObservableCollection<Rect> platforms)
         {
                 foreach (Enemy enemy in Enemies)
                 {
@@ -435,7 +435,7 @@ namespace Game.Logic.MapObjects
                                 }
                             }
                         else if (!enemy.IsFollowing)
-                        {
+                        { 
                             if (SkeletonRoam >= 0 && SkeletonRoam < 100)
                             {
                                 SkeletonRoam++;
@@ -444,6 +444,10 @@ namespace Game.Logic.MapObjects
                                 enemy.IsLeft = true;
                                 enemy.IsRight = false;
                                 if (SkeletonRoam == 99)
+                                {
+                                    SkeletonRoam = -1;
+                                }
+                                if (CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
                                 {
                                     SkeletonRoam = -1;
                                 }
@@ -456,6 +460,10 @@ namespace Game.Logic.MapObjects
                                 enemy.IsRight = true;
                                 enemy.IsLeft = false;
                                 if (SkeletonRoam == -99)
+                                {
+                                    SkeletonRoam = 0;
+                                }
+                                if (CollisionDetection.CollisionDetection.RightCollision(enemy, platforms))
                                 {
                                     SkeletonRoam = 0;
                                 }
@@ -596,13 +604,13 @@ namespace Game.Logic.MapObjects
             else return followPlayer == false;
         }
 
-        public static void Follow(Player player, ObservableCollection<Enemy> Enemies)
+        public static void Follow(Player player, ObservableCollection<Enemy> Enemies, ObservableCollection<Rect> platforms)
         {
             foreach (Enemy enemy in Enemies)
             {
                 if (player.X < enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead && player.Y > 300)
                 {
-                    if (enemy.Name == "skeleton" && player.X + 50 < enemy.X)
+                    if (enemy.Name == "skeleton" && player.X + 50 < enemy.X && !CollisionDetection.CollisionDetection.LeftCollision(enemy,platforms))
                     {
                         enemy.X -= 3;
                         enemy.AnimateRuntoLeftSkeleton();
@@ -629,7 +637,7 @@ namespace Game.Logic.MapObjects
                 }
                 else if (player.X > enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead && player.Y > 300)
                 {
-                    if (enemy.Name == "skeleton" && player.X- 50 > enemy.X)
+                    if (enemy.Name == "skeleton" && player.X- 50 > enemy.X && !CollisionDetection.CollisionDetection.RightCollision(enemy, platforms))
                     {
                         enemy.X += 3;
                         enemy.AnimateRuntoRightSkeleton();

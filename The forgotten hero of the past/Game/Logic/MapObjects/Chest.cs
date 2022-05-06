@@ -12,7 +12,7 @@ namespace Game.Logic.MapObjects
     public class Chest : MapObject
     {
         public int count;
-        public Chest(double x, double y, int width, int height) : base(x, y, width, height) { }
+        public Chest(double x, double y, int width, int height, string name) : base(x, y, width, height, name) { }
 
         protected string[] ChestIdle =
         {

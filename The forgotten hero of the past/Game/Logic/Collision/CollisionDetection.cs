@@ -75,6 +75,21 @@ namespace Game.Logic.CollisionDetection
                 }
             }
         }
+        public static void ChestCollision(Player Player, ObservableCollection<Chest> chests)
+        {
+            Rect PlayerHitbox = new Rect(Player.X + Player.Width - 100, Player.Y + 1, 1, Player.Height - 55);
+
+            for (int i = chests.Count - 1; i >= 0; i--)
+            {
+                Rect CoinHitBox = new Rect(chests[i].X, chests[i].Y, chests[i].Width, chests[i].Height);
+
+                if (PlayerHitbox.IntersectsWith(CoinHitBox))
+                {
+                    //play animation todo
+                    Player.Gold += 25;
+                }
+            }
+        }
 
         public static void PotionCollision(Player Player, ObservableCollection<Potion> potions)
         {

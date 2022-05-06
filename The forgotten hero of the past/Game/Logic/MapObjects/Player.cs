@@ -86,7 +86,12 @@ namespace Game.Logic.MapObjects
             {
                 case Key.A: IsLeft = false; break;
                 case Key.D: IsRight = false; break;
-                case Key.W: Jumping = false; break;
+                case Key.W:
+                    if (CollisionDetection.CollisionDetection.OnPlatform || Ground == Y)
+                    {
+                        Jumping = false;
+                    }
+                    break;
                 case Key.Space: IsAttack = false; break;
                 case Key.H: HP(); break;
                 case Key.M: MS(); break;
@@ -129,7 +134,7 @@ namespace Game.Logic.MapObjects
                     MoveRight();
                 if (IsLeft && X > 0 && !CollisionDetection.CollisionDetection.PlayerLeftCollision(this, platform))
                     MoveLeft();
-                if (Jumping && Y > 30)
+                if (Jumping && Y > 1)
                     Jump();
             } 
         }
@@ -379,7 +384,7 @@ namespace Game.Logic.MapObjects
                 IsDead = true;
             }
 
-            if (Y < Ground && Jumping )
+            if (Y < Ground && Jumping)
             {
                 AnimateJumpUp();
 

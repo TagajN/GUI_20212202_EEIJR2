@@ -13,7 +13,7 @@ namespace Game.Logic.Map
     {
         public static void Load(ObservableCollection<Rect> Platforms, ObservableCollection<Gold> Coins, ObservableCollection<Potion> Potions, ObservableCollection<Enemy> Enemies)
         {
-            foreach (string line in System.IO.File.ReadLines("GAMEMAP.txt"))
+            foreach (string line in System.IO.File.ReadLines("Map/GAMEMAP.txt"))
             {
                 string item = line;
                 string[] values = item.Split(" ");

@@ -98,6 +98,16 @@ namespace Game.Logic.Map
             Coins.Add(new Gold(7100, 575, 40, 40));
             Coins.Add(new Gold(7200, 575, 40, 40));
         }
+        public static void Creates(ObservableCollection<Chest> Chests)
+        {
+            Chests.Add(new Chest(1900, 50, 150, 150));
+            Chests.Add(new Chest(6500, 100, 150, 150));
+        }
+
+        public static void Portals(ObservableCollection<Portal> portals)
+        {
+            portals.Add(new Portal(8000, 450, 200, 200));
+        }
 
         public static void Potions(ObservableCollection<Potion> Potions)
         {

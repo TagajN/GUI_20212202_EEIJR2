@@ -93,10 +93,7 @@ namespace Game.Logic
         {
             this.Dispatcher.Invoke(() =>
             {
-                Map.Map.Platforms(Platforms);
-                Map.Map.Coins(GoldCoins);
-                Map.Map.CreateEnemies(Enemies);
-                Map.Map.Potions(Potions);
+                Map.Map.Load(Platforms, GoldCoins, Potions, Enemies);
             });
         }
         public bool Pause(KeyEventArgs e)

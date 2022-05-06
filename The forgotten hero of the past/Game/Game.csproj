@@ -321,6 +321,7 @@
     <None Remove="EXIT_button.png" />
     <None Remove="LEADERBOARDS_button.png" />
     <None Remove="LOAD_button.png" />
+    <None Remove="Logic\Map\GAMEMAP.txt" />
     <None Remove="Resources\idle1.png" />
     <None Remove="title.png" />
     <None Remove="Windows\knight-idle.gif" />
@@ -714,6 +715,9 @@
     <Resource Include="Art\Game\UpdgradeHelpButton\keyboard_H.png" />
     <Resource Include="Art\Game\UpdgradeHelpButton\keyboard_M.png" />
     <Resource Include="Art\Game\UpdgradeHelpButton\keyboard_P.png" />
+    <Resource Include="Logic\Map\GAMEMAP.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\idle1.png" />
   </ItemGroup>
 

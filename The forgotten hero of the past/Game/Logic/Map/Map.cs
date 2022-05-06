@@ -13,16 +13,50 @@ namespace Game.Logic.Map
     {
         public static void Platforms(ObservableCollection<Rect> Platforms)
         {
-            Platforms.Add(new Rect(500, 570, 200, 50));
-                Platforms.Add(new Rect(800, 530, 200, 50));
-            Platforms.Add(new Rect(1110, 480, 200, 50));
-            for (int i = 1; i <= 20; i++)
-            {
-                Platforms.Add(new Rect(300 + i * 1700, 570, 200, 50));
-                Platforms.Add(new Rect(200 + i * 1200, 350, 200, 50));
-                Platforms.Add(new Rect(300 + i * 1500, 300, 200, 50));
-                Platforms.Add(new Rect(400 + i * 2000, 200, 100, 50));
-            }
+            //First part
+            Platforms.Add(new Rect(500, 480, 200, 50));
+            Platforms.Add(new Rect(750, 450, 200, 50));
+            Platforms.Add(new Rect(500, 300, 200, 50));
+            Platforms.Add(new Rect(800, 250, 200, 50));
+            Platforms.Add(new Rect(1000, 250, 200, 50));
+
+            //Second part
+            Platforms.Add(new Rect(1600, 480, 200, 50));
+            Platforms.Add(new Rect(1800, 450, 200, 50));
+            Platforms.Add(new Rect(1600, 250, 200, 50));
+            Platforms.Add(new Rect(1400, 150, 200, 50));
+            Platforms.Add(new Rect(2000, 350, 200, 50));
+            Platforms.Add(new Rect(1950, 350, 200, 50));
+            Platforms.Add(new Rect(2200, 450, 200, 50));
+            Platforms.Add(new Rect(2400, 480, 200, 50));
+
+            //third part
+
+            Platforms.Add(new Rect(2800, 480, 200, 50));
+            Platforms.Add(new Rect(3050, 450, 200, 50));
+            Platforms.Add(new Rect(3300, 480, 200, 50));
+            Platforms.Add(new Rect(3300, 300, 200, 50));
+            Platforms.Add(new Rect(3500, 250, 200, 50));
+            Platforms.Add(new Rect(3700, 200, 200, 50));
+
+            //fourth part
+            Platforms.Add(new Rect(4500, 480, 200, 50));
+            Platforms.Add(new Rect(4300, 450, 200, 50));
+            Platforms.Add(new Rect(4500, 350, 200, 50));
+            Platforms.Add(new Rect(4750, 230, 200, 50));
+            Platforms.Add(new Rect(4500, 200, 200, 50));
+            Platforms.Add(new Rect(5000, 200, 200, 50));
+            Platforms.Add(new Rect(5250, 230, 200, 50));
+            Platforms.Add(new Rect(5500, 350, 200, 50));
+
+            //fifth part
+            Platforms.Add(new Rect(6000, 480, 200, 50));
+            Platforms.Add(new Rect(6230, 450, 200, 50));
+            Platforms.Add(new Rect(6460, 420, 200, 50));
+            Platforms.Add(new Rect(6000, 200, 200, 50));
+            Platforms.Add(new Rect(6230, 270, 200, 50));
+            Platforms.Add(new Rect(6690, 450, 200, 50));
+
         }
 
         public static void Coins(ObservableCollection<Gold> Coins)
@@ -46,9 +80,9 @@ namespace Game.Logic.Map
         {
             for (int i = 1; i <= 20; i++)
             {
-               Enemies.Add(new Enemy(i * 1500, 500, 200, 200,"skeleton",100,10));
-               Enemies.Add(new Enemy(i * 2000, 515, 130, 130, "mushroom",100,12));
-               Enemies.Add(new Enemy(i * 3000, 400, 250, 250, "griffin",230, 30));
+               //Enemies.Add(new Enemy(i * 1500, 500, 200, 200,"skeleton",100,10));
+              // Enemies.Add(new Enemy(i * 2000, 515, 130, 130, "mushroom",100,12));
+               //Enemies.Add(new Enemy(i * 3000, 400, 250, 250, "griffin",230, 30));
             }
         }
     }

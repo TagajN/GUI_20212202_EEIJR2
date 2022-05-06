@@ -411,11 +411,6 @@ namespace Game.Logic.MapObjects
                                 enemy.AnimateDeathSkeleton();
                                 enemy.IsDead = true;
                                 player.KillCounter += 1;
-                                player.Experience += 200;
-                                if (player.Level*500<=player.Experience)
-                                {
-                                    player.Level += 1;
-                                }
                             }
                             else if ((enemy.X - player.X) < 55 && enemy.IsLeft && player.Y == 490 && !player.IsDead)
                             {
@@ -446,7 +441,6 @@ namespace Game.Logic.MapObjects
                             {
                                 enemy.AnimateDeathMushroom();
                                 enemy.IsDead = true;
-                                player.Experience += 150;
                                 player.KillCounter += 1;
                             }
                             else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490 && !player.IsDead)
@@ -479,7 +473,6 @@ namespace Game.Logic.MapObjects
                             {
                                 enemy.AnimateDeathGriffin();
                                 enemy.IsDead = true;
-                                player.Experience += 300;
                                 player.KillCounter += 1;
                             }
                             else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490 && !player.IsDead )

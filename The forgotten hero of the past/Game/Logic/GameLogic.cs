@@ -36,7 +36,6 @@ namespace Game.Logic
             player.Damage = 200;
             player.Speed = 20;
             player.JumpStrength = -10;
-            player.Level = 1;
         }
         public void GameTimer()
         {

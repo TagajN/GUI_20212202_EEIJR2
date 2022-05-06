@@ -17,6 +17,10 @@ namespace Game.Logic.MapObjects
         private int health;
         private int damage;
         public string Name;
+        public static int SkeletonRoam = 0;
+        public static int MushroomRoam = 0;
+        public static int GriffRoam = 0;
+        public bool IsFollowing = false;
         public int Health
         {
             get { return health; }
@@ -37,7 +41,7 @@ namespace Game.Logic.MapObjects
             }
         }
 
-        public Enemy(double x, double y, int width, int height,string name, int health, int damage) : base(x, y, width, height) { this.Name = name; this.Health = health; this.damage = damage; }
+        public Enemy(double x, double y, int width, int height,string name, int health, int damage) : base(x, y, width, height, name) { this.Name = name; this.Health = health; this.damage = damage; }
 
         protected string[] RunSkeleton =
         {
@@ -383,7 +387,7 @@ namespace Game.Logic.MapObjects
                 count = 0;
             Image = new BitmapImage(new Uri(AttackGriffin[count], UriKind.RelativeOrAbsolute));
             count++;
-            if (count == 6)
+            if (count == 7)
             {
                 Attacking = true;
             }
@@ -397,11 +401,11 @@ namespace Game.Logic.MapObjects
             count++;
         }
 
-        public static void PlayEnemyAnimation(Player player, ObservableCollection<Enemy> Enemies)
+        public static void PlayEnemyAnimation(Player player, ObservableCollection<Enemy> Enemies, ObservableCollection<Rect> platforms)
         {
                 foreach (Enemy enemy in Enemies)
                 {
-                    if (enemy.X >= player.X - 500 && enemy.X <= player.X + 1300 && !enemy.IsDead)
+                    if (enemy.X >= player.X - 700 && enemy.X <= player.X + 1300 && !enemy.IsDead)
                     {
 
                         if (enemy.Name == "skeleton")
@@ -412,7 +416,7 @@ namespace Game.Logic.MapObjects
                                 enemy.IsDead = true;
                                 player.KillCounter += 1;
                             }
-                            else if ((enemy.X - player.X) < 55 && enemy.IsLeft && player.Y == 490 && !player.IsDead)
+                            else if ((enemy.X - player.X) < 55 && (enemy.X - player.X) > 0 && player.Y == 490 && enemy.IsLeft && !player.IsDead)
                             {
                                 enemy.AnimateAttacktoLeftSkeleton();
                                 if(enemy.Attacking)
@@ -421,7 +425,7 @@ namespace Game.Logic.MapObjects
                                     enemy.Attacking = false;
                                 }
                             }
-                            else if ((player.X - enemy.X) < 60 && enemy.IsRight && player.Y == 490 && !player.IsDead)
+                            else if ((player.X - enemy.X) < 60 && (player.X - enemy.X) > 0 && player.Y == 490 && enemy.IsRight && !player.IsDead)
                             {
                                 enemy.AnimateAttacktoRightSkeleton();
                                 if (enemy.Attacking)
@@ -430,10 +434,37 @@ namespace Game.Logic.MapObjects
                                     enemy.Attacking = false;
                                 }
                             }
-                            else
+                        else if (!enemy.IsFollowing)
+                        { 
+                            if (SkeletonRoam >= 0 && SkeletonRoam < 100)
                             {
-                                enemy.AnimateIdleSkeleton();
+                                SkeletonRoam++;
+                                enemy.X -= 3;
+                                enemy.AnimateRuntoLeftSkeleton();
+                                enemy.IsLeft = true;
+                                enemy.IsRight = false;
+                                if (SkeletonRoam == 99 || CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
+                                {
+                                    SkeletonRoam = -1;
+                                }
                             }
+                            if (SkeletonRoam < 0 && SkeletonRoam > -100)
+                            {
+                                SkeletonRoam--;
+                                enemy.X += 3;
+                                enemy.AnimateRuntoRightSkeleton();
+                                enemy.IsRight = true;
+                                enemy.IsLeft = false;
+                                if (SkeletonRoam == -99 || CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
+                                {
+                                    SkeletonRoam = 0;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            enemy.AnimateIdleSkeleton();
+                        }
                         }
                         else if (enemy.Name == "mushroom")
                         {
@@ -443,7 +474,7 @@ namespace Game.Logic.MapObjects
                                 enemy.IsDead = true;
                                 player.KillCounter += 1;
                             }
-                            else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490 && !player.IsDead)
+                            else if ((enemy.X - player.X) < 105 && (enemy.X - player.X) > 0 &&  enemy.IsLeft && player.Y == 490 && !player.IsDead)
                             {
                                 enemy.AnimateAttacktoLeftMushroom();
                                 if (enemy.Attacking)
@@ -452,7 +483,7 @@ namespace Game.Logic.MapObjects
                                     enemy.Attacking = false;
                                 }
                             }
-                            else if ((player.X - enemy.X) < 85 && enemy.IsRight && player.Y == 490 && !player.IsDead)
+                            else if ((player.X - enemy.X) < 85 && (player.X - enemy.X) > 0 && enemy.IsRight && player.Y == 490 && !player.IsDead)
                             {
                                 enemy.AnimateAttacktoRightMushroom();
                                 if (enemy.Attacking)
@@ -461,7 +492,34 @@ namespace Game.Logic.MapObjects
                                     enemy.Attacking = false;
                                 }
                             }
-                            else
+                        else if (!enemy.IsFollowing)
+                        {
+                            if (MushroomRoam >= 0 && MushroomRoam < 100)
+                            {
+                                MushroomRoam++;
+                                enemy.X -= 3;
+                                enemy.AnimateRuntoLeftMushroom();
+                                enemy.IsLeft = true;
+                                enemy.IsRight = false;
+                                if (MushroomRoam == 99 || CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
+                                {
+                                    MushroomRoam = -1;
+                                }
+                            }
+                            if (MushroomRoam < 0 && MushroomRoam > -100)
+                            {
+                                MushroomRoam--;
+                                enemy.X += 3;
+                                enemy.AnimateRuntoRightMushroom();
+                                enemy.IsRight = true;
+                                enemy.IsLeft = false;
+                                if (MushroomRoam == -99 || CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
+                                {
+                                    MushroomRoam = 0;
+                                }
+                            }
+                        }
+                        else
                             {
                                 enemy.AnimateIdleMushroom();
                             }
@@ -475,7 +533,7 @@ namespace Game.Logic.MapObjects
                                 enemy.IsDead = true;
                                 player.KillCounter += 1;
                             }
-                            else if ((enemy.X - player.X) < 105 && enemy.IsLeft && player.Y == 490 && !player.IsDead )
+                            else if ((enemy.X - player.X) < 105 && (enemy.X - player.X) > 0 && enemy.IsLeft && player.Y == 490 && !player.IsDead )
                             {
                                 enemy.AnimateAttacktoLeftGriffin();
                                 if (enemy.Attacking)
@@ -484,15 +542,43 @@ namespace Game.Logic.MapObjects
                                     enemy.Attacking = false;
                                 }
                             }
-                            else if ((player.X - enemy.X) < 165 && enemy.IsRight && player.Y == 490 && !player.IsDead)
+                            else if ((player.X - enemy.X) < 165 && (player.X - enemy.X) > 0 && enemy.IsRight && player.Y == 490 && !player.IsDead)
                             {
                                 enemy.AnimateAttacktoRightGriffin();
-                                if ((player.X - enemy.X) < 160)
+                                if (enemy.Attacking)
                                 {
-                                    player.Health -= enemy.Damage; //todo ellenállás számítás
+                                    player.Health -= enemy.Damage;
+                                    enemy.Attacking = false;
                                 }
                             }
-                            else
+                        else if (!enemy.IsFollowing)
+                        {
+                            if (GriffRoam >= 0 && GriffRoam < 100)
+                            {
+                                GriffRoam++;
+                                enemy.X -= 3;
+                                enemy.AnimateRuntoLeftGriffin();
+                                enemy.IsLeft = true;
+                                enemy.IsRight = false;
+                                if (GriffRoam == 99 || CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
+                                {
+                                    GriffRoam = -1;
+                                }
+                            }
+                            if (GriffRoam < 0 && GriffRoam > -100)
+                            {
+                                GriffRoam--;
+                                enemy.X += 3;
+                                enemy.AnimateRuntoRightGriffin();
+                                enemy.IsRight = true;
+                                enemy.IsLeft = false;
+                                if (GriffRoam == -99 || CollisionDetection.CollisionDetection.RightCollision(enemy, platforms))
+                                {
+                                    GriffRoam = 0;
+                                }
+                            }
+                        }
+                        else
                             {
                                 enemy.AnimateIdleGriffin();
                             }
@@ -510,57 +596,67 @@ namespace Game.Logic.MapObjects
             else return followPlayer == false;
         }
 
-        public static void Follow(Player player, ObservableCollection<Enemy> Enemies)
+        public static void Follow(Player player, ObservableCollection<Enemy> Enemies, ObservableCollection<Rect> platforms)
         {
             foreach (Enemy enemy in Enemies)
             {
-                if (player.X < enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead )
+                if (player.X < enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead && player.Y > 300)
                 {
-                    if (enemy.Name == "skeleton" && player.X + 50 < enemy.X)
+                    if (enemy.Name == "skeleton" && player.X + 50 < enemy.X && !CollisionDetection.CollisionDetection.LeftCollision(enemy,platforms))
                     {
                         enemy.X -= 3;
                         enemy.AnimateRuntoLeftSkeleton();
                         enemy.IsLeft = true;
                         enemy.IsRight = false;
+                        enemy.IsFollowing = true;
                     }
-                    else if (enemy.Name == "mushroom" && player.X + 105 < enemy.X)
+                    else if (enemy.Name == "mushroom" && player.X + 105 < enemy.X && !CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
                     {
                         enemy.X -= 6;
                         enemy.AnimateRuntoLeftMushroom();
                         enemy.IsLeft = true;
                         enemy.IsRight = false;
+                        enemy.IsFollowing = true;
                     }
-                    else if (enemy.Name == "griffin" && player.X + 100 < enemy.X)
+                    else if (enemy.Name == "griffin" && player.X + 100 < enemy.X && !CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
                     {
                         enemy.X -= 6;
                         enemy.AnimateRuntoLeftGriffin();
                         enemy.IsLeft = true;
                         enemy.IsRight = false;
+                        enemy.IsFollowing = true;
                     }
                 }
-                else if (player.X > enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead )
+                else if (player.X > enemy.X && enemy.PlayerSpotted(player) && !enemy.IsDead && !player.IsDead && player.Y > 300)
                 {
-                    if (enemy.Name == "skeleton" && player.X- 50 > enemy.X)
+                    if (enemy.Name == "skeleton" && player.X- 50 > enemy.X && !CollisionDetection.CollisionDetection.RightCollision(enemy, platforms))
                     {
                         enemy.X += 3;
                         enemy.AnimateRuntoRightSkeleton();
                         enemy.IsLeft = false;
                         enemy.IsRight = true;
+                        enemy.IsFollowing = true;
                     }
-                    else if (enemy.Name == "mushroom" && player.X-40 > enemy.X)
+                    else if (enemy.Name == "mushroom" && player.X-40 > enemy.X && !CollisionDetection.CollisionDetection.RightCollision(enemy, platforms))
                     {
                         enemy.X += 6;
                         enemy.AnimateRuntoRightMushroom();
                         enemy.IsLeft = false;
                         enemy.IsRight = true;
+                        enemy.IsFollowing = true;
                     }
-                    else if (enemy.Name == "griffin" && player.X - 145 > enemy.X)
+                    else if (enemy.Name == "griffin" && player.X - 145 > enemy.X && !CollisionDetection.CollisionDetection.RightCollision(enemy, platforms))
                     {
                         enemy.X += 6;
                         enemy.AnimateRuntoRightGriffin();
                         enemy.IsLeft = false;
                         enemy.IsRight = true;
+                        enemy.IsFollowing = true;
                     }
+                }
+                else
+                {
+                    enemy.IsFollowing = false;
                 }
             }
         }

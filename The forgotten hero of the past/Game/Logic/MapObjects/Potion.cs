@@ -11,7 +11,7 @@ namespace Game.Logic.MapObjects
     public class Potion : MapObject
     {
         public int count;
-        public Potion(double x, double y, int width, int height) : base(x, y, width, height) { }
+        public Potion(double x, double y, int width, int height) : base(x, y, width, height, "potion") { }
 
         protected string[] pot =
         {
@@ -31,7 +31,7 @@ namespace Game.Logic.MapObjects
         {
             foreach (Potion item in potion)
             {
-                if (item.X >= player.X - 300 && item.X <= player.X + 1300)
+                if (item.X >= player.X - 520 && item.X <= player.X + 1300)
                 {
                     item.PotionAnimation(item);
                 }

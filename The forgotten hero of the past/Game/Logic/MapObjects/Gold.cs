@@ -12,7 +12,7 @@ namespace Game.Logic.MapObjects
     public class Gold : MapObject
     {
         public int count;
-        public Gold(double x, double y, int width, int height) : base(x, y, width, height) { }
+        public Gold(double x, double y, int width, int height) : base(x, y, width, height, "gold") { }
 
         protected string[] gold =
         {
@@ -34,7 +34,7 @@ namespace Game.Logic.MapObjects
         {
             foreach (Gold coin in Gold)
             {
-                if (coin.X >= player.X - 300 && coin.X <= player.X + 1300)
+                if (coin.X >= player.X - 520 && coin.X <= player.X + 1300)
                 {
                     coin.CoinAnimation(coin);
                 }

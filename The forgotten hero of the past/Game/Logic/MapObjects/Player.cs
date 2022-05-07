@@ -21,7 +21,6 @@ namespace Game.Logic.MapObjects
         private bool direction = false;
         private int killcounter = 0;
         private static int maxHP = 100;
-
         public static int MaxHP
         {
             get { return maxHP; }
@@ -74,10 +73,16 @@ namespace Game.Logic.MapObjects
         {
                 switch (e.Key)
                 {
+
                     case Key.A: IsLeft = true; direction = true; break;
                     case Key.D: IsRight = true; direction = false; break;
-                    case Key.W: Jumping = true; break;
-                    case Key.Space: IsAttack = true; break;
+                case Key.W:
+                    if (Y == Ground || CollisionDetection.CollisionDetection.OnPlatform)
+                    {
+                        Jumping = true;
+                    }
+                    break;
+                case Key.Space: IsAttack = true; break;
                 }      
         }
 

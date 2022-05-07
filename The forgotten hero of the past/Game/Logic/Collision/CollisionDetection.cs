@@ -139,7 +139,7 @@ namespace Game.Logic.CollisionDetection
                 {
                     Random r = new Random();
                     chests.RemoveAt(i);
-                    if (r.Next(0,100) == 7)
+                    if (r.Next(0,100) == 69)
                     {
                         new Task(() => { new SoundPlayer("Art/Game/Sounds/easteregg.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                     }

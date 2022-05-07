@@ -275,15 +275,11 @@
     <None Remove="Art\Game\Potion\potion2.png" />
     <None Remove="Art\Game\Potion\potion3.png" />
     <None Remove="Art\Game\Potion\potion4.png" />
-    <None Remove="Art\Game\Sounds\coinSound.wav" />
     <None Remove="Art\Game\UpdgradeHelpButton\keyboard_H.png" />
     <None Remove="Art\Game\UpdgradeHelpButton\keyboard_M.png" />
     <None Remove="Art\Game\UpdgradeHelpButton\keyboard_P.png" />
     <None Remove="Art\HEALTH_title.png" />
     <None Remove="Art\HEROUPGRADE_title.png" />
-    <None Remove="Art\Menu\Aron.png" />
-    <None Remove="Art\Menu\createdBy.png" />
-    <None Remove="Art\Menu\Norbi.png" />
     <None Remove="Art\MUTE.png" />
     <None Remove="Art\PAUSED_title.png" />
     <None Remove="Art\RESUME_title.png" />
@@ -295,7 +291,6 @@
     <None Remove="EXIT_button.png" />
     <None Remove="LEADERBOARDS_button.png" />
     <None Remove="LOAD_button.png" />
-    <None Remove="Resources\idle1.png" />
     <None Remove="title.png" />
     <None Remove="Windows\knight-idle.gif" />
     <None Remove="Windows\warlock-idle.gif" />
@@ -342,15 +337,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Art\Menu\+_title.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Art\Menu\Aron.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Art\Menu\createdBy.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Art\Menu\Norbi.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Art\Menu\PAUSED_title.png">
@@ -1196,8 +1182,6 @@
     <Content Include="Map\GAMEMAP.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Art\Game\Sounds\coinSound.wav" />
-    <Resource Include="Resources\idle1.png" />
   </ItemGroup>
 
 </Project>

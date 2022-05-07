@@ -97,9 +97,9 @@ namespace Game.Logic.MapObjects
 
         private void DM()
         {
-            if (Gold >= 5)
+            if (Gold >= 10)
             {
-                Gold -= 5;
+                Gold -= 10;
                 Damage += 10;
             }
         }
@@ -393,7 +393,7 @@ namespace Game.Logic.MapObjects
 
         public void HP()
         {
-            if (Gold >= 5)
+            if (Gold >= 10)
             {
                 if (Health < 100)
                 {
@@ -403,7 +403,7 @@ namespace Game.Logic.MapObjects
                 else
                 {
                     MaxHP += 10;
-                    Gold -= 5;
+                    Gold -= 10;
                     Health = MaxHP;
                 }
             }
@@ -411,10 +411,10 @@ namespace Game.Logic.MapObjects
 
         public void MS()
         {
-            if (Gold >= 5)
+            if (Gold >= 10)
             {
-                Gold -= 5;
-                Speed += 10;
+                Gold -= 10;
+                Speed += 4;
             }
         }
 

@@ -146,7 +146,7 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
             
-            <Grid x:Name="grid" Canvas.Left="-300" Canvas.Top="25">
+            <Grid x:Name="grid" Canvas.Left="-320" Canvas.Top="25">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
@@ -179,11 +179,11 @@
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
                         <Image Grid.Column="0" Grid.Row="0" Opacity="0.5" HorizontalAlignment="Right" VerticalAlignment="Top" Source="/Art/Game/UpdgradeHelpButton/keyboard_H.png" Height="50" Width="50"/>
-                        <Label Grid.Column="1" Grid.Row="0" Opacity="0.5" Foreground="White" Content="+ health (5 gold)" FontSize="20"/>
+                        <Label Grid.Column="1" Grid.Row="0" Opacity="0.5" Foreground="White" Content="+ health (10 gold)" FontSize="20"/>
                         <Image Grid.Column="0" Grid.Row="1" Opacity="0.5" HorizontalAlignment="Right" VerticalAlignment="Top" Source="/Art/Game/UpdgradeHelpButton/keyboard_M.png" Height="50" Width="50"/>
-                        <Label Grid.Column="1" Grid.Row="1" Opacity="0.5" Foreground="White" Content="+ movement speed (5 gold)" FontSize="20"/>
+                        <Label Grid.Column="1" Grid.Row="1" Opacity="0.5" Foreground="White" Content="+ movement speed (10 gold)" FontSize="20"/>
                         <Image Grid.Column="0" Grid.Row="2" Opacity="0.5" VerticalAlignment="Top" HorizontalAlignment="Right" Source="/Art/Game/UpdgradeHelpButton/keyboard_P.png" Height="50" Width="50"/>
-                        <Label Grid.Column="1" Grid.Row="2" Opacity="0.5" Foreground="White" Content="+ power (5 gold)" FontSize="20"/>
+                        <Label Grid.Column="1" Grid.Row="2" Opacity="0.5" Foreground="White" Content="+ power (10 gold)" FontSize="20"/>
                     </Grid>
                 </StackPanel>
             </Grid>

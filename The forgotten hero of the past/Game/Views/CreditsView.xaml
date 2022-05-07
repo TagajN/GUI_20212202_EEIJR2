@@ -16,6 +16,11 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Image Source="/Art/Menu/CREDITS_button.png" HorizontalAlignment="Center" Height="40"/>
+        <StackPanel Grid.Row="1">
+            <Image Source="/Art/Menu/createdBy.png" Margin="20,40,0,0" HorizontalAlignment="Center" Height="40"/>
+            <Image Source="/Art/Menu/Aron.png" Margin="10" HorizontalAlignment="Center" Height="20"/>
+            <Image Source="/Art/Menu/Norbi.png" Margin="10" HorizontalAlignment="Center" Height="25"/>
+        </StackPanel>
         <Button Grid.Row="2" Command="{Binding NavigateHomeCommand}" Padding="10" Margin="10" Width="200" Background="Gray">
             <Button.Content>
                 <Image  Height="22" Width="163" Source="/Art/Menu/BACK_button.png"/>

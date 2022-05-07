@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -120,6 +121,7 @@ namespace Game.Logic.CollisionDetection
                 if (PlayerHitbox.IntersectsWith(CoinHitBox))
                 {
                     coins.RemoveAt(i);
+                    new Task(() => { new SoundPlayer(@"G:\GUI_20212202_EEIJR2\The forgotten hero of the past\Game\Art\Game\Sounds\coinSound.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                     Player.Gold++;
                 }
             }
@@ -164,16 +166,16 @@ namespace Game.Logic.CollisionDetection
 
                 if (PlayerHitbox.IntersectsWith(PotionHitBox))
                 {
-                    potions.RemoveAt(i);
                     if (Player.Health + 30 <= Player.MaxHP)
                     {
                         Player.Health += 30;
+                        potions.RemoveAt(i);
                     }
-                    else
+                    else if (Player.Health< Player.MaxHP)
                     {
                         Player.Health = Player.MaxHP;
+                        potions.RemoveAt(i);
                     }
-                    
                 }
             }
         }

@@ -20,7 +20,8 @@ namespace Game.Logic
         public DispatcherTimer Animation;
         public ObservableCollection<Gold> GoldCoins { get; set; }
         public ObservableCollection<Rect> Platforms { get; set; }
-
+        public ObservableCollection<Portal> Portals { get; set; }
+        public ObservableCollection<Chest> Chests { get; set; }
         public ObservableCollection<Potion> Potions { get; set; }
 
         public Player player;
@@ -34,7 +35,7 @@ namespace Game.Logic
 
             player.Health = 100;
             player.Damage = 50;
-            player.Speed = 20;
+            player.Speed = 200;
             player.JumpStrength = -10;
         }
         public void GameTimer()
@@ -53,6 +54,8 @@ namespace Game.Logic
             Platforms = new ObservableCollection<Rect>();
             Enemies = new ObservableCollection<Enemy>();
             Potions = new ObservableCollection<Potion>();
+            Portals = new ObservableCollection<Portal>();
+            Chests = new ObservableCollection<Chest>();
         }
 
         public void AnimationTimer()
@@ -70,6 +73,8 @@ namespace Game.Logic
             {
                 player.AnimatePlayer(Platforms, Enemies);
                 Gold.PlayCoinAnimation(GoldCoins, player);
+                Portal.PlayPortalAnimation(Portals, player);
+                Chest.PlayChestAnimation(Chests, player);
                 Potion.PlayPotionAnimation(Potions, player);
                 Enemy.PlayEnemyAnimation(player, Enemies, Platforms);
                 Potion.PlayPotionAnimation(Potions, player);
@@ -86,6 +91,8 @@ namespace Game.Logic
                 CollisionDetection.CollisionDetection.PlatformCollision(player, Platforms);
                 CollisionDetection.CollisionDetection.GoldCollision(player, GoldCoins);
                 CollisionDetection.CollisionDetection.PotionCollision(player, Potions);
+                CollisionDetection.CollisionDetection.ChestCollision(player, Chests);
+                CollisionDetection.CollisionDetection.PortalCollision(player, Portals);
             });
         }
 
@@ -93,7 +100,7 @@ namespace Game.Logic
         {
             this.Dispatcher.Invoke(() =>
             {
-                Map.Map.Load(Platforms, GoldCoins, Potions, Enemies);
+                Map.Map.Load(Platforms, GoldCoins, Potions, Enemies, Portals, Chests);
             });
         }
         public bool Pause(KeyEventArgs e)

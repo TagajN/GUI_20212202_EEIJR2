@@ -11,7 +11,7 @@ namespace Game.Logic.Map
 {
     public class Map
     {
-        public static void Load(ObservableCollection<Rect> Platforms, ObservableCollection<Gold> Coins, ObservableCollection<Potion> Potions, ObservableCollection<Enemy> Enemies)
+        public static void Load(ObservableCollection<Rect> Platforms, ObservableCollection<Gold> Coins, ObservableCollection<Potion> Potions, ObservableCollection<Enemy> Enemies, ObservableCollection<Portal> Portals, ObservableCollection<Chest> Chests)
         {
             foreach (string line in System.IO.File.ReadLines("Map/GAMEMAP.txt"))
             {
@@ -28,6 +28,14 @@ namespace Game.Logic.Map
                 if (values[4] == "H")
                 {
                     Potions.Add(new Potion(int.Parse(values[0]), int.Parse(values[1]), int.Parse(values[2]), int.Parse(values[3])));
+                }
+                if (values[4] == "C")
+                {
+                    Chests.Add(new Chest(int.Parse(values[0]), int.Parse(values[1]), int.Parse(values[2]), int.Parse(values[3])));
+                }
+                if (values[4] == "T")
+                {
+                    Portals.Add(new Portal(int.Parse(values[0]), int.Parse(values[1]), int.Parse(values[2]), int.Parse(values[3])));
                 }
                 if (values.Length == 8)
                 {

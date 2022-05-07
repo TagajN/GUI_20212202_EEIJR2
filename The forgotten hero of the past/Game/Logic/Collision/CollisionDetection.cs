@@ -133,7 +133,7 @@ namespace Game.Logic.CollisionDetection
 
             for (int i = chests.Count - 1; i >= 0; i--)
             {
-                Rect ChestHitBox = new Rect(chests[i].X, chests[i].Y, chests[i].Width, chests[i].Height);
+                Rect ChestHitBox = new Rect(chests[i].X, chests[i].Y, chests[i].Width, chests[i].Height - 140);
 
                 if (PlayerHitbox.IntersectsWith(ChestHitBox))
                 {

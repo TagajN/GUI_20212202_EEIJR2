@@ -417,5 +417,14 @@ namespace Game.Logic.MapObjects
                 Speed += 10;
             }
         }
+
+        public bool PlayerDead()
+        {
+            if (IsDead)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

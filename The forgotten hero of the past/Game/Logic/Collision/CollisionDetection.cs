@@ -139,18 +139,19 @@ namespace Game.Logic.CollisionDetection
                 }
             }
         }
-        public static void PortalCollision(Player Player, ObservableCollection<Portal> portals)
+        public static bool PortalCollision(Player Player, ObservableCollection<Portal> portals)
         {
-            Rect PlayerHitbox = new Rect(Player.X + Player.Width - 100, Player.Y + 1, 1, Player.Height - 55);
+            Rect PlayerHitbox = new Rect(Player.X, Player.Y + 1, 1, Player.Height - 55);
             for (int i = portals.Count - 1; i >= 0; i--)
             {
                 Rect PortalHitBox = new Rect(portals[i].X, portals[i].Y, portals[i].Width, portals[i].Height);
 
                 if (PlayerHitbox.IntersectsWith(PortalHitBox))
                 {
-                    // todo Win window
+                    return true;
                 }
             }
+            return false;
         }
 
         public static void PotionCollision(Player Player, ObservableCollection<Potion> potions)

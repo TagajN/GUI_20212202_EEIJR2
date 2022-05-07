@@ -27,10 +27,10 @@ namespace Game.Windows
 
         public GameWindow()
         {
-            
-            DataContext = logic;
-            logic.Start();
 
+            DataContext = logic;
+            logic.GameOver += GameOver;
+            logic.Start();
             KeyDown += logic.player.Jump;
             KeyUp += logic.player.JumpDown;
             logic.player.Moved += OnMoved;
@@ -77,7 +77,29 @@ namespace Game.Windows
         private void Window_Closed(object sender, EventArgs e)
         {
             logic.SaveScore();
-            
+        }
+
+        private void GameOver(object? sender, EventArgs e)
+        {
+
+            if (logic.Win)
+            {
+                 var result = MessageBox.Show("Congratualation!");
+                if (result == MessageBoxResult.OK)
+                {
+                    this.Close();
+                    System.Environment.Exit(1);
+                }
+            }
+            else
+            {
+                 var result = MessageBox.Show("GAME OVER!");
+                if (result == MessageBoxResult.OK)
+                {
+                    this.Close();
+                    System.Environment.Exit(1);
+                }
+            }
         }
     }
 }

@@ -16,6 +16,8 @@ namespace Game.Logic
 {
     class GameLogic : Window
     {
+        public event EventHandler GameOver;
+
         public DispatcherTimer Timer;
         public DispatcherTimer Animation;
         public ObservableCollection<Gold> GoldCoins { get; set; }
@@ -26,6 +28,8 @@ namespace Game.Logic
 
         public Player player;
         public ObservableCollection<Enemy> Enemies { get; set; }
+
+        public bool Win = false;
         public void Start()
         {
             InitMapObjects();
@@ -35,7 +39,7 @@ namespace Game.Logic
 
             player.Health = 100;
             player.Damage = 50;
-            player.Speed = 200;
+            player.Speed = 20;
             player.JumpStrength = -10;
         }
         public void GameTimer()
@@ -92,7 +96,21 @@ namespace Game.Logic
                 CollisionDetection.CollisionDetection.GoldCollision(player, GoldCoins);
                 CollisionDetection.CollisionDetection.PotionCollision(player, Potions);
                 CollisionDetection.CollisionDetection.ChestCollision(player, Chests);
-                CollisionDetection.CollisionDetection.PortalCollision(player, Portals);
+                if (CollisionDetection.CollisionDetection.PortalCollision(player, Portals))
+                {
+                    Win = true;
+                    GameOver?.Invoke(this, null);
+                    Animation.Stop();
+                    Timer.Stop();
+                }
+                if (player.PlayerDead())
+                {
+                    GameOver?.Invoke(this, null);
+                    Animation.Stop();
+                    Timer.Stop();
+                }
+
+                
             });
         }
 
@@ -125,5 +143,6 @@ namespace Game.Logic
             string output = DateTime.Now.ToString().Replace(" ", string.Empty) + " " + player.Gold.ToString() + " " + player.KillCounter.ToString() + " " + Math.Round(player.X / 29810 * 100);
             File.AppendAllText("score.txt", output + Environment.NewLine);
         }
+
     }
 }

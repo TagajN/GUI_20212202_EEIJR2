@@ -121,7 +121,6 @@ namespace Game.Logic.CollisionDetection
                 if (PlayerHitbox.IntersectsWith(CoinHitBox))
                 {
                     coins.RemoveAt(i);
-                    new Task(() => { new SoundPlayer(@"G:\GUI_20212202_EEIJR2\The forgotten hero of the past\Game\Art\Game\Sounds\coinSound.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                     Player.Gold++;
                 }
             }

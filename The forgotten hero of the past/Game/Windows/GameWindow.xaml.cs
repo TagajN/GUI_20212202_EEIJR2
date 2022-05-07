@@ -88,7 +88,6 @@ namespace Game.Windows
                 if (result == MessageBoxResult.OK)
                 {
                     this.Close();
-                    System.Environment.Exit(1);
                 }
             }
             else
@@ -97,7 +96,6 @@ namespace Game.Windows
                 if (result == MessageBoxResult.OK)
                 {
                     this.Close();
-                    System.Environment.Exit(1);
                 }
             }
         }

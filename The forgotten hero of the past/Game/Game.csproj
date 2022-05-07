@@ -291,7 +291,6 @@
     <None Remove="EXIT_button.png" />
     <None Remove="LEADERBOARDS_button.png" />
     <None Remove="LOAD_button.png" />
-    <None Remove="Resources\idle1.png" />
     <None Remove="title.png" />
     <None Remove="Windows\knight-idle.gif" />
     <None Remove="Windows\warlock-idle.gif" />
@@ -1183,7 +1182,6 @@
     <Content Include="Map\GAMEMAP.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Resources\idle1.png" />
   </ItemGroup>
 
 </Project>

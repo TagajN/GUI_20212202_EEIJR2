@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -382,6 +383,7 @@ namespace Game.Logic.MapObjects
             if (Health <= 0 && !IsDead)
             {
                 AnimateDeath();
+                new Task(() => { new SoundPlayer(@"G:\GUI_20212202_EEIJR2\The forgotten hero of the past\Game\Art\Game\Sounds\playerDeath.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                 IsDead = true;
             }
 

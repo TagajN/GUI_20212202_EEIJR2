@@ -275,6 +275,11 @@
     <None Remove="Art\Game\Potion\potion2.png" />
     <None Remove="Art\Game\Potion\potion3.png" />
     <None Remove="Art\Game\Potion\potion4.png" />
+    <None Remove="Art\Game\Sounds\backgroundMusic.wav" />
+    <None Remove="Art\Game\Sounds\coinSound.wav" />
+    <None Remove="Art\Game\Sounds\playerDeath.wav" />
+    <None Remove="Art\Game\Sounds\portalSound.wav" />
+    <None Remove="Art\Game\Sounds\potionSound.wav" />
     <None Remove="Art\Game\UpdgradeHelpButton\keyboard_H.png" />
     <None Remove="Art\Game\UpdgradeHelpButton\keyboard_M.png" />
     <None Remove="Art\Game\UpdgradeHelpButton\keyboard_P.png" />
@@ -1194,6 +1199,14 @@
     <Content Include="Map\GAMEMAP.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Art\Game\Sounds\backgroundMusic.wav" />
+    <Resource Include="Art\Game\Sounds\coinSound.wav" />
+    <Resource Include="Art\Game\Sounds\playerDeath.wav" />
+    <Resource Include="Art\Game\Sounds\portalSound.wav" />
+    <Resource Include="Art\Game\Sounds\potionSound.wav" />
   </ItemGroup>
 
 </Project>

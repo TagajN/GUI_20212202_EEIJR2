@@ -3,6 +3,7 @@ using Game.Logic.Background;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -39,6 +40,7 @@ namespace Game.Windows
 
             Player.DataContext = logic.player;
             grid.DataContext = logic.player;
+            new Task(() => { new SoundPlayer(@"G:\GUI_20212202_EEIJR2\The forgotten hero of the past\Game\Art\Game\Sounds\backgroundMusic.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
 
         }
         private void Window_KeyDown(object sender, KeyEventArgs e)

@@ -105,6 +105,7 @@ namespace Game.Logic.MapObjects
         {
             if (Gold >= 10)
             {
+                new Task(() => { new SoundPlayer("Art/Game/Sounds/levelup.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                 Gold -= 10;
                 Damage += 10;
             }
@@ -246,6 +247,7 @@ namespace Game.Logic.MapObjects
             count++;
             if (count == 3)
             {
+                new Task(() => { new SoundPlayer("Art/Game/Sounds/sword.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                 Attacking = true;
             }
         }
@@ -259,6 +261,7 @@ namespace Game.Logic.MapObjects
             count++;
             if (count == 3)
             {
+                new Task(() => { new SoundPlayer("Art/Game/Sounds/sword.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                 Attacking = true;
             }
         }
@@ -383,7 +386,7 @@ namespace Game.Logic.MapObjects
             if (Health <= 0 && !IsDead)
             {
                 AnimateDeath();
-                new Task(() => { new SoundPlayer(@"G:\GUI_20212202_EEIJR2\The forgotten hero of the past\Game\Art\Game\Sounds\playerDeath.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
+                new Task(() => { new SoundPlayer("Art/Game/Sounds/playerDeath.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                 IsDead = true;
             }
 
@@ -404,11 +407,13 @@ namespace Game.Logic.MapObjects
             {
                 if (Health < 100)
                 {
+                    new Task(() => { new SoundPlayer("Art/Game/Sounds/potionSound.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                     Gold -= 5;
                     Health = MaxHP;
                 }
                 else
                 {
+                    new Task(() => { new SoundPlayer("Art/Game/Sounds/levelup.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                     MaxHP += 10;
                     Gold -= 10;
                     Health = MaxHP;
@@ -420,6 +425,7 @@ namespace Game.Logic.MapObjects
         {
             if (Gold >= 10)
             {
+                new Task(() => { new SoundPlayer("Art/Game/Sounds/levelup.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                 Gold -= 10;
                 Speed += 4;
             }

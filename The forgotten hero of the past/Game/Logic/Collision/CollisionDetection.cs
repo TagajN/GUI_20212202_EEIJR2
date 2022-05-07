@@ -11,6 +11,7 @@ using System.Windows;
 
 namespace Game.Logic.CollisionDetection
 {
+    
     public class CollisionDetection : GameWindow
     {
         public static bool OnPlatform;
@@ -121,7 +122,7 @@ namespace Game.Logic.CollisionDetection
                 if (PlayerHitbox.IntersectsWith(CoinHitBox))
                 {
                     coins.RemoveAt(i);
-                    //new Task(() => { new SoundPlayer(@"G:\GUI_20212202_EEIJR2\The forgotten hero of the past\Game\Art\Game\Sounds\coinSound.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
+                    new Task(() => { new SoundPlayer("Art/Game/Sounds/coinSound.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                     Player.Gold++;
                 }
             }
@@ -136,8 +137,13 @@ namespace Game.Logic.CollisionDetection
 
                 if (PlayerHitbox.IntersectsWith(ChestHitBox))
                 {
+                    Random r = new Random();
                     chests.RemoveAt(i);
-                    //new Task(() => { new SoundPlayer(@"G:\GUI_20212202_EEIJR2\The forgotten hero of the past\Game\Art\Game\Sounds\coinSound.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
+                    if (r.Next(0,100) == 7)
+                    {
+                        new Task(() => { new SoundPlayer("Art/Game/Sounds/easteregg.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
+                    }
+                    new Task(() => { new SoundPlayer("Art/Game/Sounds/chest.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                     Player.Gold += 10;
                 }
             }
@@ -151,7 +157,7 @@ namespace Game.Logic.CollisionDetection
 
                 if (PlayerHitbox.IntersectsWith(PortalHitBox))
                 {
-                    new Task(() => { new SoundPlayer(@"G:\GUI_20212202_EEIJR2\The forgotten hero of the past\Game\Art\Game\Sounds\portalSound.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
+                    new Task(() => { new SoundPlayer("Art/Game/Sounds/Win.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                     return true;
                 }
             }
@@ -171,13 +177,13 @@ namespace Game.Logic.CollisionDetection
                     if (Player.Health + 30 <= Player.MaxHP)
                     {
                         Player.Health += 30;
-                        //new Task(() => { new SoundPlayer(@"G:\GUI_20212202_EEIJR2\The forgotten hero of the past\Game\Art\Game\Sounds\potionSound.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
+                        new Task(() => { new SoundPlayer("Art/Game/Sounds/potionSound.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                         potions.RemoveAt(i);
                     }
                     else if (Player.Health< Player.MaxHP)
                     {
                         Player.Health = Player.MaxHP;
-                        //new Task(() => { new SoundPlayer(@"G:\GUI_20212202_EEIJR2\The forgotten hero of the past\Game\Art\Game\Sounds\potionSound.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
+                        new Task(() => { new SoundPlayer("Art/Game/Sounds/potionSound.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                         potions.RemoveAt(i);
                     }
                 }

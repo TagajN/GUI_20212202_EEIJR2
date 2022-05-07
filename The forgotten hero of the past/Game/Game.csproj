@@ -276,10 +276,18 @@
     <None Remove="Art\Game\Potion\potion3.png" />
     <None Remove="Art\Game\Potion\potion4.png" />
     <None Remove="Art\Game\Sounds\backgroundMusic.wav" />
+    <None Remove="Art\Game\Sounds\chest.wav" />
     <None Remove="Art\Game\Sounds\coinSound.wav" />
+    <None Remove="Art\Game\Sounds\easteregg.wav" />
+    <None Remove="Art\Game\Sounds\griffattack.wav" />
+    <None Remove="Art\Game\Sounds\levelup.wav" />
+    <None Remove="Art\Game\Sounds\mushroomattack.wav" />
     <None Remove="Art\Game\Sounds\playerDeath.wav" />
     <None Remove="Art\Game\Sounds\portalSound.wav" />
     <None Remove="Art\Game\Sounds\potionSound.wav" />
+    <None Remove="Art\Game\Sounds\skeletonattack.wav" />
+    <None Remove="Art\Game\Sounds\sword.wav" />
+    <None Remove="Art\Game\Sounds\Win.wav" />
     <None Remove="Art\Game\UpdgradeHelpButton\keyboard_H.png" />
     <None Remove="Art\Game\UpdgradeHelpButton\keyboard_M.png" />
     <None Remove="Art\Game\UpdgradeHelpButton\keyboard_P.png" />
@@ -342,6 +350,30 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Art\Game\Portal\portal9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Art\Game\Sounds\chest.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Art\Game\Sounds\easteregg.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Art\Game\Sounds\griffattack.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Art\Game\Sounds\levelup.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Art\Game\Sounds\mushroomattack.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Art\Game\Sounds\skeletonattack.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Art\Game\Sounds\sword.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Art\Game\Sounds\Win.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Art\Menu\+_title.png">
@@ -1202,11 +1234,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Art\Game\Sounds\backgroundMusic.wav" />
-    <Resource Include="Art\Game\Sounds\coinSound.wav" />
-    <Resource Include="Art\Game\Sounds\playerDeath.wav" />
-    <Resource Include="Art\Game\Sounds\portalSound.wav" />
-    <Resource Include="Art\Game\Sounds\potionSound.wav" />
+    <Content Include="Art\Game\Sounds\coinSound.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Art\Game\Sounds\playerDeath.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Art\Game\Sounds\potionSound.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

@@ -40,7 +40,6 @@ namespace Game.Windows
 
             Player.DataContext = logic.player;
             grid.DataContext = logic.player;
-            new Task(() => { new SoundPlayer(@"G:\GUI_20212202_EEIJR2\The forgotten hero of the past\Game\Art\Game\Sounds\backgroundMusic.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
 
         }
         private void Window_KeyDown(object sender, KeyEventArgs e)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -128,6 +129,7 @@ namespace Game.Logic.MapObjects
             count++;
             if (count == 4)
             {
+                new Task(() => { new SoundPlayer("Art/Game/Sounds/skeletonattack.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                 Attacking = true;
             }
 
@@ -142,6 +144,7 @@ namespace Game.Logic.MapObjects
             count++;
             if (count == 4)
             {
+                new Task(() => { new SoundPlayer("Art/Game/Sounds/skeletonattack.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                 Attacking = true;
             }
         }
@@ -254,6 +257,7 @@ namespace Game.Logic.MapObjects
             count++;
             if (count == 6)
             {
+                new Task(() => { new SoundPlayer("Art/Game/Sounds/mushroomattack.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                 Attacking = true;
             }
         }
@@ -267,6 +271,7 @@ namespace Game.Logic.MapObjects
             count++;
             if (count == 6)
             {
+                new Task(() => { new SoundPlayer("Art/Game/Sounds/mushroomattack.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                 Attacking = true;
             }
         }
@@ -374,8 +379,9 @@ namespace Game.Logic.MapObjects
                 count = 0;
             Image = new BitmapImage(new Uri(AttackGriffin[count], UriKind.RelativeOrAbsolute));
             count++;
-            if (count == 6)
+            if (count == 9)
             {
+                new Task(() => { new SoundPlayer("Art/Game/Sounds/griffattack.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                 Attacking = true;
             }
         }
@@ -387,8 +393,9 @@ namespace Game.Logic.MapObjects
                 count = 0;
             Image = new BitmapImage(new Uri(AttackGriffin[count], UriKind.RelativeOrAbsolute));
             count++;
-            if (count == 7)
+            if (count == 9)
             {
+                new Task(() => { new SoundPlayer("Art/Game/Sounds/griffattack.wav").Play(); }, TaskCreationOptions.LongRunning).Start();
                 Attacking = true;
             }
         }

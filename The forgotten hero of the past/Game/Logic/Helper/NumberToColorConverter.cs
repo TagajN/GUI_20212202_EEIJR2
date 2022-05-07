@@ -28,7 +28,7 @@ namespace Game.Logic.Helper
             }
             else if (number > 100)
             {
-                return Brushes.Gold;
+                return Brushes.LightBlue;
             }
             else
             {

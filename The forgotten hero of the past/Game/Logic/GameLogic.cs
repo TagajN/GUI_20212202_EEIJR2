@@ -20,12 +20,10 @@ namespace Game.Logic
         public DispatcherTimer Animation;
         public ObservableCollection<Gold> GoldCoins { get; set; }
         public ObservableCollection<Rect> Platforms { get; set; }
-        public ObservableCollection<Chest> Chests { get; set; }
 
         public ObservableCollection<Potion> Potions { get; set; }
 
         public Player player;
-        public ObservableCollection<Portal> Portals { get; set; }
         public ObservableCollection<Enemy> Enemies { get; set; }
         public void Start()
         {
@@ -52,8 +50,6 @@ namespace Game.Logic
         {
             player = new Player();
             GoldCoins = new ObservableCollection<Gold>();
-            Portals = new ObservableCollection<Portal>();
-            Chests = new ObservableCollection<Chest>();
             Platforms = new ObservableCollection<Rect>();
             Enemies = new ObservableCollection<Enemy>();
             Potions = new ObservableCollection<Potion>();
@@ -74,8 +70,6 @@ namespace Game.Logic
             {
                 player.AnimatePlayer(Platforms, Enemies);
                 Gold.PlayCoinAnimation(GoldCoins, player);
-                Portal.PlayPortalAnimation(Portals, player);
-                Chest.PlayChestAnimation(Chests, player);
                 Potion.PlayPotionAnimation(Potions, player);
                 Enemy.PlayEnemyAnimation(player, Enemies, Platforms);
                 Potion.PlayPotionAnimation(Potions, player);
@@ -91,8 +85,6 @@ namespace Game.Logic
                 player.UpdateGravity();
                 CollisionDetection.CollisionDetection.PlatformCollision(player, Platforms);
                 CollisionDetection.CollisionDetection.GoldCollision(player, GoldCoins);
-                CollisionDetection.CollisionDetection.ChestCollision(player, Chests);
-                CollisionDetection.CollisionDetection.PortalCollision(player, Portals);
                 CollisionDetection.CollisionDetection.PotionCollision(player, Potions);
             });
         }
@@ -101,12 +93,7 @@ namespace Game.Logic
         {
             this.Dispatcher.Invoke(() =>
             {
-                Map.Map.Platforms(Platforms);
-                Map.Map.Coins(GoldCoins);
-                Map.Map.Creates(Chests);
-                Map.Map.Portals(Portals);
-                Map.Map.CreateEnemies(Enemies);
-                Map.Map.Potions(Potions);
+                Map.Map.Load(Platforms, GoldCoins, Potions, Enemies);
             });
         }
         public bool Pause(KeyEventArgs e)

@@ -165,7 +165,7 @@
                 <Label Grid.Row="0" Grid.Column="1" Foreground="OrangeRed" Content="{Binding KillCounter}" FontSize="20" Margin="300,0,0,0" Width="62"/>
                 <Image Grid.Row="0" Grid.Column="2" VerticalAlignment="Top" Source="/Art/Game/KillGoldCounter/kill.png" Height="50" Width="50"/>
                 <Label Grid.Row="0" Grid.Column="3" Foreground="Gold" Content="{Binding Gold}" FontSize="20" Margin="300,0,0,0" Width="62"/>
-                <Image Grid.Row="0" Grid.Column="4" VerticalAlignment="Top" Source="/Art/Game/KillGoldCounter/coin.png" Height="50" Width="50"/>
+                <Image Grid.Row="0" Grid.Column="4" VerticalAlignment="Top" Source="/Art/Game/Gold/gold1.png" Height="50" Width="50"/>
 
                 <StackPanel Grid.Row="1" Grid.Column="0">
                     <Grid HorizontalAlignment="Left">

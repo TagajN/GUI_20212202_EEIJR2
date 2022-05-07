@@ -140,7 +140,7 @@ namespace Game.Logic
 
         public void SaveScore()
         {
-            string output = DateTime.Now.ToString().Replace(" ", string.Empty) + " " + player.Gold.ToString() + " " + player.KillCounter.ToString() + " " + Math.Round(player.X / 29810 * 100);
+            string output = DateTime.Now.ToString().Replace(" ", string.Empty) + " " + player.Gold.ToString() + " " + player.KillCounter.ToString() + " " + Math.Round(player.X / 28500 * 100);
             File.AppendAllText("score.txt", output + Environment.NewLine);
         }
 

@@ -1,5 +1,4 @@
-﻿using Game.Commands;
-using MVVMEssentials.Commands;
+﻿using MVVMEssentials.Commands;
 using MVVMEssentials.Services;
 using MVVMEssentials.ViewModels;
 using System;

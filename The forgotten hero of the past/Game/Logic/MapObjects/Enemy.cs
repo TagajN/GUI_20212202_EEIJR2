@@ -462,7 +462,7 @@ namespace Game.Logic.MapObjects
                                 enemy.AnimateRuntoRightSkeleton();
                                 enemy.IsRight = true;
                                 enemy.IsLeft = false;
-                                if (SkeletonRoam == -99 || CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
+                                if (SkeletonRoam == -99 || CollisionDetection.CollisionDetection.RightCollision(enemy, platforms))
                                 {
                                     SkeletonRoam = 0;
                                 }
@@ -520,7 +520,7 @@ namespace Game.Logic.MapObjects
                                 enemy.AnimateRuntoRightMushroom();
                                 enemy.IsRight = true;
                                 enemy.IsLeft = false;
-                                if (MushroomRoam == -99 || CollisionDetection.CollisionDetection.LeftCollision(enemy, platforms))
+                                if (MushroomRoam == -99 || CollisionDetection.CollisionDetection.RightCollision(enemy, platforms))
                                 {
                                     MushroomRoam = 0;
                                 }

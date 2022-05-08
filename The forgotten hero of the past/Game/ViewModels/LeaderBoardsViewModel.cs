@@ -1,5 +1,4 @@
-﻿using Game.Commands;
-using Game.Logic.MapObjects;
+﻿using Game.Logic.MapObjects;
 using MVVMEssentials.Commands;
 using MVVMEssentials.Services;
 using MVVMEssentials.ViewModels;
@@ -28,19 +27,21 @@ namespace Game.ViewModels
 
         public void LoadScore()
         {
-            foreach(string line in System.IO.File.ReadLines("score.txt"))
+            if (File.Exists("score.txt"))
             {
-                string item = line;
-                string[] values = item.Split(" ");
-                scores.Add(new Score()
+                foreach (string line in System.IO.File.ReadLines("score.txt"))
                 {
-                    Date = values[0],
-                    Points = int.Parse(values[1]),
-                    Kill = int.Parse(values[2]),
-                    Progress = int.Parse(values[3]),
-                });
+                    string item = line;
+                    string[] values = item.Split(" ");
+                    scores.Add(new Score()
+                    {
+                        Date = values[0],
+                        Points = int.Parse(values[1]),
+                        Kill = int.Parse(values[2]),
+                        Progress = int.Parse(values[3]),
+                    });
+                }
             }
-
         }
     }
 }

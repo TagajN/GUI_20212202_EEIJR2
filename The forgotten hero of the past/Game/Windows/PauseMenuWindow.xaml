@@ -7,9 +7,6 @@
         xmlns:vms="clr-namespace:Game.ViewModels"
         mc:Ignorable="d"
         Title="PauseMenuWindow" Height="200" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" BorderBrush="Black" BorderThickness="3" x:Name="PauseMenu" KeyDown="PauseMenu_KeyDown">
-    <Window.DataContext>
-        <vms:PauseMenuViewModel/>
-    </Window.DataContext>
     <Window.Background>
         <ImageBrush ImageSource="/Art/Menu/StatBackground.jpg"/>
     </Window.Background>
